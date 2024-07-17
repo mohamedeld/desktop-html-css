@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./bootstrap/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/general.css">
+    <link rel="stylesheet" href="./styles/signup.css">
+    <script src="./bootstrap/bootstrap.min.js"></script>
+    <title>Sign up</title>
+</head>
+
+<body>
+    <main class="main">
+
+        <div class="login signup_container">
+            <p>تسجيل الدخول</p>
+            <form class="form">
+                <div class="">
+                    <label for="exampleInputName1" class="form-label label-general verify-name">بريد الكتروني</label>
+                    <input type="email" class="form-control general-control" id="exampleInputName" aria-describedby="textHelp" placeholder="ادخل بريدك الإكتروني">
+                </div>
+                <div class="login-password">
+                    <label for="exampleInput1" class="form-label label-general">كلمة المرور</label>
+                    <input type="password" class="form-control general-control" id="exampleInput1" aria-describedby="textHelp" placeholder="ادخل كلمة المرور الخاصة بك">
+                    <img src="./images/icons/eye.svg" class="eye-icon" alt="eye icon" />
+
+                </div>
+                <div class="verify-check login-check-account">
+                    <p class="login-email">اختر نوع الحساب</p>
+                    <div class="form-check login-form">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                    حساب طالب
+                  </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                    حساب محكم
+                  </label>
+                    </div>
+                </div>
+
+
+                <div class="create-account-btn login-button">
+                    <button>دخول</button>
+                    <div class="have-account">
+                        <span>لديك حساب بالفعل ؟</span>
+                        <span class="login">انشاء حساب</span>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </main>
+    <script src="./scripts/script.js"></script>
+</body>
+
+</html>

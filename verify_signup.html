@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./bootstrap/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/general.css">
+    <link rel="stylesheet" href="./styles/signup.css">
+    <script src="./bootstrap/bootstrap.min.js"></script>
+    <title>Sign up</title>
+</head>
+
+<body>
+    <main class="main">
+
+        <div class="verify signup_container">
+            <p>اختر نوع الحساب</p>
+            <p class="desc">مع العلم انه يمكنك انشاء حساب آخر من نوع مختلف فيما بعد</p>
+            <form class="form">
+                <div class="verify-check">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                    حساب طالب
+                  </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                    حساب محكم
+                  </label>
+                    </div>
+                </div>
+                <div class="">
+                    <label for="exampleInputName1" class="form-label label-general verify-name">الاسم رباعي</label>
+                    <input type="text" class="form-control general-control" id="exampleInputName" aria-describedby="textHelp" placeholder="ادخل اسمك رباعي">
+                </div>
+                <div class="">
+                    <label for="exampleInput1" class="form-label label-general">الجامعة</label>
+                    <input type="text" class="form-control general-control" id="exampleInput1" aria-describedby="textHelp" placeholder="ادخل الجامعة التي تنتمي لها">
+                </div>
+
+                <div class="verify-account-btn">
+                    <button>تأكيد</button>
+                </div>
+            </form>
+            <img src="./images/icons/arrowBack.svg" class="arrow-back" alt="arrow right icon" />
+        </div>
+    </main>
+    <script src="./scripts/script.js"></script>
+</body>
+
+</html>

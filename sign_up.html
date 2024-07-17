@@ -24,24 +24,41 @@
                     <input type="email" class="form-control general-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ادخل بريد الكتروني فعال">
                 </div>
                 <div class="">
-                    <label for="exampleInputPassword1" class="form-label label-general">رقم الجوال</label>
+                    <label for="exampleInputs1" class="form-label label-general">رقم الجوال</label>
                     <div class="select-container">
-                        <select class="form-select form-select-lg mb-3 select-country" aria-label=".form-select-lg example">
-                        <option selected><img src="../images/icons/saudi_arbia.svg" alt="saudi arabia flag country"/></option>
-                        <option value="1"><img src="../images/icons/saudi_arbia.svg" alt="saudi arabia flag country"/></option>
-                        <option value="2"><img src="../images/icons/saudi_arbia.svg" alt="saudi arabia flag country"/></option>
-                        <option value="3"><img src="../images/icons/saudi_arbia.svg" alt="saudi arabia flag country"/></option>
-                      </select>
-                        <input type="text" class="form-control general-control" placeholder="ادخل رقم جوالك" id="exampleInputPassword1">
+                        <div>
+                            <div class="selector">
+                                <img src="./images/icons/saudi_arbia.svg" class="select-saudi" alt="saudi arabia image" />
+                                <img src="./images/icons/arrowDownCountry.svg" alt="arrow down icon" />
+                            </div>
+                            <ul class="list toggle-visible">
+                                <li class="options">
+                                    <img src="./images/icons/saudi_arbia.svg" alt="saudi arbia option image" />
+                                </li>
+                                <li class="options">
+                                    <img src="./images/icons/saudi_arbia.svg" alt="saudi arbia option image" />
+                                </li>
+                                <li class="options">
+                                    <img src="./images/icons/saudi_arbia.svg" alt="saudi arbia option image" />
+                                </li>
+                                <li class="options">
+                                    <img src="./images/icons/saudi_arbia.svg" alt="saudi arbia option image" />
+                                </li>
+                            </ul>
+                        </div>
+
+                        <input type="number" class="form-control general-control" placeholder="ادخل رقم جوالك" id="exampleInputs1">
                     </div>
                 </div>
-                <div class="">
+                <div class="login-password">
                     <label for="exampleInputPassword1" class="form-label label-general">كلمة المرور</label>
                     <input type="password" class="form-control general-control" id="exampleInputPassword1" aria-describedby="passwordHelp" placeholder="ادخل كلمة مرور لا تقل عن 8 احرف">
+                    <img src="./images/icons/eye.svg" class="eye-icon" alt="eye icon" />
                 </div>
-                <div class="">
+                <div class="login-password">
                     <label for="exampleInputPassword2" class="form-label label-general">كرر كلمة المرور</label>
                     <input type="password" class="form-control general-control" id="exampleInputPassword2" aria-describedby="passwordHelp" placeholder="ادخل كلمة مرور لا تقل عن 8 احرف">
+                    <img src="./images/icons/eye.svg" class="eye-icon" alt="eye icon" />
                 </div>
                 <div class="create-account-btn">
                     <button>انشاء حساب</button>
@@ -53,6 +70,7 @@
             </form>
         </div>
     </main>
+    <script src="./scripts/script.js"></script>
 </body>
 
 </html>
