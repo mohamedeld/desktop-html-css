@@ -1,0 +1,91 @@
+.main{
+  width:100%;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  background-image:url('../images/sign_up.png');
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center;
+}
+.signup_container{
+  max-width:542px;
+  width:100%;
+  background-color:#fff;
+  padding:6.7rem 7.2rem 5.7rem 7.2rem;
+   border-radius:8px;
+}
+.signup_container p{
+  font-size:1.8rem;
+  font-weight:500px;
+  line-height:21.6px;
+  text-align:right;
+  margin-bottom:3.2rem;
+  color:#2E2E2E
+}
+.form .label-general{
+  font-size:1.6rem;
+  line-height:19.2px;
+  text-align:right;
+  font-weight:500;
+  margin-top:2rem;
+  margin-bottom:1.2rem;
+  color:#2E2E2E;
+}
+.general-control{
+  padding:1.5rem 1.6rem;
+border-radius:5px;
+box-shadow:0px 0px 6px 0px rgba(0, 0, 0, 0.08);
+border:1px solid #167CC8;
+}
+.general-control::placeholder{
+  font-size:1.4rem;
+  font-weight:500;
+  color:#5F5F5F;
+  line-height:16.8px;
+}
+.select-container{
+  display:grid;
+  grid-template-columns:84px 1fr;
+  gap:1.2rem;
+}
+.select-container .select-country{
+  padding:0.8rem 1.6rem;
+  border-radius:5px;
+box-shadow:0px 0px 6px 0px rgba(0, 0, 0, 0.08);
+border:1px solid #167CC8;
+height:100%;
+}
+.select-container option img{
+  width:24px;
+  height:24px;
+  object-fit:cover;
+}
+.create-account-btn button{
+  outline:none;
+  border:none;
+  width:100%;
+  background-color:#FDA922;
+  padding:0.8rem 1.6rem;
+  border-radius:5px;
+  box-shadow:0px 0px 6px 0px rgba(0, 0, 0, 0.08);
+  font-size:1.6rem;
+  font-weight:500;
+  line-height:19.2px;
+  color:#2E2E2E;
+  text-align:center;
+  margin-top:6rem;
+  margin-bottom:1.2rem;
+}
+.create-account-btn .have-account{
+  text-align:center;
+  font-size:1.6rem;
+  font-weight:500;
+  color:#2E2E2E;
+  line-height:19.2px;
+}
+.create-account-btn .have-account .login{
+  color:#167CC8
+}

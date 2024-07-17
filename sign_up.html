@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./bootstrap/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/general.css">
+    <link rel="stylesheet" href="./styles/signup.css">
+    <script src="./bootstrap/bootstrap.min.js"></script>
+    <title>Sign up</title>
+</head>
+
+<body>
+    <main class="main">
+        <div class="signup_container">
+            <p>إنشاء حساب جديد</p>
+            <form class="form">
+                <div class="">
+                    <label for="exampleInputEmail1" class="form-label label-general">بريد الكتروني</label>
+                    <input type="email" class="form-control general-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ادخل بريد الكتروني فعال">
+                </div>
+                <div class="">
+                    <label for="exampleInputPassword1" class="form-label label-general">رقم الجوال</label>
+                    <div class="select-container">
+                        <select class="form-select form-select-lg mb-3 select-country" aria-label=".form-select-lg example">
+                        <option selected><img src="../images/icons/saudi_arbia.svg" alt="saudi arabia flag country"/></option>
+                        <option value="1"><img src="../images/icons/saudi_arbia.svg" alt="saudi arabia flag country"/></option>
+                        <option value="2"><img src="../images/icons/saudi_arbia.svg" alt="saudi arabia flag country"/></option>
+                        <option value="3"><img src="../images/icons/saudi_arbia.svg" alt="saudi arabia flag country"/></option>
+                      </select>
+                        <input type="text" class="form-control general-control" placeholder="ادخل رقم جوالك" id="exampleInputPassword1">
+                    </div>
+                </div>
+                <div class="">
+                    <label for="exampleInputPassword1" class="form-label label-general">كلمة المرور</label>
+                    <input type="password" class="form-control general-control" id="exampleInputPassword1" aria-describedby="passwordHelp" placeholder="ادخل كلمة مرور لا تقل عن 8 احرف">
+                </div>
+                <div class="">
+                    <label for="exampleInputPassword2" class="form-label label-general">كرر كلمة المرور</label>
+                    <input type="password" class="form-control general-control" id="exampleInputPassword2" aria-describedby="passwordHelp" placeholder="ادخل كلمة مرور لا تقل عن 8 احرف">
+                </div>
+                <div class="create-account-btn">
+                    <button>انشاء حساب</button>
+                    <div class="have-account">
+                        <span>لديك حساب بالفعل ؟</span>
+                        <span class="login">سجل دخول</span>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+
+</html>
