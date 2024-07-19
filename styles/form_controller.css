@@ -5,6 +5,12 @@
     gap: 1.6rem
 }
 
+@media (max-width:500px) {
+    .choose-doctor {
+        gap: 1rem;
+    }
+}
+
 .main .detail-main .choose-doctor h1 {
     margin-bottom: 0px;
 }
@@ -17,6 +23,15 @@
     margin-bottom: 0px;
 }
 
+@media (max-width:500px) {
+    .choose-doctor h1 {
+        font-size: 1.1rem;
+    }
+    .choose-doctor p {
+        font-size: 1.1rem;
+    }
+}
+
 .table {
     margin-top: 1.2rem;
     padding: 0.8rem
@@ -26,11 +41,23 @@
     padding: 1.5rem
 }
 
+@media (max-width:500px) {
+    .table>:not(caption)>*>* {
+        padding: 1.2rem
+    }
+}
+
 .th-container {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     gap: 0.6rem;
+}
+
+@media (max-width:500px) {
+    .table thead tr th {
+        font-size: 1.2rem;
+    }
 }
 
 .table thead tr th {
@@ -39,6 +66,12 @@
     line-height: 19.2px;
     text-align: right;
     color: #424242;
+}
+
+@media (max-width:500px) {
+    .table thead tr th {
+        font-size: 1.2rem;
+    }
 }
 
 label.check-table,
@@ -50,11 +83,25 @@ label.check-table,
     color: #424242;
 }
 
+@media (max-width:500px) {
+    label.check-table,
+    .table tbody tr td {
+        font-size: 1.6rem;
+        text-wrap: nowrap;
+    }
+}
+
 .table .form-check-input {
     float: right;
     margin-left: 0.6rem;
     margin-right: 0px;
     padding: 0.9rem;
+}
+
+@media (max-width:500px) {
+    .table .form-check-input {
+        padding: 0.4rem;
+    }
 }
 
 .save-btn-form {
