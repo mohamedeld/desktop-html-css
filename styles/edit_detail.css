@@ -1,0 +1,154 @@
+.detail-main {
+    width: 100%;
+    padding-bottom: 3.4rem;
+}
+
+.edit-hour {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    gap: 1.2rem;
+}
+
+@media (max-width:800px) {
+    .edit-hour {
+        flex-direction: column;
+    }
+}
+
+.aside .sign-out.edit-signout {
+    margin-top: 10rem;
+}
+
+.edit-hour .hour-number {
+    width: 30%;
+}
+
+.edit-hour .hour-date {
+    width: 70%;
+}
+
+@media (max-width:1000px) {
+    .edit-hour .hour-number {
+        width: 50%;
+    }
+    .edit-hour .hour-date {
+        width: 50%;
+    }
+}
+
+@media (max-width:800px) {
+    .edit-hour {
+        flex-direction: column;
+    }
+    .edit-hour .hour-number {
+        width: 100%;
+    }
+    .edit-hour .hour-date {
+        width: 100%;
+    }
+}
+
+.form-item textarea {
+    resize: none;
+    width: 100%;
+    height: 20rem;
+    font-size: 1.4rem;
+    background-color: #f7f7f7;
+}
+
+.form-item textarea::placeholder {
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 16.8px;
+    color: #5F5F5F;
+    padding: 1.6rem;
+}
+
+.total-price {
+    padding-top: 2rem;
+    padding-bottom: 1.2rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.6rem;
+}
+
+.total-price h3 {
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 19.2px;
+    text-align: right;
+    color: #2E2E2E;
+}
+
+.total-price p {
+    color: #167CC8;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 19.2px;
+    text-align: right;
+}
+
+.agree {
+    font-weight: 400;
+    font-size: 1.4rem;
+    color: #5F5F5F;
+    line-height: 16.8px;
+    text-align: right;
+    margin-bottom: 1.2rem;
+}
+
+.conditions {
+    font-weight: 400;
+    font-size: 1.4rem;
+    color: #167CC8;
+    line-height: 16.8px;
+    text-align: right;
+    text-decoration: underline;
+    margin-bottom: 0px;
+}
+
+.save-btn-edit,
+.request-btn-edit {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1.6rem;
+    padding-top: 10rem;
+}
+
+.save-btn-edit button {
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    padding: 1.6rem 6rem;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.2px;
+    color: #2E2E2E;
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.08);
+}
+
+.request-btn-edit button {
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    padding: 1.6rem 2.1rem;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.2px;
+    color: #2E2E2E;
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.08);
+}
+
+.request-btn-edit .return {
+    background-color: transparent;
+    border: 1px solid #FDA922;
+    width: 155px;
+}
+
+.request-btn-edit .save {
+    background-color: #FDA922;
+}

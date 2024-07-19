@@ -14,3 +14,5 @@ for (option of options) {
 
     }
 }
+
+// show menu and hide itdocument.
