@@ -298,11 +298,23 @@ body {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    gap: 0.4rem;
+    gap: 1.6rem;
     margin-left: 2.1rem;
     border-radius: 8px;
 }
-
+.question-info-error{
+  display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.4rem;
+}
+.question .question-link{
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 19.2px;
+  color: #167CC8;
+  text-decoration: underline;
+}
 .question img {
     width: 18px;
     height: 18px;

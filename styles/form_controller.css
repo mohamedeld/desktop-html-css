@@ -132,3 +132,15 @@ label.check-table,
     color: #424242;
     margin-bottom: 0px;
 }
+.save-btn-form .save-disabled {
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  padding: 1.6rem 6rem;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19.2px;
+  color: #2E2E2E;
+  background-color: #D3D3D3;
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.08);
+}

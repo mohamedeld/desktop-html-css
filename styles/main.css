@@ -1,0 +1,217 @@
+.main{
+  background-color: #fff;
+}
+.main-service header{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1.2rem;
+}
+.main-service header img{
+  width: 41px;
+  height: 41px;
+}
+.main-service header h2{
+  font-weight: 700;
+  font-size: 2.4rem;
+  line-height: 28.8px;
+  color: #167CC8;
+}
+.main-service .main-section{
+  padding:3.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap:2rem;
+  
+}
+@media (max-width:700px) {
+  .main-service .main-section{
+    width:100%;
+    margin:0px auto;
+    flex-direction:column;
+  }
+}
+@media (max-width:800px) {
+  .main-service .main-section{
+    padding: 2rem;
+    gap:1rem;
+  }
+}
+.main-service .main-section .main-section-item{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+.main-service .main-section .main-section-item .number{
+  width: fit-content;
+  background-color: #FFFFFF;
+  padding: 1.6rem;
+  border-radius: 15px;
+  font-weight: 400;
+  font-size: 4rem;
+  line-height: 4.8rem;
+  color: #167CC8;
+  box-shadow: 0px 0px 10px 0px rgba(8, 111, 190, 0.25);
+  margin-bottom: 2.5rem;
+}
+
+.main-service .main-section .main-section-item h3{
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 19.2px;
+  color: #2E2E2E;
+  margin-bottom: 1.6rem;
+}
+
+.main-service .main-section .main-section-item p{
+  font-weight: 400;
+  font-size: 1.4rem;
+  color: #5F5F5F;
+  line-height: 16.8px;
+}
+.last-news{
+  padding: 1.2rem 3.2rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1.6rem;
+}
+.last-news .last-news-item{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap:1.2rem
+}
+
+.last-news .last-news-item img{
+  width: 26px;
+  height: 24px;
+  object-fit: cover;
+}
+.last-news .last-news-item p{
+  font-weight: 500;
+  font-size: 1.8rem;
+  line-height: 21.6px;
+  margin-bottom: 0px;
+  color: #2E2E2E;
+}
+.last-news .add-service{
+  padding: 1.7rem 4rem;
+  background-color: #E1F1FC;
+  clip-path:polygon(0 100%, 100% 50%, 0% 0%, 0% 0%);
+
+}
+.last-news .add-service p{
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 19.2px;
+  color: #2E2E2E;
+}
+.nominate-container{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap:6rem;
+}
+@media (max-width:800px) {
+  .nominate-container{
+    flex-direction: column;
+  }
+}
+.nominate-cards{
+  flex:1;
+  gap: 6rem;
+}
+.nominate-card{
+  flex: 1;
+}
+.nominate-container .calendar{
+  margin-top: 10.3rem;
+  border-radius: 12px;
+  border: 1px solid #D3D3D3;
+  padding: 2rem;
+}
+.nominate-container .calendar header{
+  padding: 0rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.nominate-container .calendar header img{
+  width: 19.97px;
+  height: 19.97px;
+  object-fit: cover;
+}
+.nominate-container .calendar header p{
+  font-weight: 400;
+  font-size: 14.97px;
+  line-height: 17.97px;
+  color: #19191A;
+  margin-bottom: 0px;
+}
+.nominate-container .calendar .line-calender{
+  width: 300px;
+  border: 0.83px solid #F2F2F3;
+  margin: 0px auto;
+}
+.nominate-container .calendar .days{
+  padding: 1.2rem 0rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.4rem
+}
+.nominate-container .calendar .days span{
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 19.2px;
+  text-align: right;
+  color: #161617;
+}
+.nominate-container .calendar .days-numbers{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.4rem
+}
+.nominate-container .calendar .days-numbers span{
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 19.2px;
+  text-align: right;
+  color: #0C0C0D;
+  padding: 1.2rem 1.7rem;
+  background-color: #F2F2F3;
+  border-radius: 50%;
+}
+.nominate-container .calendar .line-calender2{
+  width: 360px;
+  border: 0.83px solid #F2F2F3;
+  margin: 0.8rem auto 0rem auto;
+}
+.nominate-container .calendar .comming-calenders{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1.2rem;
+  padding-right: 3.2rem;
+  margin-top: 1.2rem;
+}
+.nominate-container .calendar .comming-calenders img{
+  width: 24px;
+  height: 26.67px;
+  object-fit: cover;
+}
+.nominate-container .calendar .comming-calenders p{
+  font-weight: 500;
+  font-size: 1.4rem;
+  color: #5F5F5F;
+  text-align: right;
+  line-height: 16.8px;
+  margin-bottom: 0px;
+}
