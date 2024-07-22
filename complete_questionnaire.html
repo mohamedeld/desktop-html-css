@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./bootstrap/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/general.css">
+
+    <link rel="stylesheet" href="./styles/my_account.css">
+    <link rel="stylesheet" href="./styles/questionnaire.css">
+    <script src="./bootstrap/bootstrap.min.js"></script>
+    <title>Landing Page</title>
+</head>
+
+<body>
+    <main class="main-container">
+        <header class="header">
+            <img src="../images/logo.png" alt="image logo" class="logo" />
+            <div class="header-search">
+                <div class="input-search">
+                    <input type="text" name="search" placeholder="بحث" />
+                    <img src="./images/icons/search.svg" alt="search icon" />
+                </div>
+                <div class="notification-container">
+                    <img src="./images/icons/notifications.svg" alt="notification icon" />
+                </div>
+                <div class="menu">
+                    <img src="./images/menu.png" alt="menu icon" />
+                </div>
+            </div>
+        </header>
+        <aside class="aside show-aside">
+            <div class="profile">
+                <img src="./images/person1.png" alt="person profile image" />
+                <h1>عبد الله احمد محمد</h1>
+                <p>حسابك مكتمل بنسبة 90%</p>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li>
+                        <a href="#">الرئيسية</a>
+                    </li>
+                    <li>
+                        <a href="#" class="active">حسابي</a>
+                    </li>
+                    <li>
+                        <a href="#">تحكيم ادوات البحث</a>
+                    </li>
+                    <li>
+                        <a href="#">استشارات اكاديمية</a>
+                    </li>
+                    <li>
+                        <a href="#">طلباتي السابقة</a>
+                    </li>
+                </ul>
+            </nav>
+            <button class="sign-out">الخروج</button>
+        </aside>
+        <main class="main">
+            <div class="inner-main">
+                <h1>محتوى الإستبانة</h1>
+                <div class="questionnaire-sub-header">
+                  <img src="./images/icons/questionIcon.svg" alt="question error icon"/>
+                  <p>البيانات الديموغرافية</p>
+                </div>
+                <div class="data-section">
+                  <form class="form">
+                    <div class="drag-drop">
+                      <img src="./images/icons/dragdrop.svg" alt="drog drop icon"/>
+                      <input type="text" class="form-control general-control" id="exampleInputName" aria-describedby="textHelp" placeholder="العبارة ( مثال : ما سنك؟ )">
+                      
+                    </div>
+                    <div class="drag-drop">
+                      <img src="./images/icons/dragdrop.svg" alt="drag drop icon"/>
+                      <input type="text" class="form-control general-control second" id="exampleInputName" aria-describedby="textHelp" placeholder="المتغير الأول ( مثال : من 20 ل25 سنة )">
+                      
+                    </div>
+                    <div class="drag-drop">
+                      <img src="./images/icons/dragdrop.svg" alt="drag drop icon"/>
+                      <input type="text" class="form-control general-control" id="exampleInputName" aria-describedby="textHelp" placeholder="المتغير الثاني ( مثال : من 20 ل25 سنة )">
+                      <div class="add-variable">
+                        <img src="./images/icons/plus.svg" alt="plus icon"/>
+                        <p>أضف متغير</p>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <div class="add-section">
+                  <img src="./images/icons/plus.svg" alt="add plus icon"/>
+                  <p>أضف فقرة</p>
+                </div>
+                <div class="main-data">
+                  <div class="questionnaire-sub-header">
+                    <img src="./images/icons/questionIcon.svg" alt="question error icon"/>
+                    <p>البيانات الأساسية</p>
+                  </div>
+                  <div class="main-data-content">
+                    <div class="inner-main-content">
+                      <div class="first-part">
+                        <p>المحور الأول:</p>
+                      </div>
+                      <form class="form">
+                        <div class="form-item main-item">
+                          <input type="text" class="form-control general-control" id="exampleInputName" aria-describedby="textHelp" placeholder="العبارة ( مثال : ما سنك؟ )">
+                          
+                        </div>
+                        <div class="form-item main-item">
+                          <input type="text" class="form-control general-control" id="exampleInputName" aria-describedby="textHelp" placeholder="العبارة ( مثال : ما سنك؟ )">
+                          
+                        </div>
+                        <div class="form-item">
+                          <input type="text" class="form-control general-control" id="exampleInputName" aria-describedby="textHelp" placeholder="العبارة ( مثال : ما سنك؟ )">
+                          
+                        </div>
+                    </div>
+                    <div class="first-part-container">
+                      <header>
+                        <img src="./images/icons/dragdrop.svg" alt="drag drop icon"/>
+                        <p>البعد الاول</p>
+                      </header>
+                      <div class="form">
+                        <div class="form-item">
+                          <input type="text" class="form-control general-control" id="exampleInputName" aria-describedby="textHelp" placeholder="العبارة ( مثال : ما سنك؟ )">
+                          
+                        </div>
+                        <div class="concepts-container">
+                          <p class="concepts">العبارات</p>
+                          <div class="concepts-container-item">
+                            <div class="drag-drop">
+                              <img src="./images/icons/dragdrop.svg" alt="drag drop icon"/>
+                              <input type="text" class="form-control general-control second" id="exampleInputName" aria-describedby="textHelp" placeholder="المتغير الأول ( مثال : من 20 ل25 سنة )">
+                              <div class="trash-icon"><img src="./images/icons/trash.svg" alt="trash icon" /></div>
+                            </div>
+                            <div class="drag-drop">
+                              <img src="./images/icons/dragdrop.svg" alt="drag drop icon"/>
+                              <input type="text" class="form-control general-control second" id="exampleInputName" aria-describedby="textHelp" placeholder="المتغير الأول ( مثال : من 20 ل25 سنة )">
+                              <div class="add-variable">
+                                <img src="./images/icons/plus.svg" alt="plus icon"/>
+                                <p>أضف متغير</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="inner-main-drag"></div>
+                  </div>
+
+                </div>
+                <div class="add-section">
+                  <img src="./images/icons/plus.svg" alt="add plus icon"/>
+                  <p>أضف فقرة</p>
+                </div>
+                <div class="main-data">
+                  
+                  <div class="main-data-content section-two">
+                    <div class="inner-main-content">
+                      <div class="first-part section-part">
+                        <p>المحور الأول:</p>
+                      </div>
+                      <form class="form">
+                        <div class="form-item main-item">
+                          <input type="text" class="form-control general-control" id="exampleInputName" aria-describedby="textHelp" placeholder="العبارة ( مثال : ما سنك؟ )">
+                          
+                        </div>
+                        <div class="form-item main-item">
+                          <input type="text" class="form-control general-control" id="exampleInputName" aria-describedby="textHelp" placeholder="العبارة ( مثال : ما سنك؟ )">
+                          
+                        </div>
+                        <div class="form-item">
+                          <input type="text" class="form-control general-control" id="exampleInputName" aria-describedby="textHelp" placeholder="العبارة ( مثال : ما سنك؟ )">
+                          
+                        </div>
+                    </div>
+                    <div class="first-part-container">
+                      <header>
+                        <img src="./images/icons/dragdrop.svg" alt="drag drop icon"/>
+                        <p>البعد الاول</p>
+                      </header>
+                      <div class="form">
+                        <div class="form-item">
+                          <input type="text" class="form-control general-control" id="exampleInputName" aria-describedby="textHelp" placeholder="العبارة ( مثال : ما سنك؟ )">
+                          
+                        </div>
+                        <div class="concepts-container">
+                          <p class="concepts">العبارات</p>
+                          <div class="concepts-container-item">
+                            <div class="drag-drop">
+                              <img src="./images/icons/dragdrop.svg" alt="drag drop icon"/>
+                              <input type="text" class="form-control general-control second" id="exampleInputName" aria-describedby="textHelp" placeholder="المتغير الأول ( مثال : من 20 ل25 سنة )">
+                              <div class="trash-icon"><img src="./images/icons/trash.svg" alt="trash icon" /></div>
+                            </div>
+                            <div class="drag-drop">
+                              <img src="./images/icons/dragdrop.svg" alt="drag drop icon"/>
+                              <input type="text" class="form-control general-control second" id="exampleInputName" aria-describedby="textHelp" placeholder="المتغير الأول ( مثال : من 20 ل25 سنة )">
+                              <div class="add-variable">
+                                <img src="./images/icons/plus.svg" alt="plus icon"/>
+                                <p>أضف متغير</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="inner-main-drag"></div>
+                  </div>
+
+                </div>
+                <div class="add-section">
+                  <img src="./images/icons/plus.svg" alt="add plus icon"/>
+                  <p>أضف فقرة</p>
+                </div>
+            </div>
+            <div class="save-btn-container second-button">
+              <div class="footer-desc">
+                <p>أو حفظ و متابعة لاحقاً</p>
+              </div>
+              <button class="save">ابدأ التحكيم</button></div>
+        </main>
+    </main>
+    <script src="./scripts/script.js"></script>
+</body>
+
+</html>
