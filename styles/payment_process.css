@@ -1,0 +1,223 @@
+.payment-main{
+  width: 100%;
+}
+@media (max-width:800px) {
+  .main-container {
+      grid-template-areas: "header header " "main main";
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+  }
+}
+@media(max-width:800px) {
+  .menu {
+      display: block;
+      padding: 1.1rem 1.3rem;
+      background-color: #FCFCFC;
+      border-radius: 5px;
+      box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.08);
+  }
+  .menu img {
+      width: 20px;
+      height: 20px;
+      object-fit: cover;
+  }
+}
+
+@media (max-width:800px) {
+  .aside {
+      position: absolute;
+      z-index: 9999;
+      height: calc(100% - 8rem);
+      top: 8rem;
+  }
+  .show-aside {
+      display: none;
+  }
+}
+.payment-main .table {
+  margin-top: 1.2rem;
+  padding: 0.8rem
+}
+
+.payment-main .table>:not(caption)>*>* {
+  padding: 1.2rem
+}
+@media (max-width:800px) {
+  .payment-main .table>:not(caption)>*>* {
+    padding: 0.6rem
+  }
+}
+
+
+.th-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+@media (max-width:800px) {
+  .th-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap:0.1rem;
+  }
+  .table thead tr th {
+      font-size: 1.2rem;
+  }
+}
+
+.table thead tr th {
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 19.2px;
+  text-align: right;
+  color: #424242;
+}
+@media (max-width:800px) {
+  .table thead tr th  {
+    font-size:1rem;
+  }
+}
+
+
+
+label.check-table,
+.table tbody tr td {
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 19.2px;
+  text-align: right;
+  color: #424242;
+}
+@media (max-width:800px) {
+  
+label.check-table,
+.table tbody tr td  {
+    font-size:1rem;
+    text-wrap: nowrap
+  }
+}
+
+.table .form-check-input {
+  float: right;
+  margin-left: 0.6rem;
+  margin-right: 0px;
+  padding: 0.9rem;
+}
+
+@media (max-width:800px) {
+  .table .form-check-input {
+      padding: 0.4rem;
+  }
+}
+
+
+.total-price {
+  padding-top: 2rem;
+  padding-bottom: 1.2rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1.6rem;
+  margin-top: 1.2rem;
+}
+
+.total-price h3 {
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 19.2px;
+  text-align: right;
+  color: #2E2E2E;
+}
+
+.total-price p {
+  color: #167CC8;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 19.2px;
+  text-align: right;
+}
+
+.payment{
+  padding:3.2rem;
+}
+.payment h1{
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 19.2px;
+  color: #2E2E2E;
+  margin-bottom: 0px;
+}
+.payment-content{
+  margin-top: 3.7rem;
+}
+.payment-content .th-container .form-check-input.payment-check{
+  float: right;
+    margin-left: 0.6rem;
+    margin-right: 0px;
+    padding: 0.9rem ;
+}
+.payment-contnet label{
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 19.2px;
+  text-align: right;
+  color: #2E2E2E;
+}
+.credit{
+  margin-top: 1.5rem;
+  width: 50%;
+}
+@media (max-width:800px) {
+  .credit{
+    margin-top: 1.5rem;
+    width: 100%;
+  }
+  
+}
+.credit-item{
+  padding:1.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+border: 1px solid #167CC8;
+border-radius: 8px;
+margin-bottom: 1.2rem;
+}
+.credit-item h2{
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 19.2px;
+  color: #2E2E2E;
+  text-align: right;
+}
+.credit-item p{
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 16.8px;
+  text-align: right;
+  color: #5F5F5F;
+  margin-bottom: 0px;
+}
+.credit-item img{
+  width: 30.87px;
+  height: 24px;
+  object-fit: cover;
+}
+.credit-item.add-credit{
+  border: none;
+}
+.credit-item h3{
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 19.2px;
+  color: #167CC8;
+  text-align: right;
+}
+.credit-item .plus-icon{
+  width: 24px;
+  height: 24px;
+  object-fit: cover;
+}
