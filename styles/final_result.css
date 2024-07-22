@@ -1,0 +1,179 @@
+@media (max-width:800px) {
+  .main-container {
+      grid-template-areas: "header header " "main main";
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+  }
+}
+@media(max-width:800px) {
+  .menu {
+      display: block;
+      padding: 1.1rem 1.3rem;
+      background-color: #FCFCFC;
+      border-radius: 5px;
+      box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.08);
+  }
+  .menu img {
+      width: 20px;
+      height: 20px;
+      object-fit: cover;
+  }
+}
+
+@media (max-width:800px) {
+  .aside {
+      position: absolute;
+      z-index: 9999;
+      height: calc(100% - 8rem);
+      top: 8rem;
+  }
+  .show-aside {
+      display: none;
+  }
+}
+
+.table {
+  margin-top: 1.2rem;
+  padding: 0.8rem
+}
+
+.table>:not(caption)>*>* {
+  padding: 1.5rem
+}
+
+@media (max-width:800px) {
+  .table>:not(caption)>*>* {
+      padding: 1.2rem
+  }
+}
+
+@media (max-width:800px) {
+  .table thead tr th {
+      font-size: 1.2rem;
+  }
+}
+
+.table thead tr th {
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 19.2px;
+  text-align: right;
+  color: #424242;
+}
+.table thead tr th:last-child{
+  text-align: left;
+}
+@media (max-width:800px) {
+  .table thead tr th {
+      font-size: 1.2rem;
+  }
+}
+.back-icon{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+}
+.back-icon img{
+  width: 24px;
+  height: 44px;
+  object-fit: cover;
+}
+#number-table{
+  color: #167CC8;
+  font-size: 1.6rem;
+  font-weight: 400;
+  text-align: right;
+  line-height: 19.2px;
+}
+label.check-table,
+.table tbody tr td {
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 19.2px;
+  text-align: right;
+  color: #424242;
+  text-wrap: nowrap;
+}
+.table tbody tr td:last-child{
+  text-align: left;
+}
+@media (max-width:800px) {
+  label.check-table,
+  .table tbody tr td {
+      font-size: 1.6rem;
+      text-wrap: nowrap;
+  }
+  tbody, td, tfoot, th, thead, tr{
+    text-wrap: nowrap;
+  }
+}
+.print{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1rem;
+  margin:3.2rem 0rem;
+}
+.print img{
+  width: 24px;
+  height: 24px;
+  object-fit: cover;
+}
+.print p{
+  margin-bottom: 0px;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 19.2px;
+  color: #5F5F5F;
+}
+.data{
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 19.2px;
+  color: #2E2E2E;
+  text-align: right;
+  margin-bottom: 2rem;
+}
+#name-doctor{
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 19.2px;
+  text-align: right;
+  color: #424242;
+}
+#points span img{
+  width: 10px;
+  height: 10px;
+  object-fit: cover;
+}
+.data2{
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 19.2px;
+  color: #2E2E2E;
+  text-align: right;
+  margin-bottom: 2rem;
+  margin-top: 3.2rem;
+}
+table.table#concept{
+  border-color: white;
+}
+th#correct-concept{
+  padding: 1.5rem 0rem;
+  width: 17%;
+}
+/* .table-headers{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.table-headers p{
+  margin-bottom: 0px;
+  font-size: 1.6rem;
+  font-weight: 500;
+  text-align: right;
+  line-height: 19.2px;
+  color: #2E2E2E;
+} */
