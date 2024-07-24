@@ -1,0 +1,112 @@
+.main .paypal-header{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1.6rem;
+  margin-bottom: 4.8rem;
+  flex-wrap: wrap;
+}
+.main .paypal-header li{
+  padding: 1.6rem;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 19.2px;
+  text-align: right;
+  color: #424242;
+}
+
+.main .paypal-header li:hover,
+.main .paypal-header li.active{
+  border-bottom: 1px solid #167CC8;
+}
+.paypal-content{
+  width: 40%;
+}
+@media (min-width:801px) and (max-width:1200px) {
+  .paypal-content{
+    width: 60%;
+  }
+}
+
+@media (max-width:800px) {
+  .paypal-content{
+    width: 100%;
+  }
+}
+.paypal-content ul li{
+  padding: 1.6rem;
+  border-radius:8px;
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2rem;
+}
+.paypal-content ul li img{
+  width: 49.63px;
+  height: 47px;
+  object-fit: cover;
+}
+.paypal-content ul li h2{
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 19.2px;
+  color: #424242;
+  text-align: right;
+}
+.paypal-content ul li:last-child{
+  margin-top: 2.5rem;
+
+}
+.paypal-content ul li.active,
+.paypal-content ul li:hover
+{
+ box-shadow: none;
+ border: 1px solid #167CC8;
+  
+}
+.paypal-content ul li:last-child img{
+  width: 40px;
+  height: 47.17px;
+  object-fit: cover;
+  
+}
+.paypal-message{
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  margin-top: 3.2rem;
+  padding: 3.2rem;
+  width: 50%;
+
+}
+@media (min-width:801px) and (max-width:1200px) {
+  .paypal-message{
+    width: 70%;
+  }
+}
+@media (max-width:800px) {
+  .paypal-message{
+    width: 100%;
+  }
+}
+.paypal-message h2{
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 23px;
+  text-align: right;
+  color: #424242;
+}
+.paypal-message button{
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background-color: #FDA922;
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.08);
+  padding: 1.7rem 5.7rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 19.2px;
+  color: #2E2E2E;
+  margin-top: 3.2rem;
+  font-family: "Tajawal", sans-serif;
+}

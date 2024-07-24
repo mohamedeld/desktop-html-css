@@ -1,0 +1,36 @@
+.main-loading{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.loading-container{
+  border: 2px solid #167CC8;
+  border-left-color: transparent;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
+  
+}
+.loading-inner{
+  background-color: #167CC8;
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loading-inner svg{
+  stroke: #fff;
+  width: 24px;
+  height: 24px;
+  object-fit: cover;
+}
+
