@@ -72,6 +72,20 @@
   align-items: center;
   gap: 1.6rem;
 }
+@media(max-width:500px){
+  .control-numbers{
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    align-items: flex-start;
+  }
+  .control-numbers .controls-number-container{
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    align-items: flex-start;
+  }
+}
 .control-numbers .search-icon{
   text-align: center;
   padding: 0.8rem 1.6rem;
@@ -308,4 +322,73 @@ label.check-table,
   align-items: center;
 
   gap: 1.2rem;
+}
+#money-btn button{
+  border: none;
+  outline: none;
+  background-color: #FDA922;
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.08);
+  border-radius: 5px;
+  padding: 1.5rem 1.7rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color:#424242;
+  line-height: 19.2px;
+}
+@media (max-width:800px) {
+  #money-btn button{
+    font-size: 1.2rem;
+    padding: 1.5rem 1rem;
+    text-wrap: nowrap;
+  }
+}
+#cancel-btn button{
+  border: none;
+  outline: none;
+  background-color: #D35252;
+  border-radius: 5px;
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.08);
+  padding: 1rem 5.9rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color:#FFFFFF;
+  line-height: 19.2px;
+}
+@media (max-width:800px) {
+  #cancel-btn button{
+    font-size: 1.2rem;
+    padding: 1rem 3rem;
+    text-wrap: nowrap;
+  }
+}
+
+#cancel-under-btn {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  justify-content: flex-end;
+}
+#cancel-under-btn button:first-child{
+  border: none;
+  outline: none;
+  background-color: #FDA922;
+  border-radius: 5px;
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.08);
+  padding: 1rem 5.9rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color:#424242;
+  line-height: 19.2px;
+}
+#cancel-under-btn button:last-child{
+  border: none;
+  outline: none;
+  background-color: #D35252;
+  border-radius: 5px;
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.08);
+  padding: 1rem 5.9rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color:#FFFFFF;
+  line-height: 19.2px;
 }
