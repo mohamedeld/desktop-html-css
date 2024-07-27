@@ -1,0 +1,256 @@
+@media (max-width:800px) {
+  .main-container {
+      grid-template-areas: "header header " "main main";
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+  }
+}
+@media(max-width:800px) {
+  .menu {
+      display: block;
+      padding: 1.1rem 1.3rem;
+      background-color: #FCFCFC;
+      border-radius: 5px;
+      box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.08);
+  }
+  .menu img {
+      width: 20px;
+      height: 20px;
+      object-fit: cover;
+  }
+}
+
+@media (max-width:800px) {
+  .aside {
+      position: absolute;
+      z-index: 9999;
+      height: calc(100% - 8rem);
+      top: 8rem;
+  }
+  .show-aside {
+      display: none;
+  }
+}
+
+.table {
+  margin-top: 1.2rem;
+  padding: 0.8rem
+}
+
+.table>:not(caption)>*>* {
+  padding: 1.5rem
+}
+
+@media (max-width:800px) {
+  .table>:not(caption)>*>* {
+      padding: 1.2rem 0rem
+  }
+}
+
+@media (max-width:800px) {
+  .table thead tr th {
+      font-size: 1.2rem;
+  }
+}
+
+.table thead tr th {
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 19.2px;
+  text-align: right;
+  color: #424242;
+}
+
+@media (max-width:800px) {
+  .table thead tr th {
+      font-size: 1.2rem;
+  }
+}
+#number-table{
+  color: #167CC8;
+  font-size: 1.6rem;
+  font-weight: 400;
+  text-align: right;
+  line-height: 19.2px;
+}
+label.check-table,
+.table tbody tr td {
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 19.2px;
+  text-align: right;
+  color: #424242;
+}
+
+@media (max-width:800px) {
+  label.check-table,
+  .table tbody tr td {
+      font-size: 1.6rem;
+      text-wrap: nowrap;
+  }
+}
+
+.table .form-check-input {
+  float: right;
+  margin-left: 0.6rem;
+  margin-right: 0px;
+  padding: 0.9rem;
+}
+
+@media (max-width:800px) {
+  .table .form-check-input {
+      padding: 0.4rem;
+  }
+}
+.main-data{
+  margin-top: 4.4rem;
+  margin-bottom: 3.2rem;
+}
+
+#admin-form.form .form-container .form-item .label-general{
+  margin-bottom: 1.8rem;
+}
+.add-part-section{
+  margin-top: 3.2rem;
+}
+.add-part{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2rem;
+}
+@media (max-width:500px) {
+  .add-part{
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+}
+.add-part .add-data-container{
+  border-radius: none;
+  outline: none;
+  padding: 0.8rem 1.6rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.6rem;
+}
+.add-part img{
+  width: 24px;
+  height: 24px;
+  object-fit: cover;
+}
+.add-part p{
+  font-size: 1.6rem;
+  color: #D3D3D3;
+  line-height: 19.2px;
+  font-weight: 500;
+  text-wrap: nowrap;
+  margin-bottom: 0px;
+}
+
+ .controls-number-container{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1.6rem;
+  margin-bottom: 1.6rem;
+}
+.controls-number-container a {
+  margin-bottom: 0px;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 19.2px;
+  text-align: right;      
+  color: #2E2E2E;
+  padding: 1.6rem; 
+}
+.controls-number-container a.active,
+.controls-number-container a:hover{
+  border-bottom: 1px solid #167CC8;
+}
+@media(max-width:500px){
+  
+   .controls-number-container{
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    align-items: flex-start;
+  }
+}
+.table tr:last-child{
+  text-align: left;
+}
+.table td:last-child{
+  text-align: left;
+}
+.detail-desc{
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 19.2px;
+  color: #2E2E2E;
+  margin-left: 1rem;
+}
+#table-name{
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 19.2px;
+  text-align: right;
+  color: #2E2E2E;
+}
+#percent-error{
+  color: #D35252;
+}
+#bound-table{
+  width: 40%;
+  margin-top: 4rem;
+}
+@media (max-width:500px) {
+  #bound-table{
+    width: 100%;
+  }
+}
+#bounds-table.table>:not(caption)>*>* {
+  padding:3rem;
+}
+#green-correct{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1.6rem;
+}
+#green-correct .agree img{
+  width: 24px;
+  height: 24px;
+  object-fit: cover;
+}
+#gender-admin{
+  width: 50%;
+}
+@media (max-width:800px) {
+  #gender-admin{
+    width: 100%;
+  }
+}
+.save-btn-container{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1.6rem;
+}
+.save-btn-container #delete-account{
+  margin-top: 5.2rem;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    padding: 1.6rem 3.1rem;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.2px;
+    color: #fff;
+    background-color: #D35252;
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.08);
+}
+#header-account{
+  margin-top: 6rem;
+}

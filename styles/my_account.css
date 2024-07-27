@@ -597,3 +597,26 @@ body {
 .main .paypal-header li.active{
   border-bottom: 1px solid #167CC8;
 }
+
+#admin-aside .main-nav ul li a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+#admin-aside .main-nav ul li p{
+  margin-bottom: 0px;
+  padding: 0.6rem;
+  background-color: #FDA92280;
+  border-radius: 4px;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 19.2px;
+  text-align: right;
+  color: #2E2E2E;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 22px;
+}
