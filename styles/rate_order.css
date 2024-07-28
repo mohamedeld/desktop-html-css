@@ -7,25 +7,22 @@
 }
 
 .loading-container{
-  border: 2px solid #167CC8;
-  border-left-color: transparent;
-
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 50%;
-  width: 5rem;
-  height: 5rem;
-  
+  flex-direction: column;
+  height: 100vh;
+ 
 }
 .loading-inner{
-  background-color: #167CC8;
-  border-radius: 50%;
-  width: 4rem;
-  height: 4rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 7.9rem 10.1rem;
+  background-color: #fff;
+  border-radius: 8px;
+}
+.loading-inner img{
+  width: 380px;
+  height: 317.83px;
+  object-fit: cover;
 }
 .loading-inner svg{
   stroke: #fff;
