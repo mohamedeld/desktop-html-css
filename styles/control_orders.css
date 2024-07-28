@@ -417,3 +417,97 @@ label.check-table,
   color:#FFFFFF;
   line-height: 19.2px;
 }
+/* admin financial report */
+.report-filter{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2.2rem;
+}
+.report-filter .report-print{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.6rem;
+}
+@media (max-width:500px) {
+  .report-filter .report-print{
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+}
+.report-filter .report-print img{
+  width: 24px;
+  height: 24px;
+  object-fit: cover;
+}
+.report-filter .report-print p{
+  margin-bottom: 0px;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 19.2px;
+  color: #2E2E2E;
+}
+
+.report-filter .form {
+  width: 40%;
+}
+.report-filter .form .form-container{
+  align-items: center;
+}
+.report-filter .form .form-container .form-item{
+  width: 100%;
+}
+.report-filter .form .search-icon{
+  text-align: center;
+  padding: 0.8rem 1.6rem;
+  border-radius: 5px;
+  background-color: #FCFCFC;
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.08);
+}
+.admin-check{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.6rem;
+}
+.username{
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 19.2px;
+  text-align: right;
+  color: #424242;
+  margin-bottom: 0.8rem;
+}
+.email{
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 19.2px;
+  text-align: right;
+  color: #5F5F5F;
+  margin-bottom: 0px;
+}
+#number-table.admin-check{
+  padding-bottom: 2rem;
+  color: #424242;
+  
+}
+#user-info{
+  padding: 0.5rem 1.5rem;
+}
+#user-status-warn{
+  color: #FDA922;
+}
+#financial td:last-child,#financial  th:last-child{
+  text-align-last: right;
+}
+#user-status-success{
+  color: #24C909;
+}
+#user-status-error{
+  color: #D35252;
+}
+#report3{
+  margin-top: 0px;
+}
