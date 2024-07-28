@@ -99,9 +99,14 @@ body {
 }
 
 .input-search input {
-    border: none;
-    background: transparent;
-    width: 100%;
+  font-size: 1.6rem;
+  border: none;
+  height: 100%;
+  outline: none;
+  font-weight: 400;
+  line-height: 19.2px;
+  color: #5F5F5F;
+  width: 100%;
 }
 
 .input-search input::placeholder {

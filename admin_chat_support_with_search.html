@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./bootstrap/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/general.css">
+
+    <link rel="stylesheet" href="./styles/my_account.css">
+    
+    <link rel="stylesheet" href="./styles/ask_details.css">    
+    <script src="./bootstrap/bootstrap.min.js"></script>
+    <title>Landing Page</title>
+</head>
+
+<body>
+    <main class="main-container" id="admin-faq">
+        <header class="header">
+            <img src="../images/logo.png" alt="image logo" class="logo" />
+            <div class="header-search">
+                <div class="input-search">
+                    <input type="text" name="search" placeholder="بحث" />
+                    <img src="./images/icons/search.svg" alt="search icon" />
+                </div>
+                <div class="notification-container">
+                    <img src="./images/icons/notifications.svg" alt="notification icon" />
+                </div>
+                <div class="menu">
+                    <img src="./images/menu.png" alt="menu icon" />
+                </div>
+            </div>
+        </header>
+        <aside class="aside show-aside" id="admin-aside">
+            <nav class="main-nav">
+                <ul>
+                    <li>
+                        <a href="#">الرئيسية</a>
+                    </li>
+                    <li>
+                        <a href="#" >الطلبات<p>8</p></a>
+                        
+                    </li>
+                    <li>
+                        <a href="#" >  الطلاب</a>
+                    </li>
+                    <li>
+                        <a href="#">المحكمين </a>
+                    </li>
+                    <li>
+                        <a href="#"> التقارير المالية</a>
+                    </li>
+                    <li>
+                        <a href="#" class="active">  الأسئلة الشائعة</a>
+                    </li>
+                    <li>
+                        <a href="#">   الإستفسارات <p>5</p></a>
+                    </li>
+                    <li>
+                        <a href="#">   الإعدادات</a>
+                    </li>
+                </ul>
+            </nav>
+            <button class="sign-out">الخروج</button>
+        </aside>
+        <main class="main">
+          <header class="common-question-header">
+            <img src="./images/icons/commonQuestion.svg" alt="common question">
+            <h2>الإستفسارات</h2>
+          </header>
+          <div class="chat-filter">
+            <div class="header-search">
+              <div class="input-search">
+                <input type="text" name="search" placeholder="بحث" />
+                <img src="./images/icons/search.svg" alt="search icon" />
+                        </div>
+            </div>
+          <div class="form">
+            <div class="form-item">
+           
+              <select class="form-select general-control" aria-label="Default select example" id="exampleInputGender1" disabled>
+          <option selected>الشهر </option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+                            </select>
+          </div>
+          </div>
+
+          </div>
+          <div class="admin-chat-container">
+            <div class="admin-chat-item">
+              <div class="admin-chat-inner">
+                <img src="./images/icons/messageIcon.svg" alt="message">
+                <div class="admin-chat-info">
+                  <p>1245</p>
+                  <p>محمد ابراهيم</p>
+                  <p>إستفسار بخصوص طلب #125 لماذا لم يتم الموافقة على الإستشارة؟</p>
+                </div>
+              </div>
+              <div class="chat-date">
+                <h5>5</h5>
+                <p>5 نوفمبر 2024</p>
+              </div>
+            </div>
+            <div class="admin-chat-item">
+              <div class="admin-chat-inner">
+                <img src="./images/icons/messageIcon.svg" alt="message">
+                <div class="admin-chat-info">
+                  <p>1245</p>
+                  <p>محمد ابراهيم</p>
+                  <p>إستفسار بخصوص طلب #125 لماذا لم يتم الموافقة على الإستشارة؟</p>
+                </div>
+              </div>
+              <div class="chat-date">
+                <h5>5</h5>
+                <p>5 نوفمبر 2024</p>
+              </div>
+            </div>
+          </div>
+          </main>
+    </main>
+    <script src="./scripts/edit_script.js"></script>
+</body>
+
+</html>

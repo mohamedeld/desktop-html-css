@@ -254,3 +254,31 @@ label.check-table,
 #header-account{
   margin-top: 6rem;
 }
+.main .upload-image{
+  padding: 1.2rem 0rem;
+  margin-bottom: 2rem;
+}
+.main .upload-image img{
+  width: 77px;
+  height: 77px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.main .upload-image p{
+  margin-bottom: 0px;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 16.8px;
+  color: #D35252;
+  margin-top: 2rem;
+}
+@media (max-width:500px) {
+  
+.main .upload-image{
+  padding: 1.2rem 0rem;
+  margin-bottom: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+}
