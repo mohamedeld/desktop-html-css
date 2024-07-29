@@ -63,7 +63,8 @@
 }
 .control-numbers{
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap:1.2rem;
   align-items: center;
 }
 .control-numbers .controls-number-container{

@@ -26,12 +26,27 @@
                 </div>
                 <div class="notification-container">
                     <img src="./images/icons/notifications.svg" alt="notification icon" />
+                    <main class="notification">
+                      <header>
+                        <h1>اشعارات جديدة</h1>
+                      </header>
+                      <div class="notifications-container">
+                        <div class="notification-item">
+                          <img src="./images/icons/notification.svg" alt="notification right check icon"/>
+                          <p>وافق 5 محكمون على طلبك, يمكنك الآن اكمال الطلب</p>
+                        </div>
+                      </div>
+                    </main>
                 </div>
                 <div class="menu">
                     <img src="./images/menu.png" alt="menu icon" />
                 </div>
             </div>
         </header>
+        <div class="input-search" id="search">
+          <input type="text" name="search" placeholder="بحث" />
+          <img src="./images/icons/search.svg" alt="search icon" />
+      </div>
         <aside class="aside show-aside">
             <div class="profile">
                 <img src="./images/person1.png" alt="person profile image" />
@@ -69,137 +84,140 @@
             <div class="inner-main">
 
                 <h1>بيانات اساسية</h1>
-                <div class="add-image">
-                    <img src="./images/icons/profileImage.svg" alt="profile image" />
-                    <p>اضافة صورة شخصية</p>
-                </div>
-                <div class="form">
-                    <div class="form-container">
-                        <div class="form-item">
-                            <label for="exampleInputName1" class="form-label label-general ">الاسم</label>
-                            <input type="email" class="form-control general-control" id="exampleInputName" aria-describedby="textHelp" placeholder="عبد الله احمد محمد">
-                        </div>
-                        <div class="form-item">
-                            <label for="exampleInputGender1" class="form-label label-general ">الجنس</label>
-                            <select class="form-select general-control" aria-label="Default select example" id="exampleInputGender1">
-                        <option selected>ذكر</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                                          </select>
-                        </div>
-                    </div>
-                    <div class="form-container">
-                        <div class="form-item">
-                            <label for="exampleInputGender2" class="form-label label-general ">الدولة</label>
-                            <select class="form-select general-control" aria-label="Default select example" id="exampleInputGender2">
-                    <option selected>السعودية</option>
-                    <option value="1">السعودية</option>
-                    <option value="2">السعودية</option>
-                    <option value="3">السعودية</option>
-                                      </select>
-                        </div>
-                        <div class="form-item">
-                            <label for="exampleInputs1" class="form-label label-general">رقم الجوال</label>
-                            <div class="select-container">
-                                <div>
-                                    <div class="selector">
-                                        <img src="./images/icons/saudi_arbia.svg" class="select-saudi" alt="saudi arabia image" />
-                                        <img src="./images/icons/arrowDownCountry.svg" alt="arrow down icon" />
-                                    </div>
-                                    <ul class="list toggle-visible">
-                                        <li class="options">
-                                            <img src="./images/icons/saudi_arbia.svg" alt="saudi arbia option image" />
-                                        </li>
-                                        <li class="options">
-                                            <img src="./images/icons/saudi_arbia.svg" alt="saudi arbia option image" />
-                                        </li>
-                                        <li class="options">
-                                            <img src="./images/icons/saudi_arbia.svg" alt="saudi arbia option image" />
-                                        </li>
-                                        <li class="options">
-                                            <img src="./images/icons/saudi_arbia.svg" alt="saudi arbia option image" />
-                                        </li>
-                                    </ul>
-                                </div>
-                                <input type="number" class="form-control general-control" placeholder="ادخل رقم جوالك" id="exampleInputs1">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-container">
-                        <div class=" form-item login-password">
-                            <label for="exampleInputPassword1" class="form-label label-general">كلمة المرور</label>
-                            <input type="password" class="form-control general-control" id="exampleInputPassword1" aria-describedby="passwordHelp" placeholder="ادخل كلمة مرور لا تقل عن 8 احرف">
-                            <img src="./images/icons/eye.svg" class="eye-icon" alt="eye icon" />
-                        </div>
-                        <div class="form-item">
-                            <label for="change-password" class="form-label label-general "></label>
-                            <p class="general change-password">تغيير كلمة المرور</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="job-container">
-                    <h1 class="data-job">بيانات وظيفية</h1>
-                    <div class="form">
-                        <div class="form-container">
-                            <div class="form-item">
-                                <label for="exampleInputName1" class="form-label label-general ">الجامعة</label>
-                                <select class="form-select general-control" aria-label="Default select example" id="exampleInputGender1">
-                                <option selected>الدولية للمعلومات</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                                                  </select>
-                            </div>
-                            <div class="form-item">
-                                <label for="exampleInputGender1" class="form-label label-general ">الكلية</label>
-                                <select class="form-select general-control" aria-label="Default select example" id="exampleInputGender1">
-                        <option selected>علوم</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                                          </select>
-                            </div>
-                        </div>
-                        <div class="form-container">
-                            <div class="form-item">
-                                <label for="exampleInputGender1" class="form-label label-general ">القسم</label>
-                                <select class="form-select general-control" aria-label="Default select example" id="exampleInputGender1">
-                    <option selected>كيمياء</option>
+                <form action="">
+                  <div class="add-image">
+                    <img src="./images/icons/profileImage.svg" alt="profile image" id="profile-image" />
+                    <p id="add-image-text">اضافة صورة شخصية</p>
+                    <input type="file" id="file-input" accept="image/*" style="display: none;">
+                  </div>
+                  <div class="form">
+                      <div class="form-container">
+                          <div class="form-item">
+                              <label for="exampleInputName1" class="form-label label-general ">الاسم</label>
+                              <input type="email" class="form-control general-control" id="exampleInputName" aria-describedby="textHelp" placeholder="عبد الله احمد محمد">
+                          </div>
+                          <div class="form-item">
+                              <label for="exampleInputGender1" class="form-label label-general ">الجنس</label>
+                              <select class="form-select general-control" aria-label="Default select example" id="exampleInputGender1">
+                          <option selected>ذكر</option>
+                          <option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                                            </select>
+                          </div>
+                      </div>
+                      <div class="form-container">
+                          <div class="form-item">
+                              <label for="exampleInputGender2" class="form-label label-general ">الدولة</label>
+                              <select class="form-select general-control" aria-label="Default select example" id="exampleInputGender2">
+                      <option selected>السعودية</option>
+                      <option value="1">السعودية</option>
+                      <option value="2">السعودية</option>
+                      <option value="3">السعودية</option>
+                                        </select>
+                          </div>
+                          <div class="form-item">
+                              <label for="exampleInputs1" class="form-label label-general">رقم الجوال</label>
+                              <div class="select-container">
+                                  <div>
+                                      <div class="selector">
+                                          <img src="./images/icons/saudi_arbia.svg" class="select-saudi" alt="saudi arabia image" />
+                                          <img src="./images/icons/arrowDownCountry.svg" alt="arrow down icon" />
+                                      </div>
+                                      <ul class="list toggle-visible">
+                                          <li class="options">
+                                              <img src="./images/icons/saudi_arbia.svg" alt="saudi arbia option image" />
+                                          </li>
+                                          <li class="options">
+                                              <img src="./images/icons/saudi_arbia.svg" alt="saudi arbia option image" />
+                                          </li>
+                                          <li class="options">
+                                              <img src="./images/icons/saudi_arbia.svg" alt="saudi arbia option image" />
+                                          </li>
+                                          <li class="options">
+                                              <img src="./images/icons/saudi_arbia.svg" alt="saudi arbia option image" />
+                                          </li>
+                                      </ul>
+                                  </div>
+                                  <input type="number" class="form-control general-control" placeholder="ادخل رقم جوالك" id="exampleInputs1">
+                              </div>
+                          </div>
+                      </div>
+                      <div class="form-container">
+                          <div class=" form-item login-password">
+                              <label for="exampleInputPassword1" class="form-label label-general">كلمة المرور</label>
+                              <input type="password" class="form-control general-control" id="exampleInputPassword1" aria-describedby="passwordHelp" placeholder="ادخل كلمة مرور لا تقل عن 8 احرف">
+                  
+                          </div>
+                          <div class="form-item">
+                              <label for="change-password" class="form-label label-general "></label>
+                              <p class="general change-password">تغيير كلمة المرور</p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="job-container">
+                      <h1 class="data-job">بيانات وظيفية</h1>
+                      <div class="form">
+                          <div class="form-container">
+                              <div class="form-item">
+                                  <label for="exampleInputName1" class="form-label label-general ">الجامعة</label>
+                                  <select class="form-select general-control" aria-label="Default select example" id="exampleInputGender1">
+                                  <option selected>الدولية للمعلومات</option>
+                                  <option value="1">One</option>
+                                  <option value="2">Two</option>
+                                  <option value="3">Three</option>
+                                                    </select>
+                              </div>
+                              <div class="form-item">
+                                  <label for="exampleInputGender1" class="form-label label-general ">الكلية</label>
+                                  <select class="form-select general-control" aria-label="Default select example" id="exampleInputGender1">
+                          <option selected>علوم</option>
+                          <option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                                            </select>
+                              </div>
+                          </div>
+                          <div class="form-container">
+                              <div class="form-item">
+                                  <label for="exampleInputGender1" class="form-label label-general ">القسم</label>
+                                  <select class="form-select general-control" aria-label="Default select example" id="exampleInputGender1">
+                      <option selected>كيمياء</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                                        </select>
+                              </div>
+                              <div class="form-item">
+                                  <label for="exampleInputGender1" class="form-label label-general ">التخصص</label>
+                                  <select class="form-select general-control" aria-label="Default select example" id="exampleInputGender1">
+                    <option selected>كيمياء متخصصة</option>
                     <option value="1">One</option>
                     <option value="2">Two</option>
                     <option value="3">Three</option>
                                       </select>
-                            </div>
-                            <div class="form-item">
-                                <label for="exampleInputGender1" class="form-label label-general ">التخصص</label>
-                                <select class="form-select general-control" aria-label="Default select example" id="exampleInputGender1">
-                  <option selected>كيمياء متخصصة</option>
-                  <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
-                                    </select>
-                            </div>
-                        </div>
-                        <div class="form-container">
-                            <div class="form-item">
-                                <label for="exampleInputGender1" class="form-label label-general ">الدرجة العملية</label>
-                                <select class="form-select general-control" aria-label="Default select example" id="exampleInputGender1">
-                    <option selected>طالب ماجيستير</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                                      </select>
-                            </div>
-                            <div class="form-item"></div>
-                        </div>
-                    </div>
-                </div>
+                              </div>
+                          </div>
+                          <div class="form-container">
+                              <div class="form-item">
+                                  <label for="exampleInputGender1" class="form-label label-general ">الدرجة العملية</label>
+                                  <select class="form-select general-control" aria-label="Default select example" id="exampleInputGender1">
+                      <option selected>طالب ماجيستير</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                                        </select>
+                              </div>
+                              <div class="form-item"></div>
+                          </div>
+                      </div>
+                  </div>
+                </form>
             </div>
             <div class="save-btn-container"><button class="save">حفظ</button></div>
         </main>
     </main>
-    <script src="./scripts/script.js"></script>
+    <script src="./scripts/edit_script.js"></script>
 </body>
 
 </html>
