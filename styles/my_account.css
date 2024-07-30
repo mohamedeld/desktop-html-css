@@ -11,7 +11,8 @@ body {
     row-gap: 1.1rem;
     background-color: #F7F7F7;
     position: relative;
-}
+    min-height: 100vh;
+  }
 
 .main-container-question {
     width: 100%;
@@ -115,6 +116,10 @@ body {
     box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.08);
     width: 90%;
     margin: 1rem auto;
+    }
+    #search:focus-within {
+      outline: none;
+      box-shadow: 0px 0px 6px 0px hsl(37, 73%, 63%);
     }
   }
 @media(max-width:500px) {
@@ -647,6 +652,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 0.8rem;
+  margin-bottom: 2rem;
 }
 
 #admin-aside .main-nav ul li p{
@@ -677,6 +683,14 @@ body {
   background-color: #fff;
   box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.08);
   display: none;
+}
+@media (max-width:500px) {
+  .notification{
+            left: -7rem;
+        /* max-width: 100%; */
+        margin: 2rem;
+        width: 31.2rem;
+  }
 }
 .notification header h1{
   font-weight: 400;

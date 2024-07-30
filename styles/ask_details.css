@@ -1,9 +1,11 @@
 
 @media (max-width:800px) {
   .main-container {
-      grid-template-areas: "header header " "main main";
+      grid-template-areas: "header header "
+      "search search" "main main";
       grid-template-columns: 1fr 1fr;
       gap:0rem;
+      grid-template-rows: 80px 80px;
   }
 }
 

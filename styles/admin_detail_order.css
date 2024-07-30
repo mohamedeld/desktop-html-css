@@ -1,6 +1,8 @@
 @media (max-width:800px) {
   .main-container {
-      grid-template-areas: "header header " "main main";
+      grid-template-areas: "header header "
+      "search search"
+      "main main";
       grid-template-columns: 1fr 1fr;
       gap: 1rem;
   }
@@ -43,13 +45,24 @@
 
 @media (max-width:800px) {
   .table>:not(caption)>*>* {
-      padding: 1.2rem 0rem
+      padding: 1.2rem 0rem;
+      text-wrap: nowrap;
+
   }
 }
-
+@media (min-width:801px) and (max-width:1200px) {
+  .main .form #responsive-form {
+    flex-wrap: wrap;
+  }
+  .main .form #responsive-form .form-item{
+    width:45%
+  }
+}
 @media (max-width:800px) {
   .table thead tr th {
       font-size: 1.2rem;
+      text-wrap: nowrap;
+
   }
 }
 
@@ -58,12 +71,16 @@
   font-weight: 500;
   line-height: 19.2px;
   text-align: right;
+  text-wrap: nowrap;
+
   color: #424242;
 }
 
 @media (max-width:800px) {
   .table thead tr th {
       font-size: 1.2rem;
+      text-wrap: nowrap;
+
   }
 }
 #number-table{
@@ -80,6 +97,8 @@ label.check-table,
   line-height: 19.2px;
   text-align: right;
   color: #424242;
+  text-wrap: nowrap;
+
 }
 
 @media (max-width:800px) {
@@ -95,6 +114,7 @@ label.check-table,
   margin-left: 0.6rem;
   margin-right: 0px;
   padding: 0.9rem;
+  text-wrap: nowrap;
 }
 
 @media (max-width:800px) {
@@ -155,6 +175,7 @@ label.check-table,
   align-items: center;
   gap: 1.6rem;
   margin-bottom: 1.6rem;
+  flex-wrap: wrap;
 }
 .controls-number-container a {
   margin-bottom: 0px;
@@ -164,6 +185,7 @@ label.check-table,
   text-align: right;      
   color: #2E2E2E;
   padding: 1.6rem; 
+  
 }
 .controls-number-container a.active,
 .controls-number-container a:hover{
@@ -176,6 +198,7 @@ label.check-table,
     justify-content: flex-start;
     width: 100%;
     align-items: flex-start;
+    gap: 3.2rem;
   }
 }
 .table tr:last-child{
@@ -227,7 +250,7 @@ label.check-table,
 #gender-admin{
   width: 50%;
 }
-@media (max-width:800px) {
+@media (max-width:900px) {
   #gender-admin{
     width: 100%;
   }
