@@ -12,6 +12,7 @@ body {
     background-color: #F7F7F7;
     position: relative;
     min-height: 100vh;
+    grid-template-rows:80px;
   }
 
 .main-container-question {
@@ -293,7 +294,7 @@ body {
 
 .aside .main-nav ul li a {
     display: block;
-    padding: 2.1rem 2.6rem;
+    padding: 1.55rem 2.6rem;
     border-radius: 15px;
     border: 1px solid #DEEEFA;
     font-size: 1.6rem;
@@ -335,6 +336,7 @@ body {
     margin-left: 2.1rem;
     /* height: 100%; */
     margin-bottom: 2rem;
+    overflow: hidden;
 }
 
 @media (max-width:800px){
@@ -385,6 +387,7 @@ body {
 @media (max-width:500px) {
     .question {
         padding: 1.1rem 2rem;
+        margin-left: 0px;
     }
     .question p {
         font-size: 1.1rem;
@@ -474,6 +477,7 @@ body {
     font-weight: 500;
     margin-bottom: 1.2rem;
     color: #2E2E2E;
+    position: relative;
 }
 
 .main .general-control {
@@ -757,7 +761,51 @@ body {
 }
 .show-notification{
   display: block;
+  z-index: 111111;
 }
 .icon-not{
   box-shadow: 0px 0px 6px 0px hsl(206, 80%, 44%);
+}
+.table-responsive{
+  overflow-x: scroll;
+}
+.table-responsive .table #link-talking{
+  position: relative;
+}
+.table-responsive .table #link-talking .red-icon-img:hover{
+
+}
+.to-help{
+  padding: 2rem;
+  border-radius: 8px;
+  background-color: #fff;
+  width: fit-content;
+  position: absolute;
+  left: 0;
+  top: 4rem;
+  display: none;
+z-index: 1111;
+}
+.to-help p{
+  margin-bottom: 0px;
+  font-size: 1.6rem;
+  line-height: 19.2px;
+  text-align: right;
+  color: #424242;
+  font-weight: 400;
+}
+.to-help p:first-child{
+  margin-bottom: 0.8rem;
+}
+.show-red-message{
+  display: block;
+}
+.hover-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
 }

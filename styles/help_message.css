@@ -1,9 +1,5 @@
 .main-message{
-  display: flex;
-  justify-content:center;
-  align-items: center;
-  flex-direction: column;
-  height:100vh;
+  background-color: #dddddd;
 }
 .main-message-container{
   padding:2rem;

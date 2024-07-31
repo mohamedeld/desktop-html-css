@@ -1,5 +1,5 @@
 
-@media (max-width:800px) {
+@media (max-width:500px) {
   .main-container {
       grid-template-areas: "header header "
       "search search" "main main";
@@ -9,7 +9,7 @@
   }
 }
 
-@media(max-width:800px) {
+@media(max-width:500px) {
   .menu {
       display: block;
       padding: 1.1rem 1.3rem;
@@ -24,7 +24,7 @@
   }
 }
 
-@media (max-width:800px) {
+@media (max-width:500px) {
   .aside {
       position: absolute;
       z-index: 9999;
@@ -71,7 +71,7 @@
   gap: 14.6rem;
   margin-bottom: 2rem;
 }
-@media (max-width:500px) {
+@media (max-width:900px) {
   
 .message-container-detail .message-detail{
   flex-direction: column;
@@ -111,7 +111,7 @@
   color: #5F5F5F;
   margin-bottom: 0px;
 }
-@media (max-width:500px){
+@media (max-width:900px){
   .message-data{
     margin-right: auto;
   }

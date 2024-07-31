@@ -28,12 +28,27 @@
                 </div>
                 <div class="notification-container">
                     <img src="./images/icons/notifications.svg" alt="notification icon" />
-                </div>
+                    <main class="notification">
+                      <header>
+                        <h1>اشعارات جديدة</h1>
+                      </header>
+                      <div class="notifications-container">
+                        <div class="notification-item">
+                          <img src="./images/icons/notification.svg" alt="notification right check icon"/>
+                          <p>وافق 5 محكمون على طلبك, يمكنك الآن اكمال الطلب</p>
+                        </div>
+                      </div>
+                    </main>
+                  </div>
                 <div class="menu">
                     <img src="./images/menu.png" alt="menu icon" />
                 </div>
             </div>
         </header>
+        <div class="input-search" id="search">
+          <input type="text" name="search" placeholder="بحث" />
+          <img src="./images/icons/search.svg" alt="search icon" />
+      </div>
         <aside class="aside show-aside">
             <div class="profile">
                 <img src="./images/person1.png" alt="person profile image" />
@@ -95,6 +110,8 @@
               </div>
                 <div class="table-responsive">
                   <table class="table">
+             
+                      
                       <thead>
                         <tr>
                           <th scope="col">رقم الطلب</th>
@@ -104,8 +121,13 @@
                               <th scope="col">مدة الإستشارة</th>
                               <th scope="col">المبلغ المستحق </th>
                               <th scope="col" id="link-talking"> 
-                                <span><img src="./images/icons/questionIcon.svg" alt="question red icon+"/></span>
+                                <span class="red-question" id="redicon">
+                                  <img src="./images/icons/questionIcon.svg" alt="question red icon+" /></span>
                                 <span>رابط الإستشارة</span>
+                                <div class="to-help">
+                                  <p>اهلا بك, نحن هنا لمساعدتك. </p>
+                                  <p>اتبع هذا الرابط في التوقيت المحدد لبدء الإستشارة</p>
+                                </div>
                               </th>
                               
                               <th>

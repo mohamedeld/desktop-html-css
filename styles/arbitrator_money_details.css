@@ -1,6 +1,6 @@
 @media (max-width:800px) {
   .main-container {
-      grid-template-areas: "header header " "main main";
+      grid-template-areas: "header header " "search search" "main main";
       grid-template-columns: 1fr 1fr;
       gap: 1rem;
   }
@@ -78,6 +78,8 @@
   box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.08);
   border-radius: 8px;
   text-align: center;
+  position:relative;
+
 }
 @media (max-width:500px) {
   .total-container{

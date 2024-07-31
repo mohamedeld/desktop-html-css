@@ -1,14 +1,17 @@
 #control-order.main-container-question{
   grid-template-rows: 80px 75px;
 }
-@media (max-width:800px) {
+@media (max-width:500px) {
   .main-container-question {
-    grid-template-areas: "header header " "question question" "main main";
+    grid-template-areas: "header header " 
+     "search search"
+    "question question"
+    "main main";
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
 }
 }
-@media(max-width:800px) {
+@media(max-width:500px) {
   .menu {
       display: block;
       padding: 1.1rem 1.3rem;
@@ -23,7 +26,7 @@
   }
 }
 
-@media (max-width:800px) {
+@media (max-width:500px) {
   .aside {
       position: absolute;
       z-index: 9999;
@@ -63,7 +66,7 @@
 }
 .control-numbers{
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   gap:1.2rem;
   align-items: center;
 }
@@ -72,14 +75,17 @@
   justify-content: flex-start;
   align-items: center;
   gap: 1.6rem;
+  flex-wrap: wrap;
 }
-@media(max-width:500px){
+@media (max-width:400px) {
   .control-numbers{
     flex-direction: column;
     justify-content: flex-start;
     width: 100%;
     align-items: flex-start;
   }
+}
+@media(max-width:300px){
   .control-numbers .controls-number-container{
     flex-direction: column;
     justify-content: flex-start;
@@ -140,17 +146,8 @@
   padding: 1.5rem
 }
 
-@media (max-width:800px) {
-  .table>:not(caption)>*>* {
-      padding: 1.2rem
-  }
-}
 
-@media (max-width:800px) {
-  .table thead tr th {
-      font-size: 1.2rem;
-  }
-}
+
 
 .table thead tr th {
   font-size: 1.6rem;
@@ -158,13 +155,10 @@
   line-height: 19.2px;
   text-align: right;
   color: #424242;
+  text-wrap: nowrap;
+
 }
 
-@media (max-width:800px) {
-  .table thead tr th {
-      font-size: 1.2rem;
-  }
-}
 #number-table{
   color: #167CC8;
   font-size: 1.6rem;
@@ -179,15 +173,10 @@ label.check-table,
   line-height: 19.2px;
   text-align: right;
   color: #424242;
+  text-wrap: nowrap;
 }
 
-@media (max-width:800px) {
-  label.check-table,
-  .table tbody tr td {
-      font-size: 1.6rem;
-      text-wrap: nowrap;
-  }
-}
+
 
 .table .form-check-input {
   float: right;
@@ -276,6 +265,12 @@ label.check-table,
   font-weight: 500;
   line-height: 19.2px;
   color: #2E2E2E;
+}
+#print-info-working .edit-btn,
+#print-info-working .delete-btn{
+  outline: none;
+  border: none;
+  background-color: transparent;
 }
 #print-info .print{
   display: flex;

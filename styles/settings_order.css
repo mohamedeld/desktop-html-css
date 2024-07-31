@@ -1,6 +1,6 @@
 @media (max-width:800px) {
   .main-container {
-      grid-template-areas: "header header " "main main";
+      grid-template-areas: "header header " "search search" "main main";
       grid-template-columns: 1fr 1fr;
       gap: 1rem;
   }
@@ -60,6 +60,9 @@
   border-bottom: 1px solid #E1F1FC;
 }
 
+.form .form-outer .form-inner{
+  position: relative;
+}
 .form .form-outer .form-inner h2{
   font-size: 1.6rem;
   line-height: 19.2px;

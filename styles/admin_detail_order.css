@@ -1,13 +1,14 @@
-@media (max-width:800px) {
+@media (max-width:500px) {
   .main-container {
       grid-template-areas: "header header "
       "search search"
       "main main";
       grid-template-columns: 1fr 1fr;
       gap: 1rem;
+      grid-template-rows: 80px 80px;
   }
 }
-@media(max-width:800px) {
+@media(max-width:500px) {
   .menu {
       display: block;
       padding: 1.1rem 1.3rem;
@@ -22,7 +23,7 @@
   }
 }
 
-@media (max-width:800px) {
+@media (max-width:500px) {
   .aside {
       position: absolute;
       z-index: 9999;
@@ -45,7 +46,7 @@
 
 @media (max-width:800px) {
   .table>:not(caption)>*>* {
-      padding: 1.2rem 0rem;
+      padding: 1.2rem;
       text-wrap: nowrap;
 
   }
@@ -146,6 +147,7 @@ label.check-table,
     width: 100%;
   }
 }
+
 .add-part .add-data-container{
   border-radius: none;
   outline: none;
@@ -191,7 +193,7 @@ label.check-table,
 .controls-number-container a:hover{
   border-bottom: 1px solid #167CC8;
 }
-@media(max-width:500px){
+@media(max-width:300px){
   
    .controls-number-container{
     flex-direction: column;
@@ -260,6 +262,7 @@ label.check-table,
   justify-content: flex-end;
   align-items: center;
   gap: 1.6rem;
+  margin-top: 12.4rem;
 }
 .save-btn-container #delete-account{
   margin-top: 5.2rem;
@@ -274,12 +277,24 @@ label.check-table,
     background-color: #D35252;
     box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.08);
 }
+@media (max-width:600px) {
+  .save-btn-container #delete-account{
+    padding: 1.6rem 1.5rem;
+  }
+  .save-btn-container .save{
+    padding: 1.6rem 4rem;
+  }
+}
 #header-account{
   margin-top: 6rem;
 }
 .main .upload-image{
   padding: 1.2rem 0rem;
   margin-bottom: 2rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
 }
 .main .upload-image img{
   width: 77px;
@@ -287,8 +302,11 @@ label.check-table,
   object-fit: cover;
   border-radius: 50%;
 }
-.main .upload-image p{
+.main .upload-image button{
   margin-bottom: 0px;
+  border: none;
+  outline: none;
+  background-color: transparent;
   font-size: 1.4rem;
   font-weight: 500;
   line-height: 16.8px;
@@ -305,3 +323,11 @@ label.check-table,
   text-align: center;
 }
 }
+@media (max-width:500px) {
+  #admin-main-student .form .form-container{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+

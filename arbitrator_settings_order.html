@@ -27,12 +27,27 @@
                 </div>
                 <div class="notification-container">
                     <img src="./images/icons/notifications.svg" alt="notification icon" />
+                    <main class="notification">
+                      <header>
+                        <h1>اشعارات جديدة</h1>
+                      </header>
+                      <div class="notifications-container">
+                        <div class="notification-item">
+                          <img src="./images/icons/notification.svg" alt="notification right check icon"/>
+                          <p>وافق 5 محكمون على طلبك, يمكنك الآن اكمال الطلب</p>
+                        </div>
+                      </div>
+                    </main>
                 </div>
                 <div class="menu">
                     <img src="./images/menu.png" alt="menu icon" />
                 </div>
             </div>
         </header>
+        <div class="input-search" id="search">
+          <input type="text" name="search" placeholder="بحث" />
+          <img src="./images/icons/search.svg" alt="search icon" />
+      </div>
         <aside class="aside show-aside">
             <div class="profile">
                 <img src="./images/person1.png" alt="person profile image" />
@@ -101,7 +116,11 @@
                     </div>
                   </div>
                   <div class="form-inner">
-                    <h2>مواعيد الإستشارات المناسبة لي <span><img src="./images/icons/questionBlue.svg" alt="question blue" /></span></h2>
+                    <h2>مواعيد الإستشارات المناسبة لي <span id="redicon"><img src="./images/icons/questionBlue.svg" alt="question blue" /></span></h2>
+                    <div class="to-help">
+                      <p>اهلا بك, نحن هنا لمساعدتك. </p>
+                      <p>اتبع هذا الرابط في التوقيت المحدد لبدء الإستشارة</p>
+                    </div>
                     <div class="weeks-check">
                       <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
@@ -173,7 +192,13 @@
                                   </select>
                 </div>
                 <div class="form-item">
-                  <label for="exampleInputName1" class="form-label label-general ">عنوان البحث</label>
+                  <label for="exampleInputName1" class="form-label label-general ">  <span>مواعيد الإستشارات المناسبة لي <span id="redicon"><img src="./images/icons/questionBlue.svg" alt="question blue" /></span>
+                    <div class="to-help">
+                      <p>اهلا بك, نحن هنا لمساعدتك. </p>
+                      <p>اتبع هذا الرابط في التوقيت المحدد لبدء الإستشارة</p>
+                    </div>
+                  </label>
+
                   <input type="email" class="form-control general-control" id="exampleInputName" aria-describedby="textHelp" placeholder="ضع عنوان">
               </div>
                   </div>
