@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="./styles/my_account.css">
 
-    <link rel="stylesheet" href="./styles/admin_detail_order.css">
+    {# <link rel="stylesheet" href="./styles/admin_detail_order.css"> #}
     <script src="./bootstrap/bootstrap.min.js"></script>
     <title>Landing Page</title>
 </head>
@@ -85,7 +85,7 @@
         </aside>
         <main class="main">
           <header>
-            <div class="controls-number-container">
+            <div class="controls-number-container" id="admin-bound-container">
               <div class="control-number-item">
                 <a href="#" class="active">  بيانات الحساب </a>
                              </div>
@@ -115,7 +115,7 @@
                           <label for="exampleInputName1" class="form-label label-general ">الاسم</label>
                           <input type="email" class="form-control general-control" id="exampleInputName" aria-describedby="textHelp" placeholder="عبد الله احمد محمد">
                       </div>
-                      <div class="form-item">
+                      <div class="form-item" id="country-number">
                         <label for="exampleInputs1" class="form-label label-general">رقم الجوال</label>
                         <div class="select-container">
                             <div>

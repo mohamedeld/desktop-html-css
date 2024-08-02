@@ -70,17 +70,7 @@
       font-size: 1.2rem;
   }
 }
-.back-icon{
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
 
-}
-.back-icon img{
-  width: 24px;
-  height: 44px;
-  object-fit: cover;
-}
 #number-table{
   color: #167CC8;
   font-size: 1.6rem;

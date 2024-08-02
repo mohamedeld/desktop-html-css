@@ -30,13 +30,13 @@ fileInput?.addEventListener('change', (event) => {
     addImageText.style.display = 'none';
   }
 });
-const helpMessage = document.querySelector(".to-help");
-const redIcon = document?.querySelector("#redicon");
+const helpMessages = document.querySelectorAll(".to-help");
+const icons = document.querySelectorAll("#redicon");
 
-if (redIcon) {
-  redIcon.addEventListener('mouseenter', function() {
-    if (helpMessage) {
-      helpMessage.classList.add("show-red-message");
+icons.forEach((icon, index) => {
+  icon.addEventListener('mouseenter', () => {
+    if (helpMessages[index]) {
+      helpMessages[index].classList.add("show-red-message");
     }
 
     // Add the full-screen background
@@ -45,9 +45,9 @@ if (redIcon) {
     document.body.appendChild(overlay);
   });
 
-  redIcon.addEventListener('mouseleave', function() {
-    if (helpMessage) {
-      helpMessage.classList.remove("show-red-message");
+  icon.addEventListener('mouseleave', () => {
+    if (helpMessages[index]) {
+      helpMessages[index].classList.remove("show-red-message");
     }
 
     // Remove the full-screen background
@@ -56,4 +56,4 @@ if (redIcon) {
       overlay.remove();
     }
   });
-}
+});
