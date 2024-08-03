@@ -1,57 +1,4 @@
-.main {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-image: url('../images/sign_up.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
 
-@media (max-width:500px) {
-    .main {
-        padding: 2rem;
-    }
-}
-
-.signup_container {
-    max-width: 542px;
-    width: 100%;
-    background-color: #fff;
-    padding: 6.7rem 7.2rem 5.7rem 7.2rem;
-    border-radius: 8px;
-}
-
-.signup_container p {
-    font-size: 1.8rem;
-    font-weight: 500;
-    line-height: 21.6px;
-    text-align: right;
-    margin-bottom: 3.2rem;
-    color: #2E2E2E
-}
-
-.verify p:first-child {
-    margin-bottom: 1.2rem;
-}
-
-.verify .desc {
-    font-weight: 400;
-    font-size: 1.4rem;
-    line-height: 16.8px;
-    text-align: right;
-    color: #2E2E2E;
-    margin-bottom: 3.2rem;
-}
-
-@media (max-width:500px) {
-    .signup_container {
-        padding: 2.7rem 3.2rem 3.7rem 2.2rem;
-    }
-}
 
 .form .label-general {
     font-size: 1.6rem;
@@ -74,37 +21,8 @@
     border: 1px solid #167CC8;
 }
 
-.general-control::placeholder {
-    font-size: 1.4rem;
-    font-weight: 500;
-    color: #5F5F5F;
-    line-height: 16.8px;
-}
 
-.select-container {
-    display: grid;
-    grid-template-columns: 84px 1fr;
-    gap: 1.2rem;
-    position: relative;
-}
 
-.selector {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1.6rem;
-    padding: 0.8rem 1.6rem;
-    border-radius: 5px;
-    border: 1px solid #424242;
-    background-color: #FCFCFC;
-    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.08);
-}
-
-.selector:hover {
-    border: 1px solid #167CC8;
-}
 
 .list {
     width: 84px;
@@ -123,153 +41,18 @@
     padding: 0.2rem;
 }
 
-.toggle-visible {
-    visibility: hidden;
-}
 
-.options:hover {
-    background-color: #424242;
-    /* opacity:0.5; */
-}
-
-.select-container .select-country {
-    padding: 0.8rem 1.6rem;
-    border-radius: 5px;
-    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.08);
-    border: 1px solid #167CC8;
-    height: 100%;
-}
-
-.select-container option img {
-    width: 24px;
-    height: 24px;
-    object-fit: cover;
-}
-
-.create-account-btn button {
-    outline: none;
-    border: none;
-    width: 100%;
-    background-color: #FDA922;
-    padding: 0.8rem 1.6rem;
-    border-radius: 5px;
-    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.08);
-    font-size: 1.6rem;
-    font-weight: 500;
-    line-height: 19.2px;
-    color: #2E2E2E;
-    text-align: center;
-    margin-top: 6rem;
-    margin-bottom: 1.2rem;
-}
-
-.create-account-btn .have-account {
-    text-align: center;
-    font-size: 1.6rem;
-    font-weight: 500;
-    color: #2E2E2E;
-    line-height: 19.2px;
-}
-
-.create-account-btn .have-account .login {
-    color: #167CC8
-}
 
 
 /* verify */
 
-.verify {
-    position: relative;
-}
-
-.verify-check {
-    margin-bottom: 3.2rem;
-}
-
-.verify-check .form-check:first-child {
-    margin-bottom: 2.4rem;
-}
-
-.verify-check .form-check .form-check-input {
-    float: right;
-    margin-left: 0px;
-    margin-right: 1rem;
-    padding: 0.9rem;
-}
-
-.verify-check .form-check-label {
-    padding-right: 1.6rem;
-    font-size: 1.6rem;
-    color: #2E2E2E;
-    text-align: right;
-    font-weight: 500;
-}
-
-.form-label.label-general.verify-name {
-    margin-top: 0rem;
-}
-
-.verify-account-btn button {
-    outline: none;
-    border: none;
-    width: 100%;
-    background-color: #FDA922;
-    padding: 0.8rem 1.6rem;
-    border-radius: 5px;
-    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.08);
-    font-size: 1.6rem;
-    font-weight: 500;
-    line-height: 19.2px;
-    color: #2E2E2E;
-    text-align: center;
-    margin-top: 10rem;
-    margin-bottom: 1.2rem;
-}
-
-.arrow-back {
-    position: absolute;
-    top: 3%;
-    left: 3%;
-}
 
 
-/* login */
 
-.login p {
-    margin-bottom: 3.2rem;
-}
 
-.login .login-password {
-    margin-bottom: 3.7rem;
-}
 
-.login .login-email {
-    font-weight: 500;
-    font-size: 1.8rem;
-    line-height: 21.8px;
-    text-align: right;
-    color: #2E2E2E;
-    margin-bottom: 2rem;
-}
 
-.login .login-form {
-    margin-bottom: 2.4rem;
-}
 
-.verify-check.login-check-account {
-    margin-bottom: 0rem;
-}
 
-.create-account-btn.login-button button {
-    margin-top: 8.4rem;
-}
 
-.login-password {
-    position: relative;
-}
 
-.eye-icon {
-    position: absolute;
-    left: 2%;
-    top: 68%;
-}

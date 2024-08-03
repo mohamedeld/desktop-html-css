@@ -59,15 +59,7 @@
       display: none;
   }
 }
-.main{
-  padding: 0rem;
-  background-color: #F7F7F7;
-}
-.common-questions{
-  border-radius: 5px;
-  padding: 3.2rem;
-  background-color: #fff;
-}
+
 .common-question-header{
   display: flex;
   justify-content: flex-start;

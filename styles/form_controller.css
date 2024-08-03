@@ -1,36 +1,4 @@
-.choose-doctor {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 1.6rem
-}
 
-@media (max-width:500px) {
-    .choose-doctor {
-        gap: 1rem;
-    }
-}
-
-.main .detail-main .choose-doctor h1 {
-    margin-bottom: 0px;
-}
-
-.choose-doctor p {
-    font-size: 1.6rem;
-    font-weight: 400;
-    line-height: 19.2px;
-    color: #424242;
-    margin-bottom: 0px;
-}
-
-@media (max-width:500px) {
-    .choose-doctor h1 {
-        font-size: 1.1rem;
-    }
-    .choose-doctor p {
-        font-size: 1.1rem;
-    }
-}
 
 .table {
     margin-top: 1.2rem;
@@ -47,12 +15,6 @@
     }
 }
 
-.th-container {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 0.6rem;
-}
 
 @media (max-width:500px) {
     .table thead tr th {
@@ -102,45 +64,4 @@ label.check-table,
     .table .form-check-input {
         padding: 0.4rem;
     }
-}
-
-.save-btn-form {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin-top: 5.2rem;
-    gap: 2.1rem;
-}
-
-.save-btn-form .save {
-    border: none;
-    border-radius: 5px;
-    outline: none;
-    padding: 1.6rem 6rem;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 19.2px;
-    color: #2E2E2E;
-    background-color: #FDA922;
-    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.08);
-}
-
-.save-btn-form p {
-    font-size: 1.6rem;
-    font-weight: 500;
-    line-height: 19.2px;
-    color: #424242;
-    margin-bottom: 0px;
-}
-.save-btn-form .save-disabled {
-  border: none;
-  border-radius: 5px;
-  outline: none;
-  padding: 1.6rem 6rem;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 19.2px;
-  color: #2E2E2E;
-  background-color: #D3D3D3;
-  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.08);
 }

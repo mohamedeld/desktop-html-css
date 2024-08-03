@@ -8,10 +8,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/general.css">
+    
 
     <link rel="stylesheet" href="./styles/my_account.css">
-    <link rel="stylesheet" href="./styles/questionnaire.css">
+    
     <script src="./bootstrap/bootstrap.min.js"></script>
     <title>Landing Page</title>
 </head>
@@ -27,12 +27,27 @@
                 </div>
                 <div class="notification-container">
                     <img src="./images/icons/notifications.svg" alt="notification icon" />
+                    <main class="notification">
+                      <header>
+                        <h1>اشعارات جديدة</h1>
+                      </header>
+                      <div class="notifications-container">
+                        <div class="notification-item">
+                          <img src="./images/icons/notification.svg" alt="notification right check icon"/>
+                          <p>وافق 5 محكمون على طلبك, يمكنك الآن اكمال الطلب</p>
+                        </div>
+                      </div>
+                    </main>
                 </div>
                 <div class="menu">
                     <img src="./images/menu.png" alt="menu icon" />
                 </div>
             </div>
         </header>
+        <div class="input-search" id="search">
+          <input type="text" name="search" placeholder="بحث" />
+          <img src="./images/icons/search.svg" alt="search icon" />
+      </div>
         <aside class="aside show-aside">
             <div class="profile">
                 <img src="./images/person1.png" alt="person profile image" />
@@ -66,39 +81,50 @@
                 <div class="questionnaire-sub-header">
                   <img src="./images/icons/questionIcon.svg" alt="question error icon" id="redicon"/>
                   <p>البيانات الديموغرافية</p>
+                  <div class="to-help">
+                    <p>اهلا بك, نحن هنا لمساعدتك. </p>
+                    <p>اتبع هذا الرابط في التوقيت المحدد لبدء الإستشارة</p>
+                  </div>
                 </div>
-                <div class="data-section">
+                <div class="data-section" id="first-question-section">
                   <form class="form">
                     <div class="drag-drop">
-                      <img src="./images/icons/dragdrop.svg" alt="drog drop icon"/>
+                      <img src="./images/icons/dragdrop.svg" alt="drog drop  icon"id="add_var"/>
                       <input type="text" class="form-control general-control" id="exampleInputName" aria-describedby="textHelp" placeholder="العبارة ( مثال : ما سنك؟ )">
                       
                     </div>
                     <div class="drag-drop">
-                      <img src="./images/icons/dragdrop.svg" alt="drag drop icon"/>
+                      <img src="./images/icons/dragdrop.svg" alt="drag drop icon" id="add_var"/>
                       <input type="text" class="form-control general-control second" id="exampleInputName" aria-describedby="textHelp" placeholder="المتغير الأول ( مثال : من 20 ل25 سنة )">
-                      
+                      <div class="add-variable" id="add_var">
+                        <img src="./images/icons/plus.svg" alt="plus icon"/>
+                        <p>أضف متغير</p>
+                      </div>
                     </div>
                     <div class="drag-drop">
                       <img src="./images/icons/dragdrop.svg" alt="drag drop icon"/>
                       <input type="text" class="form-control general-control" id="exampleInputName" aria-describedby="textHelp" placeholder="المتغير الثاني ( مثال : من 20 ل25 سنة )">
                       <div class="add-variable">
-                        <img src="./images/icons/plus.svg" alt="plus icon"/>
-                        <p>أضف متغير</p>
+                        <img src="./images/icons/plus.svg" alt="plus icon" onclick="addVariable()"/>
+                        <p onclick="addVariable()" id="add-variable-small">أضف متغير</p>
                       </div>
                     </div>
                   </form>
                 </div>
                 <div class="add-section">
                   <img src="./images/icons/plus.svg" alt="add plus icon"/>
-                  <p>أضف فقرة</p>
+                  <p onclick="addNewSection()">أضف فقرة</p>
                 </div>
                 <div class="main-data">
                   <div class="questionnaire-sub-header">
-                    <img src="./images/icons/questionIcon.svg" alt="question error icon"/>
+                    <img src="./images/icons/questionIcon.svg" alt="question error icon" id="redicon"/>
                     <p>البيانات الأساسية</p>
+                    <div class="to-help">
+                      <p>اهلا بك, نحن هنا لمساعدتك. </p>
+                      <p>اتبع هذا الرابط في التوقيت المحدد لبدء الإستشارة</p>
+                    </div>
                   </div>
-                  <div class="main-data-content">
+                  <div class="main-data-content" id="second-question-section">
                     <div class="inner-main-content">
                       <div class="first-part">
                         <p>المحور الأول:</p>
@@ -133,14 +159,14 @@
                             <div class="drag-drop">
                               <img src="./images/icons/dragdrop.svg" alt="drag drop icon"/>
                               <input type="text" class="form-control general-control second" id="exampleInputName" aria-describedby="textHelp" placeholder="المتغير الأول ( مثال : من 20 ل25 سنة )">
-                              <div class="trash-icon"><img src="./images/icons/trash.svg" alt="trash icon" /></div>
+                              <div class="trash-icon"><button onclick="deleteItem(this)"><img src="./images/icons/trash.svg" alt="trash icon" /></button></div>
                             </div>
                             <div class="drag-drop">
                               <img src="./images/icons/dragdrop.svg" alt="drag drop icon"/>
                               <input type="text" class="form-control general-control second" id="exampleInputName" aria-describedby="textHelp" placeholder="المتغير الأول ( مثال : من 20 ل25 سنة )">
                               <div class="add-variable">
-                                <img src="./images/icons/plus.svg" alt="plus icon"/>
-                                <p>أضف متغير</p>
+                                <img src="./images/icons/plus.svg" alt="plus icon"onclick="addVariableItem(this)"/>
+                                <p onclick="addVariableItem(this)" id="add-variable-small">أضف متغير</p>
                               </div>
                             </div>
                           </div>
@@ -153,9 +179,9 @@
                 </div>
                 <div class="add-section">
                   <img src="./images/icons/plus.svg" alt="add plus icon"/>
-                  <p>أضف فقرة</p>
+                  <p onclick="addNewSectionSecondContainer()">أضف فقرة</p>
                 </div>
-                <div class="main-data">
+                <div class="main-data" id="third-question-section">
                   
                   <div class="main-data-content section-two">
                     <div class="inner-main-content">
@@ -192,14 +218,14 @@
                             <div class="drag-drop">
                               <img src="./images/icons/dragdrop.svg" alt="drag drop icon"/>
                               <input type="text" class="form-control general-control second" id="exampleInputName" aria-describedby="textHelp" placeholder="المتغير الأول ( مثال : من 20 ل25 سنة )">
-                              <div class="trash-icon"><img src="./images/icons/trash.svg" alt="trash icon" /></div>
+                              <div class="trash-icon"><button onclick="deleteItem(this)"><img src="./images/icons/trash.svg" alt="trash icon" /></button></div>
                             </div>
                             <div class="drag-drop">
                               <img src="./images/icons/dragdrop.svg" alt="drag drop icon"/>
                               <input type="text" class="form-control general-control second" id="exampleInputName" aria-describedby="textHelp" placeholder="المتغير الأول ( مثال : من 20 ل25 سنة )">
                               <div class="add-variable">
-                                <img src="./images/icons/plus.svg" alt="plus icon"/>
-                                <p>أضف متغير</p>
+                                <img src="./images/icons/plus.svg" alt="plus icon" onclick="addVariableItem(this)"/>
+                                <p onclick="addVariableItem(this)" id="add-variable-small">أضف متغير</p>
                               </div>
                             </div>
                           </div>
@@ -212,7 +238,7 @@
                 </div>
                 <div class="add-section">
                   <img src="./images/icons/plus.svg" alt="add plus icon"/>
-                  <p>أضف فقرة</p>
+                  <p onclick="addNewSectionThirdContainer()">أضف فقرة</p>
                 </div>
             </div>
             <div class="save-btn-container second-button">

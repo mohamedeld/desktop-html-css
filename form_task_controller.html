@@ -8,9 +8,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/general.css">
+    
     <link rel="stylesheet" href="./styles/my_account.css">
-    <link rel="stylesheet" href="./styles/form_controller.css" />
+   
     <script src="./bootstrap/bootstrap.min.js"></script>
     <title>Landing Page</title>
 </head>
@@ -26,12 +26,27 @@
                 </div>
                 <div class="notification-container">
                     <img src="./images/icons/notifications.svg" alt="notification icon" />
+                    <main class="notification">
+                      <header>
+                        <h1>اشعارات جديدة</h1>
+                      </header>
+                      <div class="notifications-container">
+                        <div class="notification-item">
+                          <img src="./images/icons/notification.svg" alt="notification right check icon"/>
+                          <p>وافق 5 محكمون على طلبك, يمكنك الآن اكمال الطلب</p>
+                        </div>
+                      </div>
+                    </main>
                 </div>
                 <div class="menu">
                     <img src="./images/menu.png" alt="menu icon" />
                 </div>
             </div>
         </header>
+        <div class="input-search" id="search">
+          <input type="text" name="search" placeholder="بحث" />
+          <img src="./images/icons/search.svg" alt="search icon" />
+      </div>
         <aside class="aside show-aside">
             <div class="profile">
                 <img src="./images/person1.png" alt="person profile image" />

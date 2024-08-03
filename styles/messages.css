@@ -34,50 +34,5 @@
   }
 }
 .main{
-  background-color: #F7F7F7;
-  padding:0px;
-}
-.message-container .message-item{
-  padding: 3.2rem;
-  border-radius: 8px;
-  background-color: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 2rem;
-}
-.message-container .message-item .message-info{
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 1.2rem;
-}
-.message-container .message-item .message-info img{
-  width: 24px;
-  height: 24px;
-  object-fit: cover;
-}
-.message-container .message-item .message-info p{
-  font-size: 1.6rem;
-  font-weight: 500;
-  line-height: 19.2px;
-  text-align: right;
-  color: #424242;
-  margin-bottom: 0px;
-}
-
-.message-container .message-item .message-number{
-  padding: 0.6rem;
-  background-color: #FDA92280;
-  border-radius: 4px;
-width: fit-content;
-}
-
-.message-container .message-item .message-number p{
-  font-size: 1.6rem;
-  font-weight: 500;
-  line-height: 19.2px;
-  text-align: right;
-  color: #2E2E2E;
-  margin-bottom: 0px;
+ 
 }

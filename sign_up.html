@@ -8,22 +8,22 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/general.css">
-    <link rel="stylesheet" href="./styles/signup.css">
+    
+    <link rel="stylesheet" href="./styles/my_account.css">
     <script src="./bootstrap/bootstrap.min.js"></script>
     <title>Sign up</title>
 </head>
 
 <body>
-    <main class="main">
+    <main class="main" id="signup">
         <div class="signup_container">
             <p>إنشاء حساب جديد</p>
             <form class="form">
-                <div class="">
+                <div class="item1">
                     <label for="exampleInputEmail1" class="form-label label-general">بريد الكتروني</label>
                     <input type="email" class="form-control general-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ادخل بريد الكتروني فعال">
                 </div>
-                <div class="">
+                <div class="item1">
                     <label for="exampleInputs1" class="form-label label-general">رقم الجوال</label>
                     <div class="select-container">
                         <div>
@@ -50,15 +50,15 @@
                         <input type="number" class="form-control general-control" placeholder="ادخل رقم جوالك" id="exampleInputs1">
                     </div>
                 </div>
-                <div class="login-password">
+                <div class="login-password item1">
                     <label for="exampleInputPassword1" class="form-label label-general">كلمة المرور</label>
                     <input type="password" class="form-control general-control" id="exampleInputPassword1" aria-describedby="passwordHelp" placeholder="ادخل كلمة مرور لا تقل عن 8 احرف">
-                    <img src="./images/icons/eye.svg" class="eye-icon" alt="eye icon" />
+                    
                 </div>
-                <div class="login-password">
+                <div class="login-password item1">
                     <label for="exampleInputPassword2" class="form-label label-general">كرر كلمة المرور</label>
                     <input type="password" class="form-control general-control" id="exampleInputPassword2" aria-describedby="passwordHelp" placeholder="ادخل كلمة مرور لا تقل عن 8 احرف">
-                    <img src="./images/icons/eye.svg" class="eye-icon" alt="eye icon" />
+                   
                 </div>
                 <div class="create-account-btn">
                     <button>انشاء حساب</button>
