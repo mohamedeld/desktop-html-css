@@ -5090,3 +5090,34 @@ margin-bottom: 1.2rem;
     flex-wrap: wrap;
   }
 }
+.form-container#containerr-test{
+  align-items: flex-end;
+}
+.add-new-sectionn{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+}
+.add-new-sectionn .form-item1 {
+  width: 100%;
+}
+.add-new-sectionn-desc{
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 19.2px;
+  color: #161617;
+}
+@media (min-width:801px) and (max-width:1100px) {
+  
+  #last-form-container{
+    flex-wrap: wrap;
+  }
+  #last-form-container .form-item1{
+    width:40%
+  }
+} 
+.university-input{
+  margin-top: 2rem;
+}

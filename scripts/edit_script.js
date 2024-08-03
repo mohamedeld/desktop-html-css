@@ -255,3 +255,22 @@ function addNewSectionThirdContainer() {
   const firstSection = document.getElementById('third-question-section');
   firstSection.parentNode.insertBefore(newSection, firstSection.nextSibling);
 }
+
+function addNewFormItem() {
+  const newFormItem = document.createElement('div');
+  newFormItem.classList.add('add-new-sectionn');
+
+  newFormItem.innerHTML = `
+    <div class="form-item1">
+                          
+                            <input type="email" class="form-control general-control" id="exampleInputName" aria-describedby="textHelp" placeholder="اكتب فرضيات البحث (مثال: تأثير وسائل التواصل الاجتماعي على الصحة العقلية) ">
+                          </div>
+                          <div class="add-section" id="add_var" onclick="addNewFormItem()">
+                            <img src="./images/icons/plus.svg" alt="add plus icon"/>
+                            <p>أضف فقرة</p>
+                          </div>
+  `;
+  const addNewSectionElement = document.querySelector('.add-new-sectionn');
+  addNewSectionElement.parentNode.insertBefore(newFormItem, addNewSectionElement);
+
+}

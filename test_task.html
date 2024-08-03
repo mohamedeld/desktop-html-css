@@ -130,18 +130,21 @@
                     </div>
                         </div>
                     </div>
-                    <div class="form-container" id="container-test">
-                        <div class="form-item1">
-                          <label for="exampleInputName1" class="form-label label-general "> فرضيات البحث / سؤال البحث</label>
-                          <input type="email" class="form-control general-control" id="exampleInputName" aria-describedby="textHelp" placeholder="اكتب فرضيات البحث (مثال: تأثير وسائل التواصل الاجتماعي على الصحة العقلية) ">
-                        </div>
-                        <div class="add-section">
-                          <img src="./images/icons/plus.svg" alt="add plus icon"/>
-                          <p>أضف فقرة</p>
+                    <div class="">
+                      <p class="add-new-sectionn-desc"> فرضيات البحث / سؤال البحث</p>
+                        <div class="add-new-sectionn">
+                          <div class="form-item1">
+                          
+                            <input type="email" class="form-control general-control" id="exampleInputName" aria-describedby="textHelp" placeholder="اكتب فرضيات البحث (مثال: تأثير وسائل التواصل الاجتماعي على الصحة العقلية) ">
+                          </div>
+                          <div class="add-section" onclick="addNewFormItem()">
+                            <img src="./images/icons/plus.svg" alt="add plus icon"/>
+                            <p>أضف فقرة</p>
+                          </div>
                         </div>
                     </div>
                       <h1 class="layer">إختر معايير اختيار المحكم</h1>
-                    <div class="form-container">
+                    <div class="form-container" id="last-form-container">
                       <div class="form-item1">
                         <label for="exampleInputGender1" class="form-label label-general ">الدرجة العلمية</label>
                         <select class="form-select general-control" aria-label="Default select example" id="exampleInputGender1">
