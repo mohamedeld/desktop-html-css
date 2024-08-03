@@ -274,3 +274,53 @@ function addNewFormItem() {
   addNewSectionElement.parentNode.insertBefore(newFormItem, addNewSectionElement);
 
 }
+let date = new Date();
+let year = date.getFullYear();
+let month = date.getMonth();
+
+const day = document.getElementById("calendar-dates");
+const currdate = document.getElementById("current-month-year");
+
+// Array of month names in Arabic
+const months = [
+    "يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو",
+    "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر"
+];
+
+// Function to generate the calendar
+const manipulate = () => {
+    let lastdate = new Date(year, month + 1, 0).getDate(); // Get the last date of the current month
+
+    let lit = "";
+
+    // Add dates of the current month
+    for (let i = 1; i <= lastdate; i++) {
+        lit += `<span>${i}</span>`;
+    }
+
+    currdate.innerText = `${months[month]} ${year}`;
+    day.innerHTML = lit;
+    const days = document.querySelectorAll('.day');
+   
+}
+
+manipulate();
+
+// Navigation functionality
+document.getElementById('arrowRight').addEventListener('click', () => {
+    month++;
+    if (month > 11) {
+        year++;
+        month = 0;
+    }
+    manipulate();
+});
+
+document.getElementById('arrowLeft').addEventListener('click', () => {
+    month--;
+    if (month < 0) {
+        year--;
+        month = 11;
+    }
+    manipulate();
+});
