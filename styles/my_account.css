@@ -3479,7 +3479,7 @@ margin-bottom: 2rem;
 /* end of arb money detail */
 
 /* message container */
-.main-modal{
+/* .main-modal{
   display: flex;
   justify-content:center;
   align-items: center;
@@ -3490,6 +3490,37 @@ margin-bottom: 2rem;
   background-color: #fff;
   border-radius: 8px;
   padding: 7.9rem 9.4rem;
+} */
+.main-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  display: none;
+  
+}
+
+.modal-container {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  padding: 7.9rem 9.4rem;
+}
+@media (max-width:800px){
+  .modal-container {
+    padding: 2rem;
+  }
+}
+.modal-container.show {
+  transform: translateX(0);
 }
 @media (max-width:800px) {
   .modal-container{

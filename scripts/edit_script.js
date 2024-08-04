@@ -274,6 +274,34 @@ function addNewFormItem() {
   addNewSectionElement.parentNode.insertBefore(newFormItem, addNewSectionElement);
 
 }
+
+
+// cancel button
+const cancelBtn = document.getElementById('cancel-btn');
+const mainModal = document.querySelector('.main-modal');
+const modalContainer = document.querySelector('.modal-container');
+
+cancelBtn.addEventListener('click', () => {
+  mainModal.style.display = 'flex';
+  modalContainer.classList.add('show');
+});
+
+// Add event listeners to the buttons in the modal
+const orderSolidBtn = document.querySelector('.order-solid');
+const returnOutlineBtn = document.querySelector('.return-outline');
+
+orderSolidBtn?.addEventListener('click', () => {
+  // Add your logic for canceling the order here
+  mainModal.style.display = 'none';
+  modalContainer.classList.remove('show');
+});
+
+returnOutlineBtn?.addEventListener('click', () => {
+  // Add your logic for returning to the previous page here
+  mainModal.style.display = 'none';
+  modalContainer.classList.remove('show');
+});
+
 let date = new Date();
 let year = date.getFullYear();
 let month = date.getMonth();
@@ -297,9 +325,12 @@ const manipulate = () => {
     for (let i = 1; i <= lastdate; i++) {
         lit += `<span class="day">${i}</span>`;
     }
-
-    currdate.innerText = `${months[month]} ${year}`;
-    day.innerHTML = lit;
+    if(currdate){
+      currdate.innerText = `${months[month]} ${year}`;
+    }
+    if(day){
+      day.innerHTML = lit;
+    }
     const days = document.querySelectorAll('.day');
     days.forEach(day => {
       day.addEventListener('click', function() {
@@ -309,14 +340,14 @@ const manipulate = () => {
           this.classList.add('selected-day');
       });
   });
-  const currentDay = days[date.getDate() - 1];
-            currentDay.classList.add('selected-day');
+  const currentDay = days[date?.getDate() - 1];
+            currentDay?.classList?.add('selected-day');
 }
 
 manipulate();
 
 // Navigation functionality
-document.getElementById('arrowRight').addEventListener('click', () => {
+document.getElementById('arrowRight')?.addEventListener('click', () => {
     month++;
     if (month > 11) {
         year++;
@@ -325,7 +356,7 @@ document.getElementById('arrowRight').addEventListener('click', () => {
     manipulate();
 });
 
-document.getElementById('arrowLeft').addEventListener('click', () => {
+document.getElementById('arrowLeft')?.addEventListener('click', () => {
     month--;
     if (month < 0) {
         year--;
