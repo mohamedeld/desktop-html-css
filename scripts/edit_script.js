@@ -295,13 +295,22 @@ const manipulate = () => {
 
     // Add dates of the current month
     for (let i = 1; i <= lastdate; i++) {
-        lit += `<span>${i}</span>`;
+        lit += `<span class="day">${i}</span>`;
     }
 
     currdate.innerText = `${months[month]} ${year}`;
     day.innerHTML = lit;
     const days = document.querySelectorAll('.day');
-   
+    days.forEach(day => {
+      day.addEventListener('click', function() {
+          // Remove 'selected-day' class from all days
+          days.forEach(d => d.classList.remove('selected-day'));
+          // Add 'selected-day' class to the clicked day
+          this.classList.add('selected-day');
+      });
+  });
+  const currentDay = days[date.getDate() - 1];
+            currentDay.classList.add('selected-day');
 }
 
 manipulate();
