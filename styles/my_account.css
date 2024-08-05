@@ -4381,7 +4381,7 @@ box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.08);
   gap: 3.2rem;
   margin-top: 19.6rem;
 }
-@media (max-width:500px) {
+@media (max-width:900px) {
   .message-chat-container{
     flex-direction: column;
     align-items: flex-start;
@@ -4393,9 +4393,23 @@ box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.08);
   height: 294.1px;
   object-fit: cover;
 }
-@media (max-width:800px) {
+@media(min-width:1001px) and (max-width:1200px){
   .message-chat-container img{
     width: 294.7px;
+  height: 194.1px;
+  object-fit: cover;
+  }
+}
+@media(min-width:801px) and (max-width:1000px){
+  .message-chat-container img{
+    width: 260.7px;
+  height: 194.1px;
+  object-fit: cover;
+  }
+}
+@media (max-width:800px) {
+  .message-chat-container img{
+    width: 200.7px;
   height: 194.1px;
   object-fit: cover;
   }
@@ -4445,6 +4459,12 @@ box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.08);
   line-height: 19.2px;
   color: #424242;
   padding: 1.7rem 3.7rem;
+}
+@media (min-width:900px) and (max-width:1050px) {
+  .message-chat-container .form button{
+    padding: 1.7rem 1rem;
+    font-size: 1.4rem;
+  }
 }
 
 .main-refuse{
@@ -5248,6 +5268,8 @@ margin-bottom: 1.2rem;
   top:0;
   left:0;
   right:0;
+
+  z-index: 11111;
 }
 
 @media(max-width:500px){
@@ -5866,12 +5888,12 @@ object-fit:cover;
     text-wrap: nowrap;
   }
 }
-@media (min-width:600px) and (max-width:800px){
+@media (min-width:601px) and (max-width:800px){
   .benefits{
     padding:4.5rem 0rem;
   }
 }
-@media(max-width:500px){
+@media(max-width:600px){
   .benefits{
     padding:4.5rem 0rem 2.5rem 0rem;
   }
@@ -6105,7 +6127,7 @@ object-fit:cover;
     color:#646464;
     height:80px
   }
-  .small-comments .comment-item .person-comment{
+  .small-comments2 .comment-item .person-comment{
     align-items:flex-start;
     gap:0.8rem;
   }
@@ -6606,6 +6628,7 @@ object-fit:cover;
 .socials-logo{
   margin-bottom:2.4rem;
 }
+
 .socials-logo .whatsapp{
   width:23.82px;
   height:24px;
@@ -6634,6 +6657,15 @@ object-fit:cover;
   font-weight:400;
   line-height:19.2px;
   color:#424242;
+}
+@media (max-width:800px){
+  .socials nav ul li a{
+    display:block;
+  font-size:1.2rem;
+  font-weight:400;
+  line-height:19.2px;
+  color:#424242;
+  }
 }
 .footer-logo{
   width:195px;
@@ -6716,6 +6748,9 @@ object-fit:cover;
   border-radius: 50%; /* Makes the day circular */
   padding: 1.2rem 1.7rem; /* Adds some space around the day number */
   border:1px solid #F2F2F3;
+}
+.outer-right-sm{
+  display: none;
 }
 @media (max-width:800px) {
   .outer-right{
