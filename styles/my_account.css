@@ -1076,6 +1076,7 @@ z-index: 1111;
  
   color: #2E2E2E;
 }
+.nominate-container .calendar,
 .ask .calendar{
   margin-top: 10.3rem;
   border-radius: 12px;
@@ -1083,6 +1084,7 @@ z-index: 1111;
   padding: 2rem;
   width:100%;
 }
+.nominate-container .calendar header,
 .ask .calendar header{
   padding: 0rem 2rem;
   display: flex;
@@ -1090,11 +1092,13 @@ z-index: 1111;
   align-items: center;
   margin-bottom: 1rem;
 }
+.nominate-container .calendar img,
 .ask .calendar header img{
   width: 19.97px;
   height: 19.97px;
   object-fit: cover;
 }
+.nominate-container .calendar header p,
 .ask .calendar header p{
   font-weight: 400;
   font-size: 14.97px;
@@ -1102,33 +1106,50 @@ z-index: 1111;
   color: #19191A;
   margin-bottom: 0px;
 }
+.nominate-container .calendar .line-calender,
 .ask .calendar .line-calender{
   width: 300px;
   border: 0.83px solid #F2F2F3;
   margin: 0px auto;
 }
+.nominate-container .calendar .days,
 .ask .calendar .days{
   padding: 1.2rem 0rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 0.4rem
+  gap: 0.4rem;
+  list-style: none;
 }
-.ask .calendar .days span{
+.nominate-container .calendar .days li,
+.ask .calendar .days li{
   font-weight: 500;
   font-size: 1.6rem;
   line-height: 19.2px;
+ 
   text-align: right;
   color: #161617;
 }
+.nominate-container .calendar .days-numbers,
 .ask .calendar .days-numbers{
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 0.4rem;
+  gap: 1.1rem;
   flex-wrap: wrap;
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
 }
-.ask .calendar .days-numbers span{
+@media (max-width:500px) {
+  .nominate-container .calendar .days-numbers,
+  .ask .calendar .days-numbers{
+    gap:1rem;
+  }
+}
+.nominate-container .calendar .days-numbers li,
+
+.ask .calendar .days-numbers li{
   font-weight: 500;
   font-size: 1.6rem;
   line-height: 19.2px;
@@ -1139,43 +1160,52 @@ z-index: 1111;
   border-radius: 100%;
 }
 @media (max-width:600px){
-  
+  .nominate-container .calendar .line-calender,
+
 .ask .calendar .line-calender{
   width:150px
 }
 
+
+
 }
-@media (min-width:1200px) and (max-width:1399px){
+@media (min-width:1200px) and (max-width:1300px){
+  .nominate-container .calendar,
   .ask .calendar{
     width:42%
   }
 }
 @media (min-width:1000px) and (max-width:1199px){
+  .nominate-container .calendar,
   .ask .calendar{
-    width:55%
+    width:48%
   }
 }
 @media (min-width:800px) and (max-width:999px){
+  .nominate-container .calendar,
   .ask .calendar{
     width:72%
   }
 }
+.nominate-container .calendar .line-calender2,
 .ask .calendar .line-calender2{
   width: 360px;
   border: 0.83px solid #F2F2F3;
   margin: 0.8rem auto 0rem auto;
 }
 @media (max-width:600px) {
- 
+  .nominate-container .calendar .line-calender2,
 .ask .calendar .line-calender2{
   width:200px;
 } 
 }
 @media (max-width:500px) {
-  .assk .calendar{
+  .nominate-container .calendar ,
+  .ask .calendar{
     width:90%;
   }
 }
+
 .ask .calendar .comming-calenders{
   display: flex;
   justify-content: flex-start;
@@ -2572,7 +2602,7 @@ label.check-table,
 .report-filter .form {
   width: 40%;
 }
-@media (max-width:500px) {
+@media (max-width:900px) {
   .report-filter .form {
     width: 100%;
   } 
@@ -2594,6 +2624,18 @@ label.check-table,
   border-radius: 5px;
   background-color: #FCFCFC;
   box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.08);
+}
+@media (max-width:900px) {
+  .report-filter{
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 2rem;
+  }
+  .report-filter .form .search-icon{
+    margin-left: auto;
+  }
+  
 }
 .admin-check{
   display: flex;
@@ -2925,9 +2967,11 @@ label.check-table,
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 0.4rem
+  gap: 0.4rem;
+  list-style: none;
+  flex-wrap: wrap;
 }
-.nominate-container .calendar .days span{
+.nominate-container .calendar .days li{
   font-weight: 500;
   font-size: 1.6rem;
   line-height: 19.2px;
@@ -2938,9 +2982,12 @@ label.check-table,
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 0.4rem
+  gap: 0.4rem;
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
 }
-.nominate-container .calendar .days-numbers span{
+.nominate-container .calendar .days-numbers li{
   font-weight: 500;
   font-size: 1.6rem;
   line-height: 19.2px;
@@ -2948,7 +2995,7 @@ label.check-table,
   color: #0C0C0D;
   padding: 1.2rem 1.7rem;
   background-color: #F2F2F3;
-  border-radius: 50%;
+  border-radius: 100%;
 }
 .nominate-container .calendar .line-calender2{
   width: 360px;

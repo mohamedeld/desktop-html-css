@@ -323,7 +323,7 @@ const manipulate = () => {
 
     // Add dates of the current month
     for (let i = 1; i <= lastdate; i++) {
-        lit += `<span class="day">${i}</span>`;
+        lit += `<li class="day">${i}</li>`;
     }
     if(currdate){
       currdate.innerText = `${months[month]} ${year}`;
