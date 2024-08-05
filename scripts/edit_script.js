@@ -281,7 +281,7 @@ const cancelBtn = document.getElementById('cancel-btn');
 const mainModal = document.querySelector('.main-modal');
 const modalContainer = document.querySelector('.modal-container');
 
-cancelBtn.addEventListener('click', () => {
+cancelBtn?.addEventListener('click', () => {
   mainModal.style.display = 'flex';
   modalContainer.classList.add('show');
 });

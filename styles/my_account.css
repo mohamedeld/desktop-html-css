@@ -43,7 +43,7 @@ ul {
     position: relative;
 }
 
-@media (max-width:500px) {
+@media (max-width:600px) {
     .main-container {
         grid-template-areas: "header header " 
         "search search"
@@ -53,7 +53,7 @@ ul {
     }
 }
 
-@media (max-width:500px) {
+@media (max-width:600px) {
     .main-container-question {
         grid-template-areas: "header header " 
         "search search"
@@ -121,7 +121,7 @@ ul {
     display: none;
     /* grid-area: search; */
   }
-  @media (max-width:500px){
+  @media (max-width:600px){
     #search{
       display: block;
       grid-area: search;
@@ -140,7 +140,7 @@ ul {
       box-shadow: 0px 0px 6px 0px hsl(37, 73%, 63%);
     }
   }
-@media(max-width:500px) {
+@media(max-width:600px) {
     .header-search .input-search {
         width: 22rem;
         display: none;
@@ -195,7 +195,7 @@ ul {
     display: none;
 }
 
-@media(max-width:500px) {
+@media(max-width:600px) {
     .menu {
         display: block;
         padding: 1.1rem 1.3rem;
@@ -221,7 +221,7 @@ ul {
     margin-bottom: 2rem;
 }
 
-@media (max-width:500px) {
+@media (max-width:600px) {
     .aside {
         position: absolute;
         z-index: 9999;
@@ -430,18 +430,7 @@ ul {
     }
 }
 
-@media(max-width:800px) {
-    .form-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 1rem;
-        flex-direction: column;
-    }
-    .inner-main {
-        width: 100%;
-    }
-}
+
 
 .main h1 {
     font-size: 1.6rem;
@@ -496,6 +485,7 @@ ul {
     margin-bottom: 1.2rem;
     color: #2E2E2E;
     position: relative;
+    flex-wrap: nowrap;
 }
 
 .main .general-control {
@@ -1218,6 +1208,18 @@ z-index: 1111;
   height: 100vh;
   flex-direction: column;
 }
+@media(max-width:800px) {
+  .form-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      flex-direction: column;
+  }
+  .inner-main {
+      width: 100%;
+  }
+}
 .accept-message-container{
   padding: 3.2rem 10rem;
   background-color: #fff;
@@ -1559,7 +1561,7 @@ label.check-table,
   width: 40%;
   margin-top: 4rem;
 }
-@media (max-width:500px) {
+@media (max-width:600px) {
   #bound-table{
     width: 100%;
   }
@@ -1679,7 +1681,7 @@ label.check-table,
     width:50%;
   }
 }
-@media (max-width:800px) {
+@media (max-width:850px) {
   #admin-bound-container {
     gap:2.5rem;
   }
@@ -3008,7 +3010,7 @@ label.check-table,
   gap:2rem;
   flex-wrap: wrap;
 }
-@media (max-width:500px) {
+@media (max-width:700px) {
   #arb-main .nominate .nominate-first-section{
     flex-direction: column;
     align-items: flex-start;
@@ -3023,7 +3025,7 @@ label.check-table,
   box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.08);
   text-align: center;
 }
-@media (max-width:500px) {
+@media (max-width:700px) {
   #arb-main .nominate .nominate-first-section .order-item{
     
     width: 100%;
@@ -3047,7 +3049,15 @@ margin-top: 2rem;
   border: 1px solid #FDA922;
   padding: 1.9rem 0rem;
 }
-
+@media(max-width:700px){
+  
+#arb-main .last-news{
+  flex-direction: column;
+  width:100%;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+}
 /* end of main arbitrator */
 /* paypal content */
 .paypal-content{
@@ -3330,6 +3340,7 @@ margin-top: 2rem;
   #arb-settings .form .form-container .form-item-outer{
   flex-direction: column;
   width: 100%;
+  align-items: flex-start;
   }
 }
 #arb-settings .settings-btn{
@@ -4150,7 +4161,7 @@ margin-bottom: 2rem;
   color: #5F5F5F;
   line-height: 16.8px;
   text-align: right;
-  margin-bottom: 1.2rem;
+
 }
 
 .conditions {
@@ -4356,7 +4367,11 @@ box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.08);
   padding: 3.2rem;
   background-color: #fff;
 }
-
+@media (max-width:800px) {
+  .common-questions{
+    padding: 3.2rem 0.5rem;
+  }
+}
 /* main refuse */
 
 .message-chat-container{
@@ -5132,11 +5147,11 @@ margin-bottom: 1.2rem;
   color: #2E2E2E;
 
 }
-.main .form .form-container .form-item:nth-child(2){
+/* .main .form .form-container .form-item:nth-child(2){
   display: flex;
   align-items: center;
   gap:1.2rem;
-}
+} */
 .form-item1{
   width: 100%;
 }
@@ -6702,3 +6717,24 @@ object-fit:cover;
   padding: 1.2rem 1.7rem; /* Adds some space around the day number */
   border:1px solid #F2F2F3;
 }
+@media (max-width:800px) {
+  .outer-right{
+    display: none;
+  }
+  .outer-right-sm{
+    display: block;
+    margin-bottom: 0px;
+  width: 100%;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 19.2px;
+  color: #2E2E2E;
+  }
+  #control-order .control-numbers{
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    align-items: flex-start;
+  }
+}
+
