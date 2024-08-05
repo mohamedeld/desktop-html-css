@@ -43,7 +43,7 @@ ul {
     position: relative;
 }
 
-@media (max-width:600px) {
+@media (max-width:700px) {
     .main-container {
         grid-template-areas: "header header " 
         "search search"
@@ -53,7 +53,7 @@ ul {
     }
 }
 
-@media (max-width:600px) {
+@media (max-width:700px) {
     .main-container-question {
         grid-template-areas: "header header " 
         "search search"
@@ -86,7 +86,7 @@ ul {
     object-fit: cover;
 }
 
-@media(max-width:500px) {
+@media(max-width:700px) {
     .header .logo {
         width: 37px;
         height: 37px;
@@ -121,7 +121,7 @@ ul {
     display: none;
     /* grid-area: search; */
   }
-  @media (max-width:600px){
+  @media (max-width:700px){
     #search{
       display: block;
       grid-area: search;
@@ -195,7 +195,7 @@ ul {
     display: none;
 }
 
-@media(max-width:600px) {
+@media(max-width:700px) {
     .menu {
         display: block;
         padding: 1.1rem 1.3rem;
@@ -221,7 +221,7 @@ ul {
     margin-bottom: 2rem;
 }
 
-@media (max-width:600px) {
+@media (max-width:700px) {
     .aside {
         position: absolute;
         z-index: 9999;
@@ -5206,6 +5206,7 @@ margin-bottom: 1.2rem;
 #main-test-outer .question .questions-list{
   list-style: circle;
 }
+#main-test-outer .form-container{}
 .test .question .questions-list li{
   font-size: 1.4rem;
   font-weight: 400;
@@ -5234,14 +5235,31 @@ margin-bottom: 1.2rem;
   padding: 1.7rem 3.3rem;
   margin-top: 12.9rem;
 }
-
+#main-test-outer .form .form-container #show-item-test{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1.2rem;
+}
+@media(max-width:1200px){
+  #main-test-outer .form .form-container{
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+}
+@media(max-width:800px){
+  #main-test-outer .form .form-container #show-item-test{
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+}
 /* end of tell us refuse */
-@media (min-width:501px) and (max-width:1200px) {
+/* @media (min-width:501px) and (max-width:1200px) {
   
   .main .form .form-container #show-item-test{
     flex-wrap: wrap;
   }
-}
+} */
 .form-container#containerr-test{
   align-items: flex-end;
 }
