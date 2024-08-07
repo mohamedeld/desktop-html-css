@@ -364,3 +364,86 @@ document.getElementById('arrowLeft')?.addEventListener('click', () => {
     }
     manipulate();
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const tabs = document.querySelectorAll('.control-number-item a');
+  const contentContainers = document.querySelectorAll('.content-container'); // Assuming you have a class 'content-container' for each content div
+
+  tabs?.forEach((tab, index) => {
+    tab?.addEventListener('click', (event) => {
+      event.preventDefault();
+      tabs.forEach(tab => tab.classList.remove('active'));
+      tab.classList.add('active');   
+
+
+      contentContainers.forEach(container => container.style.display = 'none');
+      contentContainers[index].style.display = 'block';
+    });
+  });
+});
+
+// Get the required elements
+const profileImageAdmin = document.getElementById('profile-image');
+const deleteImageButton = document.getElementById('delete-image');
+const addImageButton = document.getElementById('add-image');
+
+// Add click event listener to the delete image button
+deleteImageButton?.addEventListener('click', (e) => {
+  e.preventDefault();
+  // Remove the image
+  profileImageAdmin.src = '../images/icons/profileImage.svg';
+  profileImageAdmin.alt = 'default image';
+  deleteImageButton.style.display = 'none';
+  addImageButton.style.display = 'inline-block';
+});
+
+// Add click event listener to the add image button
+addImageButton?.addEventListener('click', (e) => {
+  e.preventDefault();
+  // Create a file input element
+  const fileInput = document.createElement('input');
+  fileInput.type = 'file';
+  fileInput.accept = 'image/*';
+  fileInput.style.display = 'none'
+  // Add an event listener to the file input
+  fileInput.addEventListener('change', (e) => {
+    e.preventDefault();
+    const file = e.target.files[0];
+    const imageUrl = URL.createObjectURL(file);
+
+    // Update the image source and alt text
+    profileImageAdmin.src = imageUrl;
+    profileImageAdmin.alt = file.name;
+    deleteImageButton.style.display = 'inline-block';
+    addImageButton.style.display = 'none';
+  });
+
+  // Append the file input to the document
+  profileImageAdmin.parentNode.insertBefore(fileInput, profileImageAdmin.nextSibling);
+
+  // Click the file input to open the file dialog
+  fileInput.click();
+});
+
+const showModalButtons = document.querySelectorAll('.show-modal');
+    const modal = document.querySelector('.modal-detail-container');
+    const closeButton = document.querySelector('.error-icon-detail');
+
+    showModalButtons?.forEach(button => {
+      button?.addEventListener('click', (e) => {
+        e.preventDefault()
+        modal.style.display = 'block';
+      });
+    });
+
+    closeButton?.addEventListener('click', (e) => {
+      e.preventDefault()
+      modal.style.display = 'none';
+    });
+
+    window?.addEventListener('click', (event) => {
+      if (event.target == modal) {
+        modal.style.display = 'none';
+      }
+    });

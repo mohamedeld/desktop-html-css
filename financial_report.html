@@ -82,11 +82,11 @@
           <button class="sign-out">الخروج</button>
       </aside>
         <div class="question">
-          <div class="question-header active">
+          <div class="question-header ">
             <img src="./images/icons/searchDB.svg" alt="controll question icon"/>
             <p> تقارير المحكمين</p>
           </div>
-          <div class="question-header">
+          <div class="question-header active">
             <img  src="./images/icons/person_right.svg" alt="person raise right hand"/>
             <p> تقارير السفراء</p>
           </div>
@@ -99,113 +99,210 @@
             <div>
                <div class="control-numbers">
                 <div class="controls-number-container">
-                  <div class="control-number-item active">
-                    <p> مستحقات</p>
+                  <div class="control-number-item ">
+                    <a href="" class="active"> مستحقات</a>
                                  </div>
                   <div class="control-number-item ">
-                    <p> مدفوعات</p>
+                    <a href=""> مدفوعات</a>
                                  </div>
               
                 </div>
               </div>
-               <div class="report-filter">
-                <div class="report-print"> 
-                  <img src="./images/icons/printIcon.svg" alt="print icon"/>
-                  <p>طباعة</p>
-                </div>
-                <div class="form">
-                  <div class="form-container">
-                    <div class="form-item">
-                      
-                      <select class="form-select general-control" aria-label="Default select example" id="exampleInputGender1">
-                  <option selected>ذكر</option>
-                  <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
-                                    </select>
+               <div class="content-container">
+                 <div class="report-filter">
+                  <div class="report-print">
+                    <img src="./images/icons/printIcon.svg" alt="print icon"/>
+                    <p>طباعة</p>
                   </div>
-                  <div class="form-item">
-                    
-                    <select class="form-select general-control" aria-label="Default select example" id="exampleInputGender1">
-                                <option selected>ذكر</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                                  </select>
-                                </div>
-                    <div class="search-icon">
-                      <img src="./images/icons/search.svg" alt="search icon"/>
+                  <div class="form">
+                    <div class="form-container">
+                      <div class="form-item">
+                 
+                        <select class="form-select general-control" aria-label="Default select example" id="exampleInputGender1">
+                    <option selected>ذكر</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                                      </select>
+                    </div>
+                    <div class="form-item">
+                 
+                      <select class="form-select general-control" aria-label="Default select example" id="exampleInputGender1">
+                                  <option selected>ذكر</option>
+                                  <option value="1">One</option>
+                                  <option value="2">Two</option>
+                                  <option value="3">Three</option>
+                                    </select>
+                                  </div>
+                      <div class="search-icon">
+                        <img src="./images/icons/search.svg" alt="search icon"/>
+                      </div>
                     </div>
                   </div>
-                </div>
+                 </div>
+                 <div class="table-responsive">
+                  <table class="table" id="financial">
+                      <thead>
+                        <tr>
+                          <th scope="col" class="admin-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <span>                          رقم الطلب
+                            </span>
+                          </th>
+                          <th scope="col"> المستخدم </th>
+                              <th scope="col">  المبلغ </th>
+                              <th scope="col"> الحالة </th>
+                              <th scope="col"> التاريخ</th>
+                 
+                 
+                          </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row" id="number-table" class="admin-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <span>#242</span>
+                          </th>
+                          <td id="user-info">
+                            <p class="username">أحمد فؤاد محمد</p>
+                            <p class="email">Example@gmail.com</p>
+                          </td>
+                          <td>150 ريال</td>
+                          <td id="user-status-warn">معلق</td>
+                          <td>25 نوفمبر 2024</td>
+                 
+                      </tr>
+                        <tr>
+                          <th scope="row" id="number-table" class="admin-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <span>#242</span>
+                          </th>
+                          <td id="user-info">
+                            <p class="username">أحمد فؤاد محمد</p>
+                            <p class="email">Example@gmail.com</p>
+                          </td>
+                          <td>150 ريال</td>
+                          <td id="user-status-success">معلق</td>
+                          <td>25 نوفمبر 2024</td>
+                 
+                      </tr>
+                        <tr>
+                          <th scope="row" id="number-table" class="admin-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <span>#242</span>
+                          </th>
+                          <td id="user-info">
+                            <p class="username">أحمد فؤاد محمد</p>
+                            <p class="email">Example@gmail.com</p>
+                          </td>
+                          <td>150 ريال</td>
+                          <td id="user-status-error">معلق</td>
+                          <td>25 نوفمبر 2024</td>
+                 
+                      </tr>
+                 
+                      </tbody>
+                  </table>
+                             </div>
                </div>
-               <div class="table-responsive">
-                <table class="table" id="financial">
-                    <thead>
-                      <tr>
-                        <th scope="col" class="admin-check">
-                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                          <span>                          رقم الطلب
-                          </span>
-                        </th>
-                        <th scope="col"> المستخدم </th>
-                            <th scope="col">  المبلغ </th>
-                            <th scope="col"> الحالة </th>
-                            <th scope="col"> التاريخ</th>
-                            
-                           
-                        </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row" id="number-table" class="admin-check">
-                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-
-                          <span>#242</span>
-                        </th>
-                        <td id="user-info">
-                          <p class="username">أحمد فؤاد محمد</p>
-                          <p class="email">Example@gmail.com</p>
-                        </td>
-                        <td>150 ريال</td>
-                        <td id="user-status-warn">معلق</td>
-                        <td>25 نوفمبر 2024</td>
-                        
-                    </tr>
-                      <tr>
-                        <th scope="row" id="number-table" class="admin-check">
-                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-
-                          <span>#242</span>
-                        </th>
-                        <td id="user-info">
-                          <p class="username">أحمد فؤاد محمد</p>
-                          <p class="email">Example@gmail.com</p>
-                        </td>
-                        <td>150 ريال</td>
-                        <td id="user-status-success">معلق</td>
-                        <td>25 نوفمبر 2024</td>
-                        
-                    </tr>
-                      <tr>
-                        <th scope="row" id="number-table" class="admin-check">
-                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-
-                          <span>#242</span>
-                        </th>
-                        <td id="user-info">
-                          <p class="username">أحمد فؤاد محمد</p>
-                          <p class="email">Example@gmail.com</p>
-                        </td>
-                        <td>150 ريال</td>
-                        <td id="user-status-error">معلق</td>
-                        <td>25 نوفمبر 2024</td>
-                        
-                    </tr>
-                       
-                    </tbody>
-                </table>
-            </div>
+               <div class="content-container">
+                
+                 <div class="report-filter">
+                  <div class="report-print">
+                    <img src="./images/icons/printIcon.svg" alt="print icon"/>
+                    <p>طباعة</p>
+                  </div>
+                  <div class="form">
+                    <div class="form-container">
+                      <div class="form-item">
+                 
+                        <select class="form-select general-control" aria-label="Default select example" id="exampleInputGender1">
+                    <option selected>ذكر</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                                      </select>
+                    </div>
+                    <div class="form-item">
+                 
+                      <select class="form-select general-control" aria-label="Default select example" id="exampleInputGender1">
+                                  <option selected>ذكر</option>
+                                  <option value="1">One</option>
+                                  <option value="2">Two</option>
+                                  <option value="3">Three</option>
+                                    </select>
+                                  </div>
+                      <div class="search-icon">
+                        <img src="./images/icons/search.svg" alt="search icon"/>
+                      </div>
+                    </div>
+                  </div>
+                 </div>
+                 <div class="table-responsive">
+                  <table class="table" id="financial">
+                      <thead>
+                        <tr>
+                          <th scope="col" class="admin-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <span>                          رقم الطلب
+                            </span>
+                          </th>
+                          <th scope="col"> المستخدم </th>
+                              <th scope="col">  المبلغ </th>
+                              <th scope="col"> الحالة </th>
+                              <th scope="col"> التاريخ</th>
+                 
+                 
+                          </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row" id="number-table" class="admin-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <span>#242</span>
+                          </th>
+                          <td id="user-info">
+                            <p class="username">أحمد فؤاد محمد</p>
+                            <p class="email">Example@gmail.com</p>
+                          </td>
+                          <td>150 ريال</td>
+                          <td id="user-status-warn">معلق</td>
+                          <td>25 نوفمبر 2024</td>
+                 
+                      </tr>
+                        <tr>
+                          <th scope="row" id="number-table" class="admin-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <span>#242</span>
+                          </th>
+                          <td id="user-info">
+                            <p class="username">أحمد فؤاد محمد</p>
+                            <p class="email">Example@gmail.com</p>
+                          </td>
+                          <td>150 ريال</td>
+                          <td id="user-status-success">معلق</td>
+                          <td>25 نوفمبر 2024</td>
+                 
+                      </tr>
+                        <tr>
+                          <th scope="row" id="number-table" class="admin-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <span>#242</span>
+                          </th>
+                          <td id="user-info">
+                            <p class="username">أحمد فؤاد محمد</p>
+                            <p class="email">Example@gmail.com</p>
+                          </td>
+                          <td>150 ريال</td>
+                          <td id="user-status-error">معلق</td>
+                          <td>25 نوفمبر 2024</td>
+                 
+                      </tr>
+                 
+                      </tbody>
+                  </table>
+                             </div>
+               </div>
             </div>
         </main>
     </main>
