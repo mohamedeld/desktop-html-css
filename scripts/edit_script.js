@@ -281,7 +281,8 @@ const cancelBtn = document.getElementById('cancel-btn');
 const mainModal = document.querySelector('.main-modal');
 const modalContainer = document.querySelector('.modal-container');
 
-cancelBtn?.addEventListener('click', () => {
+cancelBtn?.addEventListener('click', (e) => {
+  e.preventDefault();
   mainModal.style.display = 'flex';
   modalContainer.classList.add('show');
 });
@@ -290,13 +291,15 @@ cancelBtn?.addEventListener('click', () => {
 const orderSolidBtn = document.querySelector('.order-solid');
 const returnOutlineBtn = document.querySelector('.return-outline');
 
-orderSolidBtn?.addEventListener('click', () => {
+orderSolidBtn?.addEventListener('click', (e) => {
+  e.preventDefault();
   // Add your logic for canceling the order here
   mainModal.style.display = 'none';
   modalContainer.classList.remove('show');
 });
 
-returnOutlineBtn?.addEventListener('click', () => {
+returnOutlineBtn?.addEventListener('click', (e) => {
+  e.preventDefault();
   // Add your logic for returning to the previous page here
   mainModal.style.display = 'none';
   modalContainer.classList.remove('show');
@@ -446,4 +449,25 @@ const showModalButtons = document.querySelectorAll('.show-modal');
       if (event.target == modal) {
         modal.style.display = 'none';
       }
+    });
+
+
+    const deleteAccountButton = document.getElementById('delete-account');
+    const returnButton = document.querySelector('.return-outline');
+    const orderButton = document.querySelector('.order-solid');
+
+    deleteAccountButton?.addEventListener('click', (e) => {
+      e?.preventDefault();
+      mainModal.style.display = 'flex';
+    });
+
+    returnButton?.addEventListener('click', (e) => {
+      e?.preventDefault();
+      mainModal.style.display = 'none';
+    });
+
+    orderButton?.addEventListener('click', (e) => {
+      e?.preventDefault();
+      // Add your order cancellation logic here
+      mainModal.style.display = 'none';
     });
