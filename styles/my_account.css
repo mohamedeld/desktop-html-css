@@ -2250,6 +2250,7 @@ label.check-table,
   line-height: 19.2px;
   text-align: right;
   color: #167CC8;
+  cursor: pointer;
 }
 
 /* end of accordin item in admin faq */
@@ -3610,6 +3611,8 @@ margin-bottom: 2rem;
   border-radius: 8px;
   padding: 7.9rem 9.4rem;
 } */
+ .main-modal-edit,
+ .main-modal-delete,
 .main-modal {
   position: fixed;
   top: 0;
@@ -3624,7 +3627,8 @@ margin-bottom: 2rem;
   display: none;
   
 }
-
+.main-modal-delete .main-container,
+.main-modal-edit .main-container,
 .modal-container {
   background-color: white;
   border-radius: 0.5rem;
@@ -3644,20 +3648,28 @@ margin-bottom: 2rem;
 }
 
 @media (max-width:800px){
+  .main-modal-delete .modal-container,
+  .main-modal-edit .modal-container,
   .modal-container {
     padding: 2rem;
   }
 }
+.main-modal-delete .modal-container.show,
+.main-modal-edit .modal-container.show,
 .modal-container.show {
   transform: translateX(0);
 }
 @media (max-width:800px) {
+  .main-modal-delete .modal-container,
+  .main-modal-edit .modal-container,
   .modal-container{
     margin:2rem;
     padding: 5.9rem 7.4rem;
 
   }
 }
+.main-modal-edit .modal-container h1,
+.main-modal-delete .modal-container h1,
 .modal-container h1{
   font-weight: 500;
   font-size: 1.8rem;
@@ -3666,12 +3678,16 @@ margin-bottom: 2rem;
   color: #2E2E2E;
   margin-bottom: 3.2rem;
 }
+.main-modal-edit .button-container,
+.main-modal-delete .button-container,
 .button-container{
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 2rem;
 }
+.main-modal-edit .button-container .order-solid-edit,
+.main-modal-delete .button-container .order-solid,
 .button-container .order-solid{
   outline: none;
   border: none;
@@ -3685,11 +3701,15 @@ margin-bottom: 2rem;
   box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.08);
 }
 @media (max-width:500px) {
+  .main-modal-edit .button-container .order-solid-edit,
+  .main-modal-delete .button-container .order-solid,
   .button-container .order-solid{
     padding: 1.7rem 2rem;
     text-wrap: nowrap;
   }
 }
+.main-modal-edit .button-container .return-outline-edit,
+.main-modal-delete .button-container .return-outline-delete,
 .button-container .return-outline{
   outline: none;
   border: 1px solid #FDA922;
@@ -3703,6 +3723,9 @@ margin-bottom: 2rem;
   background-color: transparent;
 }
 @media (max-width:500px) {
+  .main-modal-edit .button-container .return-outline-edit,
+  .main-modal-delete .button-container .return-outline-delete,
+
   .button-container .return-outline{
     padding: 1.7rem 3rem;
   }
@@ -6978,4 +7001,23 @@ object-fit:cover;
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
+}
+#form-question{
+  padding: 5rem 7rem;
+}
+#form-question .button-container{
+  margin-top:3rem;
+}
+#form-question .button-container .order-solid,
+#form-question .button-container .order-solid-edit{
+  padding:1.7rem 5.7rem;
+}
+@media (max-width:500px){
+  #form-question{
+    padding: 5rem 4rem;
+  }
+  #form-question .button-container .order-solid,
+  #form-question .button-container .order-solid-edit{
+    padding:1.7rem 3.7rem;
+  }
 }

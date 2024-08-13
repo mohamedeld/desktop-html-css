@@ -88,9 +88,54 @@
               <img src="./images/icons/commonQuestion.svg" alt="common question">
               <h2>الأسئلة الشائعة</h2>
             </header>
+            <main class="main-modal" >
+            
+              <div class="modal-container" id="form-question">
+                <h1>أضف سؤال</h1>
+                <div class="form">
+                  <div class="form-item">
+                    <label for="exampleInputName1" class="form-label label-general ">السؤال</label>
+                    <input type="email" class="form-control general-control" id="exampleInputName" aria-describedby="textHelp" placeholder="أضف هنا السؤال">
+                                </div>
+                </div>
+                <div class="button-container">
+                  <button class="order-solid">أضف</button>
+                  <button class="return-outline">الرجوع</button>
+                </div>
+            
+            </div>
+          </main>
+            <main class="main-modal-edit" >
+            
+              <div class="modal-container" id="form-question">
+                <h1>تعديل سؤال</h1>
+                <div class="form">
+                  <div class="form-item">
+                    <label for="exampleInputName1" class="form-label label-general ">السؤال</label>
+                    <input type="email" class="form-control general-control" id="exampleInputName" aria-describedby="textHelp" placeholder="عدل هنا السؤال">
+                                </div>
+                </div>
+                <div class="button-container">
+                  <button class="order-solid-edit">تعديل</button>
+                  <button class="return-outline-edit">الرجوع</button>
+                </div>
+            
+            </div>
+          </main>
+          <main class="main-modal-delete">
+            
+            <div class="modal-container">
+              <h1>هل انت متأكد انك تريد تريد حذف الحساب</h1>
+              <div class="button-container">
+                <button class="order-solid"> حذف الحساب</button>
+                <button class="return-outline-delete">الرجوع</button>
+              </div>
+          
+          </div>
+        </main>
             <div class="add-question">
               <img src="./images/icons/plus.svg" alt="plus icon">
-              <p>أضف سؤال</p>
+              <p class="add-question-desc">أضف سؤال</p>
             </div>
             <div class="questions-list">
               <div class="accordion" id="accordionContainer">
@@ -109,8 +154,8 @@
                         </div>
                     </div>
                     <div class="image-container">
-                      <button><img src="./images/icons/edit.svg" alt="edit icon"></button>
-                      <button><img src="./images/icons/delete.svg" alt="delete icon"></button>
+                      <button><img src="./images/icons/edit.svg" alt="edit icon" class="edit-question-btn"></button>
+                      <button><img src="./images/icons/delete.svg" alt="delete icon" class="delete-question-btn"></button>
                     </div>
                   </div>
                   <div class="item-container">

@@ -277,10 +277,35 @@ function addNewFormItem() {
 
 
 // cancel button
+const returnedDelete = document.querySelector(".return-outline-delete");
 const cancelBtn = document.getElementById('cancel-btn');
 const mainModal = document.querySelector('.main-modal');
+const mainModalDelete = document.querySelector('.main-modal-delete');
+const mainModalEdit = document.querySelector('.main-modal-edit');
 const modalContainer = document.querySelector('.modal-container');
-
+const questionButton = document.querySelector(".add-question-desc");
+const deleteQuestionBtn = document.querySelector(".delete-question-btn");
+const editQuestionBtn = document.querySelector(".edit-question-btn");
+cancelBtn?.addEventListener('click', (e) => {
+  e.preventDefault();
+  mainModal.style.display = 'flex';
+  modalContainer.classList.add('show');
+});
+questionButton?.addEventListener('click', (e) => {
+  e.preventDefault();
+  mainModal.style.display = 'flex';
+  mainModal.classList.add('show');
+});
+deleteQuestionBtn?.addEventListener('click', (e) => {
+  e.preventDefault();
+  mainModalDelete.style.display = 'flex';
+  modalContainer.classList.add('show');
+});
+editQuestionBtn?.addEventListener('click', (e) => {
+  e.preventDefault();
+  mainModalEdit.style.display = 'flex';
+  modalContainer.classList.add('show');
+});
 cancelBtn?.addEventListener('click', (e) => {
   e.preventDefault();
   mainModal.style.display = 'flex';
@@ -290,6 +315,7 @@ cancelBtn?.addEventListener('click', (e) => {
 // Add event listeners to the buttons in the modal
 const orderSolidBtn = document.querySelector('.order-solid');
 const returnOutlineBtn = document.querySelector('.return-outline');
+const returnOutlineEditBtn = document.querySelector('.return-outline-edit');
 
 orderSolidBtn?.addEventListener('click', (e) => {
   e.preventDefault();
@@ -297,11 +323,23 @@ orderSolidBtn?.addEventListener('click', (e) => {
   mainModal.style.display = 'none';
   modalContainer.classList.remove('show');
 });
+returnOutlineEditBtn?.addEventListener('click', (e) => {
+  e.preventDefault();
+  // Add your logic for canceling the order here
+  mainModalEdit.style.display = 'none';
+  modalContainer.classList.remove('show');
+});
 
 returnOutlineBtn?.addEventListener('click', (e) => {
   e.preventDefault();
   // Add your logic for returning to the previous page here
   mainModal.style.display = 'none';
+  modalContainer.classList.remove('show');
+});
+returnedDelete?.addEventListener('click', (e) => {
+  e.preventDefault();
+  // Add your logic for returning to the previous page here
+  mainModalDelete.style.display = 'none';
   modalContainer.classList.remove('show');
 });
 
