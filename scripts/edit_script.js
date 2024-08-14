@@ -409,17 +409,45 @@ document.getElementById('arrowLeft')?.addEventListener('click', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
   const tabs = document.querySelectorAll('.control-number-item a');
-  const contentContainers = document.querySelectorAll('.content-container'); // Assuming you have a class 'content-container' for each content div
+  const contentContainers = document.querySelectorAll('.content-container');
 
-  tabs?.forEach((tab, index) => {
-    tab?.addEventListener('click', (event) => {
+  // Ensure the first tab is active and its content is shown on initial load
+  console.log(tabs[0])
+
+  tabs[0]?.classList.add('active'); // Make sure the first tab is active
+  contentContainers.forEach((container, index) => {
+    container.style.display = index === 0 ? 'block' : 'none'; // Show first content container, hide others
+  });
+
+  tabs.forEach((tab, index) => {
+    tab.addEventListener('click', (event) => {
       event.preventDefault();
-      tabs.forEach(tab => tab.classList.remove('active'));
-      tab.classList.add('active');   
+      tabs.forEach(tab => tab.classList.remove('active')); // Remove active class from all tabs
+      tab.classList.add('active'); // Add active class to clicked tab
 
+      contentContainers.forEach(container => container.style.display = 'none'); // Hide all content containers
+      contentContainers[index].style.display = 'block'; // Show clicked tab's corresponding content container
+    });
+  });
+});
+document?.addEventListener('DOMContentLoaded', () => {
+  const tabs = document?.querySelectorAll(".paypal-header li");
+  const contentContainers = document.querySelectorAll('.content-container');
 
-      contentContainers.forEach(container => container.style.display = 'none');
-      contentContainers[index].style.display = 'block';
+  // Ensure the first tab is active and its content is shown on initial load
+  tabs[0]?.classList?.add('active'); // Make sure the first tab is active
+  contentContainers.forEach((container, index) => {
+    container.style.display = index === 0 ? 'block' : 'none'; // Show first content container, hide others
+  });
+
+  tabs.forEach((tab, index) => {
+    tab.addEventListener('click', (event) => {
+      event.preventDefault();
+      tabs.forEach(tab => tab.classList.remove('active')); // Remove active class from all tabs
+      tab.classList.add('active'); // Add active class to clicked tab
+
+      contentContainers?.forEach(container => container.style.display = 'none'); // Hide all content containers
+      contentContainers[index].style.display = 'block'; // Show clicked tab's corresponding content container
     });
   });
 });
@@ -509,3 +537,35 @@ const showModalButtons = document.querySelectorAll('.show-modal');
       // Add your order cancellation logic here
       mainModal.style.display = 'none';
     });
+
+
+const confirmEmail = document.querySelector(".confirm-item-email");
+const paidAccount = document.querySelector(".paid-account");
+const paidPaypalAccount = document.querySelector(".paypal-paid-account");
+
+paidAccount?.addEventListener('click',(e)=>{
+  e.preventDefault();
+  confirmEmail.classList.toggle("confirm-paid-email");
+  paidPaypalAccount.classList.remove("active");
+  
+})
+paidPaypalAccount?.addEventListener('click',(e)=>{
+  e.preventDefault();
+  confirmEmail.classList.add("confirm-paid-email");
+  this.classList.add("active");
+  confirmEmail.classList.remove("active");
+  
+})
+
+const mainRate = document.querySelector(".main-outer-rate");
+const mainRateBtn = document.querySelector(".solid-button-rate");
+const closeRateBtn = document.querySelector(".close-rate-modal");
+
+mainRateBtn?.addEventListener('click',(e)=>{
+  e.preventDefault();
+  mainRate.style.display="block"
+})
+closeRateBtn?.addEventListener('click',(e)=>{
+  e.preventDefault();
+  mainRate.style.display="none"
+})

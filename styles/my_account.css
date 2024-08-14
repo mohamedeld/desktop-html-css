@@ -3143,6 +3143,7 @@ margin-top: 2rem;
   justify-content: flex-start;
   align-items: center;
   gap: 2rem;
+  cursor: pointer;
 }
 .paypal-content ul li img{
   width: 49.63px;
@@ -5066,7 +5067,17 @@ margin-bottom: 1.2rem;
   object-fit: cover;
 }
 /* end of payment */
-
+.main-outer-rate{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  display: none;
+  overflow: auto;
+      background-color: rgba(0, 0, 0, 0.4);
+}
 .main-rate{
   display: flex;
   justify-content: center;
@@ -5074,7 +5085,6 @@ margin-bottom: 1.2rem;
   flex-direction: column;
   height: 100vh;
   margin: 2rem;
-
 }
 
 .main-rate .main-rate-container{
@@ -5159,6 +5169,7 @@ margin-bottom: 1.2rem;
   left: 2rem;
   width: 20px;
   height: 20px;
+  cursor: pointer;
   object-fit: cover;
 }
 
@@ -7020,4 +7031,42 @@ object-fit:cover;
   #form-question .button-container .order-solid-edit{
     padding:1.7rem 3.7rem;
   }
+}
+
+#finished-form-container #finished-form{
+  width: 40%;
+}
+@media (max-width:500px) {
+  #finished-form-container #finished-form{
+    width: 100%;
+  }
+  #finished-form-container #finished-form .form-container{
+  
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+.confirm-paid-email{
+  display: none;
+}
+.edit-modal-btns{
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+.edit-modal-btns button{
+  outline: none;
+  border: none;
+  font-size: 1.6rem;
+  line-height: 19.2px;
+  font-weight: 500;
+  color: #fff;
+  background:#007bff;
+  padding:1.2rem 4rem;
+  border-radius: 8px;
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.08);
+
 }

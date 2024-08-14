@@ -83,25 +83,28 @@
           </div>
           <div class="question-header">
             <img  src="./images/icons/person_right.svg" alt="person raise right hand"/>
-            <p>طلبات التحكيم</p>
+            <p> إستشارات</p>
           </div>
         </div>
         <main class="main">
             <div>
                <div class="control-numbers" id="control-orders-numbers">
-                <div class="control-number-item">
-                  <p>قيد الموافقة</p>
-                  <div class="control-number">1</div>
-               </div>
-                <div class="control-number-item">
-                  <p>قيد العمل</p>
-                  <div class="control-number">2</div>
-               </div>
-                <div class="control-number-item active">
-                  <p>تمت بالفعل</p>
-                  <div class="control-number">3</div>
-               </div>
+                <div class="controls-number-container">
+                  <div class="control-number-item">
+                    <a href="" >قيد الموافقة</a>
+                    <div class="control-number">1</div>
+                                 </div>
+                  <div class="control-number-item">
+                    <a href="">قيد العمل</a>
+                    <div class="control-number">2</div>
+                                 </div>
+                  <div class="control-number-item active">
+                    <a href="">تمت بالفعل</a>
+                    <div class="control-number">3</div>
+                                 </div>
+                </div>
               </div>
+              <div class="content-container">
                 <div class="table-responsive">
                   <table class="table">
                       <thead>
@@ -110,8 +113,7 @@
                           <th scope="col"> العنوان </th>
                               <th scope="col"> النوع </th>
                               <th scope="col">تاريخ الطلب </th>
-                              
-                              <th scope="col">تاريخ التسليم </th>
+                              <th scope="col"></th>
                               <th scope="col"> </th>
                              
                              
@@ -125,40 +127,179 @@
                               <td id="number-table">اثر السوشيال ميديا على الشباب</td>
                               <td>إستبانة</td>
                               <td>12/11/2024</td>
-                              <td>12/11/202</td>
-                              <td id="print-info"> 
-                                <button class="outline-button">الطلب مرة أخرى</button>
-                                <button class="solid-button">نتيجة التحكيم</button>
-                                <div class="print">
-                                  <img src="./images/icons/printIcon.svg" alt="print icon">
-                                  <p>طباعه</p>
-                                </div>
+                              <td></td>
+                              <td id="print-info-working"> 
+                                <button class="solid-button"> اسماء المحكمين</button>
+                                <button class="edit-btn"><img src="./images/icons/edit.svg" class="show-modal" alt="edit icon"/></button>
+                                <button class="delete-btn"><img src="./images/icons/delete.svg" alt="delete icon" class="delete-question-btn"/></button>
+                                
                               </td>
                             
                               
                           </tr>
-                          <tr>
-                              <th scope="row" id="number-table">
-                                #242
-                              </th>
-                              <td id="number-table">اثر السوشيال ميديا على الشباب</td>
-                              <td>إستبانة</td>
-                              <td>12/11/2024</td>
-                              <td>12/11/202</td>
-                              <td id="print-info"> 
-                                <button class="outline-button">الطلب مرة أخرى</button>
-                                <button class="solid-button">نتيجة التحكيم</button>
-                                <div class="print">
-                                  <img src="./images/icons/printIcon.svg" alt="print icon">
-                                  <p>طباعه</p>
-                                </div>
-                              </td>
-                          </tr>
+                         
                       </tbody>
                   </table>
               </div>
+              </div>
                
+                <div class="content-container">
+                  <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col"></th>
+                            <th scope="col"> العنوان </th>
+                                <th scope="col"> النوع </th>
+                                <th scope="col">تاريخ الطلب </th>
+                                
+                                <th scope="col">تاريخ بدء التنفيذ  </th>
+                                <th scope="col"> </th>
+                               
+                               
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row" id="number-table">
+                                  #242
+                                </th>
+                                <td id="number-table">اثر السوشيال ميديا على الشباب</td>
+                                <td>إستبانة</td>
+                                <td>12/11/2024</td>
+                                <td id="not-yet-order">
+                                  <span><img src="./images/icons/questionIcon.svg" alt="question icon" id="redicon"/></span>
+                                  <div class="to-help">
+                                    <p>اهلا بك, نحن هنا لمساعدتك. </p>
+                                    <p>اتبع هذا الرابط في التوقيت المحدد لبدء الإستشارة</p>
+                                  </div>
+                                  <span>لم يبدأ بعد</span>
+  
+                                </td>
+                                <td id="print-info-working"> 
+                                  <button class="solid-button"> اكمل الطلب</button>
+                                  <button class="outline-button">اسماء المحكمين</button>
+                                  
+                                </td>
+                              
+                                
+                            </tr>
+                            <tr>
+                                <th scope="row" id="number-table">
+                                  #242
+                                </th>
+                                <td id="number-table">اثر السوشيال ميديا على الشباب</td>
+                                <td>إستبانة</td>
+                                <td>12/11/2024</td>
+                                <td>12/11/202</td>
+                                <td id="print-info-working"> 
+                                  
+                                  <button class="disabled-button"> اكمل الطلب</button>
+                                  <button class="outline-button"> اسماء المحكمين </button>
+                                  
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                 
+                </div>
+                <div class="content-container">
+                  <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col"></th>
+                            <th scope="col"> العنوان </th>
+                                <th scope="col"> النوع </th>
+                                <th scope="col">تاريخ الطلب </th>
+                  
+                                <th scope="col">تاريخ التسليم </th>
+                                <th scope="col"> </th>
+                  
+                  
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row" id="number-table">
+                                  #242
+                                </th>
+                                <td id="number-table">اثر السوشيال ميديا على الشباب</td>
+                                <td>إستبانة</td>
+                                <td>12/11/2024</td>
+                                <td>12/11/202</td>
+                                <td id="print-info">
+                                  <button class="outline-button">الطلب مرة أخرى</button>
+                                  <button class="solid-button">نتيجة التحكيم</button>
+                                  <div class="print">
+                                    <img src="./images/icons/printIcon.svg" alt="print icon">
+                                    <p>طباعه</p>
+                                  </div>
+                                </td>
+                  
+                  
+                            </tr>
+                            <tr>
+                                <th scope="row" id="number-table">
+                                  #242
+                                </th>
+                                <td id="number-table">اثر السوشيال ميديا على الشباب</td>
+                                <td>إستبانة</td>
+                                <td>12/11/2024</td>
+                                <td>12/11/202</td>
+                                <td id="print-info">
+                                  <button class="outline-button">الطلب مرة أخرى</button>
+                                  <button class="solid-button">نتيجة التحكيم</button>
+                                  <div class="print">
+                                    <img src="./images/icons/printIcon.svg" alt="print icon">
+                                    <p>طباعه</p>
+                                  </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                                </div>
+                </div>
             </div>
+            <div class="main modal-detail-container">
+              <div class="form-modal-inner">
+                <div class="form modal-detail">
+                  <div class="form-container">
+                    <div class="form-item">
+                      <label for="exampleInputName1" class="form-label label-general "> العنوان	</label>
+                      <input type="email" class="form-control general-control" id="exampleInputName" aria-describedby="textHelp" placeholder="#242">
+                  </div>
+                    <div class="form-item">
+                      <label for="exampleInputName1" class="form-label label-general "> النوع	</label>
+                      <input type="email" class="form-control general-control" id="exampleInputName" aria-describedby="textHelp" placeholder="أحمد محمد	   ">
+                  </div>
+                  </div>
+                  <div class="form-container">
+                    <div class="form-item">
+                      <label for="exampleInputName1" class="form-label label-general "> تاريخ الطلب		</label>
+                      <input type="email" class="form-control general-control" id="exampleInputName" aria-describedby="textHelp" placeholder="إستشارة">
+                  </div>
+                    <div class="form-item">
+                      <label for="exampleInputName1" class="form-label label-general ">التوقيت</label>
+                      <input type="email" class="form-control general-control" id="exampleInputName" aria-describedby="textHelp" placeholder="08:30 م | 29 فبراير 2024	">
+                  </div>
+                  </div>
+                  <img src="./images/icons/error.svg" alt="error icon" class="error-icon-detail"/>
+                </div>
+              </div>
+            </div>
+            <main class="main-modal-delete">
+            
+              <div class="modal-container">
+                <h1>هل انت متأكد انك تريد تريد حذف الحساب</h1>
+                <div class="button-container">
+                  <button class="order-solid" > حذف الحساب</button>
+                  <button class="return-outline-delete">الرجوع</button>
+                </div>
+            
+            </div>
+          </main>
         </main>
     </main>
     <script src="./scripts/edit_script.js"></script>
