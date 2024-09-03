@@ -742,3 +742,39 @@ closeRateBtn?.addEventListener("click", (e) => {
   e.preventDefault();
   mainRate.style.display = "none";
 });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  const copyButton = document.querySelector('#copylinkbutton'); // Select the copy button
+  const inputField = document.getElementById('copylink'); // Select the input field
+  const notification = document.createElement('div'); // Create a notification element
+
+  // Style the notification (you can customize this)
+  notification.style.position = 'fixed';
+  notification.style.top = '20px';
+  notification.style.left = '20px';
+  notification.style.backgroundColor = '#28a745'; // Green background
+  notification.style.color = 'white';
+  notification.style.padding = '10px';
+  notification.style.width = '150px';
+  notification.style.borderRadius = '5px';
+  notification.style.display = 'none'; // Initially hidden
+  notification.textContent = 'تم النسخ!'; // "Copied!" in Arabic
+  document.body.appendChild(notification);
+
+  copyButton.addEventListener('click', function(event) {
+      event.preventDefault(); // Prevent form submission
+      inputField.select(); // Select the input field content
+
+      // Copy the selected text to the clipboard
+      document.execCommand('copy');
+
+      // Show the notification
+      notification.style.display = 'block';
+
+      // Hide the notification after 2 seconds
+      setTimeout(() => {
+          notification.style.display = 'none';
+      }, 2000);
+  });
+});
