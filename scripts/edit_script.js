@@ -762,7 +762,7 @@ document.addEventListener('DOMContentLoaded', function() {
   notification.textContent = 'تم النسخ!'; // "Copied!" in Arabic
   document.body.appendChild(notification);
 
-  copyButton.addEventListener('click', function(event) {
+  copyButton?.addEventListener('click', function(event) {
       event.preventDefault(); // Prevent form submission
       inputField.select(); // Select the input field content
 

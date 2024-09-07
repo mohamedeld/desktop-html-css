@@ -1,5 +1,3 @@
-window.onload = function () {
-    console.log("hi7")
 
     const tabs = document.querySelectorAll('.control-number-item p');
     const contentContainers = document.querySelectorAll('.content-container');
@@ -398,6 +396,12 @@ function addNewSectionSecondContainer() {
   firstSection.appendChild(newSection);
   initDragAndDrop1(newSection);
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const secondContainer = document.querySelector(".section-second-container");
+  initDragAndDrop1(secondContainer);
+});
+
     function addNewSectionThirdContainer() {
         // Create a new div element
         const newSection = document.createElement('div');
@@ -741,4 +745,3 @@ function addNewSectionSecondContainer() {
         mainRate.style.display = "none"
     })
 
-}

@@ -160,12 +160,12 @@
                             <p class="concepts">العبارات</p>
                             <div class="concepts-container-item" id="dropArea">
                               <div class="drag-drop" draggable="true">
-                                <img src="./images/icons/dragdrop.svg" alt="drag drop icon"/>
+                                <img src="./images/icons/dragdrop.svg" alt="drag drop icon" class="draggable"  draggable="true" ondragstart="dragStart(event)"/>
                                 <input type="text" class="form-control general-control second" id="exampleInputName" aria-describedby="textHelp" placeholder="المتغير الأول ( مثال : من 20 ل25 سنة )">
                                 <div class="trash-icon"><button onclick="deleteItem(this)"><img src="./images/icons/trash.svg" alt="trash icon" /></button></div>
                               </div>
                               <div class="drag-drop" draggable="true">
-                                <img src="./images/icons/dragdrop.svg" alt="drag drop icon"/>
+                                <img src="./images/icons/dragdrop.svg" alt="drag drop icon" class="draggable"  draggable="true" ondragstart="dragStart(event)"/>
                                 <input type="text" class="form-control general-control second" id="exampleInputName" aria-describedby="textHelp" placeholder="المتغير الأول ( مثال : من 20 ل25 سنة )">
                                 <div class="add-variable">
                                   <img src="./images/icons/plus.svg" alt="plus icon"/>
@@ -252,7 +252,7 @@
               <button class="save">ابدأ التحكيم</button></div>
         </main>
     </main>
-    <script src="./scripts/edit_script.js"></script>
+    <script src="./scripts/JsAfterBlazor.js"></script>
 </body>
 
 </html>
