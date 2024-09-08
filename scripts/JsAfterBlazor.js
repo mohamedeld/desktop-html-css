@@ -1,3 +1,41 @@
+document?.addEventListener('DOMContentLoaded', function() {
+  const professorBtn = document.getElementById('professor-btn');
+  const studentBtn = document.getElementById('student-btn');
+  const ambassadorBtn = document.getElementById('ambassador-btn');
+
+  const professorQuestions = document.getElementById('question-large');
+  const studentQuestions = document.getElementById('student-questions');
+  const ambassadorQuestions = document.getElementById('ambassador-questions');
+
+  function toggleActiveButton(button) {
+      professorBtn.classList.remove('active');
+      studentBtn.classList.remove('active');
+      ambassadorBtn.classList.remove('active');
+      button.classList.add('active');
+  }
+
+  function showQuestions(questionsDiv) {
+      professorQuestions.style.display = 'none';
+      studentQuestions.style.display = 'none';
+      ambassadorQuestions.style.display = 'none';
+      questionsDiv.style.display = 'block';
+  }
+
+  professorBtn?.addEventListener('click', function() {
+      toggleActiveButton(this);
+      showQuestions(professorQuestions);
+  });
+
+  studentBtn?.addEventListener('click', function() {
+      toggleActiveButton(this);
+      showQuestions(studentQuestions);
+  });
+
+  ambassadorBtn?.addEventListener('click', function() {
+      toggleActiveButton(this);
+      showQuestions(ambassadorQuestions);
+  });
+});
 
     const tabs = document.querySelectorAll('.control-number-item p');
     const contentContainers = document.querySelectorAll('.content-container');
@@ -50,8 +88,8 @@ function initDragAndDrop() {
   });
 
   const dropArea = document.getElementById("dropArea");
-  dropArea.addEventListener("dragover", dragOver);
-  dropArea.addEventListener("drop", drop);
+  dropArea?.addEventListener("dragover", dragOver);
+  dropArea?.addEventListener("drop", drop);
 }
 
 // Call initDragAndDrop function after DOM content has loaded
@@ -260,9 +298,9 @@ function drop(e) {
     
     function initDragAndDrop1(container) {
       // Find all .drag-drop elements within the container and assign unique IDs
-      const dragDrops = container.querySelectorAll(".drag-drop");
+      const dragDrops = container?.querySelectorAll(".drag-drop");
     
-      dragDrops.forEach((item, index) => {
+      dragDrops?.forEach((item, index) => {
         item.id = `drag-drop-${index}-${generateUniqueId()}`; // Ensure unique IDs
         item.setAttribute("draggable", true);
     
@@ -275,10 +313,10 @@ function drop(e) {
         item.addEventListener("dragend", dragEnd);
       });
     
-      const dropArea = container.querySelector("#dropArea");
+      const dropArea = container?.querySelector("#dropArea");
       if (dropArea) {
-        dropArea.addEventListener("dragover", dragOver);
-        dropArea.addEventListener("drop", drop1);
+        dropArea?.addEventListener("dragover", dragOver);
+        dropArea?.addEventListener("drop", drop1);
       }
     }
     
@@ -744,4 +782,6 @@ document.addEventListener("DOMContentLoaded", () => {
         e.preventDefault();
         mainRate.style.display = "none"
     })
+
+
 

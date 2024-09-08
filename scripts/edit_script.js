@@ -778,3 +778,43 @@ document.addEventListener('DOMContentLoaded', function() {
       }, 2000);
   });
 });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  const professorBtn = document.getElementById('professor-btn');
+  const studentBtn = document.getElementById('student-btn');
+  const ambassadorBtn = document.getElementById('ambassador-btn');
+
+  const professorQuestions = document.getElementById('professor-questions');
+  const studentQuestions = document.getElementById('student-questions');
+  const ambassadorQuestions = document.getElementById('ambassador-questions');
+
+  function toggleActiveButton(button) {
+      professorBtn.classList.remove('active');
+      studentBtn.classList.remove('active');
+      ambassadorBtn.classList.remove('active');
+      button.classList.add('active');
+  }
+
+  function showQuestions(questionsDiv) {
+      professorQuestions.style.display = 'none';
+      studentQuestions.style.display = 'none';
+      ambassadorQuestions.style.display = 'none';
+      questionsDiv.style.display = 'block';
+  }
+
+  professorBtn.addEventListener('click', function() {
+      toggleActiveButton(this);
+      showQuestions(professorQuestions);
+  });
+
+  studentBtn.addEventListener('click', function() {
+      toggleActiveButton(this);
+      showQuestions(studentQuestions);
+  });
+
+  ambassadorBtn.addEventListener('click', function() {
+      toggleActiveButton(this);
+      showQuestions(ambassadorQuestions);
+  });
+});
