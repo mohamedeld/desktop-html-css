@@ -106,7 +106,7 @@
                         <img src="./images/icons/dragdrop.svg" alt="drag drop icon" class="draggable"  draggable="true" ondragstart="dragStart(event)"/>
                         <input type="text" class="form-control general-control" id="exampleInputName" aria-describedby="textHelp" placeholder="المتغير الثاني ( مثال : من 20 ل25 سنة )">
                         <div class="add-variable">
-                          <img src="./images/icons/plus.svg" alt="plus icon" />
+                          <img src="./images/icons/plus.svg" alt="plus icon" onclick="addVariableItem(this)" />
                           <p onclick="addVariableItem(this)" id="add-variable-small">أضف متغير</p>
                         </div>
                       </div>
@@ -152,10 +152,16 @@
                           <p>البعد الاول</p>
                         </header>
                         <div class="form">
-                          <div class="form-item">
-                            <input type="text" class="form-control general-control" id="exampleInputName" aria-describedby="textHelp" placeholder="العبارة ( مثال : ما سنك؟ )">
-                      
-                          </div>
+                            <div class="form-item form-item-outer-area">
+                              <div class="area-form-item">
+                                <input type="text" class="form-control general-control" id="exampleInputName" aria-describedby="textHelp" placeholder="العبارة ( مثال : ما سنك؟ )">
+                                <div class="add-variable">
+                                  <img src="./images/icons/plus.svg" alt="plus icon" onclick="addVariableItem2(this)"/>
+                                  <p onclick="addVariableItem2(this)" id="add-variable-small">أضف متغير</p>
+                                
+                              </div>
+                            </div>
+                            </div>
                           <div class="concepts-container">
                             <p class="concepts">العبارات</p>
                             <div class="concepts-container-item" id="dropArea">
@@ -168,7 +174,7 @@
                                 <img src="./images/icons/dragdrop.svg" alt="drag drop icon" class="draggable"  draggable="true" ondragstart="dragStart(event)"/>
                                 <input type="text" class="form-control general-control second" id="exampleInputName" aria-describedby="textHelp" placeholder="المتغير الأول ( مثال : من 20 ل25 سنة )">
                                 <div class="add-variable">
-                                  <img src="./images/icons/plus.svg" alt="plus icon"/>
+                                  <img src="./images/icons/plus.svg" alt="plus icon" onclick="addVariableItem(this)"/>
                                   <p onclick="addVariableItem(this)" id="add-variable-small">أضف متغير</p>
                                 </div>
                               </div>

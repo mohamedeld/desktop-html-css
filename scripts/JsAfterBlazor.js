@@ -250,6 +250,23 @@ function drop(e) {
       // Update dragDrops array
       dragDrops.push(newDiv);
     }
+    function addVariableItem2(element) {
+      var newDiv = document.createElement("div");
+      newDiv.className = "area-form-item drag-drop";
+      // newDiv.draggable = true;
+      // newDiv.id = `new-drag-drop-${generateUniqueId()}`;
+  
+      newDiv.innerHTML = `
+          <input type="text" class="form-control general-control second" aria-describedby="textHelp" placeholder="المتغير الأول ( مثال : من 20 ل25 سنة )">
+          <div class="trash-icon"><button onclick="deleteItem(this)"><img src="./images/icons/trash.svg" alt="trash icon" /></button></div>
+      `;
+      newDiv.style.marginTop='10px'
+      // Insert the new div before the current "add-variable" element
+      const areaFormItem = element?.closest(".form-item-outer-area");
+      areaFormItem?.insertBefore(newDiv, areaFormItem.firstChild);
+
+  }
+  
 
     function deleteItem(element) {
         element.closest(".drag-drop").remove();

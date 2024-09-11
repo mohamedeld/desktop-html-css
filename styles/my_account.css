@@ -7070,3 +7070,9 @@ object-fit:cover;
   box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.08);
 
 }
+
+.area-form-item{
+  display:flex;
+  justify-content: flex-start;
+  align-items: center;
+}
