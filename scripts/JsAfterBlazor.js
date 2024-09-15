@@ -537,7 +537,7 @@ function addNewSectionSecondContainer() {
                               <img src="./images/icons/dragdrop.svg" alt="drag drop icon"/>
                               <input type="text" class="form-control general-control second" id="exampleInputName" aria-describedby="textHelp" placeholder="المتغير الأول ( مثال : من 20 ل25 سنة )">
                               <div class="add-variable">
-                                <img src="./images/icons/plus.svg" alt="plus icon"/>
+                                <img src="./images/icons/plus.svg" alt="plus icon" onclick="addVariableItem(this)"/>
                                 <p onclick="addVariableItem(this)" id="add-variable-small">أضف متغير</p>
                               </div>
                             </div>
