@@ -1,4 +1,7 @@
 document?.addEventListener('DOMContentLoaded', function() {
+
+ 
+
   const professorBtn = document.getElementById('professor-btn');
   const studentBtn = document.getElementById('student-btn');
   const ambassadorBtn = document.getElementById('ambassador-btn');
@@ -509,12 +512,16 @@ function addNewSectionSecondContainer() {
                         </div>
                     </div>
                     <div class="first-part-container">
+                    <div class="add-concept-word__container">
+                          <button class="add-concept-word" id="toggle-button" type="button">اضف بعد</button>
+                          <button class="add-concept-word" id="toggle-button2" type="button">اضف عبارة</button>
+                        </div>
                       <header>
-                        <img src="./images/icons/dragdrop.svg" alt="drag drop icon"/>
-                        <p>البعد الاول</p>
+                        <img src="./images/icons/dragdrop.svg" alt="drag drop icon" style="display: none;"/>
+                        <p style="display: none;" class="first-area">البعد الاول</p>
                       </header>
                       <div class="form" >
-                        <div class="form-item form-item-outer-area" id="containers-area">
+                        <div class="form-item form-item-outer-area" id="containers-area" style="display: none;">
                           <div class="area-form-item draggable" draggable="true">
                                 <img src="./images/icons/dragdrop.svg" alt="drog drop  icon"  />
                                 <input type="text" class="form-control general-control" id="exampleInputName" aria-describedby="textHelp" placeholder="العبارة ( مثال : ما سنك؟ )">
@@ -525,7 +532,7 @@ function addNewSectionSecondContainer() {
                               </div>
                             </div>
                         </div>
-                        <div class="concepts-container">
+                        <div class="concepts-container" style="display: none;">
                           <p class="concepts">العبارات</p>
                           <div class="concepts-container-item" id="containers-concepts">
                             <div class="draggable" draggable="true">
@@ -556,7 +563,13 @@ function addNewSectionSecondContainer() {
   initializeDragAndDrop10(newSection.querySelector('#containers-area'));
   initializeDragAndDrop10(newSection.querySelector('#containers-concepts'));
 }
+document.addEventListener("DOMContentLoaded", function() {
+  // This code runs after the DOM is fully loaded
 
+  // Example: Call addNewSectionSecondContainer when a button is clicked
+  const addSectionButton = document.querySelector('#add-section-button'); // Adjust the selector as needed
+  addSectionButton.addEventListener('click', addNewSectionSecondContainer);
+}); 
 document.addEventListener("DOMContentLoaded", () => {
   const secondContainer = document.querySelector(".section-second-container");
   initDragAndDrop1(secondContainer);
@@ -904,6 +917,29 @@ document.addEventListener("DOMContentLoaded", () => {
         e.preventDefault();
         mainRate.style.display = "none"
     })
-
-
-
+    document?.addEventListener('DOMContentLoaded', function() {
+    const pElement = document.querySelector('.first-area')
+    const imgElement = document.querySelector('.first-area-img');
+    const containerArea = document.querySelector('.form-item-outer-area-first')
+    function handleAddArea (e){
+      e.preventDefault();
+      e.stopPropagation()
+      pElement.classList.toggle('showArea')
+      imgElement.classList.toggle('showArea')
+      containerArea.classList.toggle('showArea')
+    
+    }
+    const button = document.querySelector('#toggle-button'); // Adjust the selector as needed
+    const button2 = document.querySelector('#toggle-button2'); // Adjust the selector as needed
+    button?.addEventListener('click', handleAddArea);
+    
+  
+    const containerWord = document.querySelector('.word-container');
+    function handleAddArea2 (e){
+      e.preventDefault();
+      e.stopPropagation();
+      containerWord.classList.toggle('showArea2');
+    }
+    const button12 = document.querySelector('#toggle-button2'); // Adjust the selector as needed
+    button12?.addEventListener('click', handleAddArea2);
+  });

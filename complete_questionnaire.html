@@ -147,12 +147,17 @@
                           </div>
                       </div>
                       <div class="first-part-container">
+                        <div class="add-concept-word__container">
+                          <button class="add-concept-word" id="toggle-button" type="button">اضف بعد</button>
+                          <button class="add-concept-word" id="toggle-button2" type="button">اضف عبارة</button>
+                        </div>
                         <header>
-                          <img src="./images/icons/dragdrop.svg" alt="drag drop icon"/>
-                          <p>البعد الاول</p>
+                          <img class="first-area-img" style="display: none;" src="./images/icons/dragdrop.svg" alt="drag drop icon"/>
+                          <p style="display: none;" class="first-area">البعد الاول</p>
                         </header>
+                        
                         <div class="form">
-                            <div class="form-item form-item-outer-area" id="containers-area">
+                            <div class="form-item form-item-outer-area form-item-outer-area-first" id="containers-area" style="display: none;">
                               <div class="area-form-item draggable" draggable="true">
                                 <img src="./images/icons/dragdrop.svg" alt="drog drop  icon"  />
                                 <input type="text" class="form-control general-control" id="exampleInputName" aria-describedby="textHelp" placeholder="العبارة ( مثال : ما سنك؟ )">
@@ -163,7 +168,7 @@
                               </div>
                             </div>
                             </div>
-                          <div class="concepts-container">
+                          <div class="concepts-container word-container" style="display: none;">
                             <p class="concepts">العبارات</p>
                             <div class="concepts-container-item" id="containers-concepts">
                               <div class="draggable" draggable="true">
@@ -190,7 +195,7 @@
                 </div>
                 <div class="add-section">
                   <img src="./images/icons/plus.svg" alt="add plus icon" onclick="addNewSectionSecondContainer()"/>
-                  <p onclick="addNewSectionSecondContainer()">أضف فقرة</p>
+                  <p id="add-section-button">أضف فقرة</p>
                 </div>
                 <!-- <div class="main-data" id="third-question-section">
                   

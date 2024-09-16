@@ -7094,3 +7094,26 @@ object-fit:cover;
   border-radius: 8px;
   margin-bottom: 10px;
 }
+
+.add-concept-word__container{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 3px;
+}
+.add-concept-word__container .add-concept-word{
+  border:none;
+  outline:none;
+  background-color: transparent;
+  color: #167CC8;
+  font-size: 18px;
+  padding-right:30px;
+  margin-bottom: 1rem;
+}
+
+.showArea{
+  display: block !important;
+}
+.showArea2{
+  display: block !important;
+}
