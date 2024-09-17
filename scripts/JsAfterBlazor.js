@@ -69,6 +69,8 @@ document?.addEventListener('DOMContentLoaded', function() {
     
 const draggables = document.querySelectorAll('.draggable');
 const draggables1 = document.querySelectorAll('.draggable1');
+const draggables12 = document.querySelectorAll('.draggable12');
+const draggables13 = document.querySelectorAll('.draggable13');
 const containers = document.querySelector('#containers');
 const containersArea = document.querySelector('#containers-area');
 const containerConcepts = document.querySelector('#containers-concepts');
@@ -82,6 +84,28 @@ draggables?.forEach(draggable=>{
 draggables?.forEach(draggable=>{
   draggable.addEventListener('dragend',()=>{
     draggable.classList.remove('dragging');
+  })
+})
+draggables12?.forEach(draggable=>{
+  draggable.addEventListener('dragstart',()=>{
+    draggable.classList.add('dragging12');
+  })
+})
+
+draggables12?.forEach(draggable=>{
+  draggable.addEventListener('dragend',()=>{
+    draggable.classList.remove('dragging12');
+  })
+})
+draggables13?.forEach(draggable=>{
+  draggable.addEventListener('dragstart',()=>{
+    draggable.classList.add('dragging13');
+  })
+})
+
+draggables13?.forEach(draggable=>{
+  draggable.addEventListener('dragend',()=>{
+    draggable.classList.remove('dragging13');
   })
 })
 // document.addEventListener('DOMContentLoaded', () => {
@@ -137,9 +161,9 @@ containerParent?.addEventListener('dragover',(e)=>{
 
 containerConcepts?.addEventListener('dragover',(e)=>{
     e.preventDefault();
-    const afterElement = getDragAfterElement(containerConcepts, e.clientY);
-    const draggable = document.querySelector('.dragging');
-    
+    const afterElement = getDragAfterElement13(containerConcepts, e.clientY);
+    const draggable = document.querySelector('.dragging13');
+      console.log("after ", afterElement)
     if (afterElement == null) {
       containerConcepts.appendChild(draggable);
     } else {
@@ -151,9 +175,9 @@ containerConcepts?.addEventListener('dragover',(e)=>{
 })
 containersArea?.addEventListener('dragover',(e)=>{
     e.preventDefault();
-    const afterElement = getDragAfterElement(containersArea, e.clientY);
-    const draggable = document.querySelector('.dragging');
-    
+    const afterElement = getDragAfterElement12(containersArea, e.clientY);
+    const draggable = document.querySelector('.dragging12');
+    console.log("dra ",draggable)
     if (afterElement == null) {
       containersArea.appendChild(draggable);
     } else {
@@ -178,8 +202,36 @@ function getDragAfterElement(container, y) {
     }
   }, null)?.element;
 }
+function getDragAfterElement13(container, y) {
+  const draggableElements = [...container.querySelectorAll('.draggable13:not(.dragging13)')];
+  
+  return draggableElements.reduce((closest, child) => {
+    const box = child.getBoundingClientRect();
+    const offset = y - box.top - box.height / 2;
+
+    if (offset < 0 && (closest === null || offset > closest.offset)) {
+      return { offset: offset, element: child };
+    } else {
+      return closest;
+    }
+  }, null)?.element;
+}
+function getDragAfterElement12(container, y) {
+  const draggableElements = [...container.querySelectorAll('.draggable12:not(.dragging12)')];
+  
+  return draggableElements.reduce((closest, child) => {
+    const box = child.getBoundingClientRect();
+    const offset = y - box.top - box.height / 2;
+
+    if (offset < 0 && (closest === null || offset > closest.offset)) {
+      return { offset: offset, element: child };
+    } else {
+      return closest;
+    }
+  }, null)?.element;
+}
 function getDragAfterElement1(container, y) {
-  const draggableElements = [...container.querySelectorAll('.draggable1:not(.dragging)')];
+  const draggableElements = [...container.querySelectorAll('.draggable1:not(.dragging1)')];
   
   return draggableElements.reduce((closest, child) => {
     const box = child.getBoundingClientRect();
@@ -401,9 +453,8 @@ function drop(e) {
 
     function addVariableItem(element) {
       var newDiv = document.createElement("div");
-      newDiv.className = "draggable";
-      newDiv.draggable = true;
-      newDiv.id = `new-drag-drop-${generateUniqueId()}`;
+      
+      // newDiv.id = `new-drag-drop-${generateUniqueId()}`;
     
       newDiv.innerHTML = `
           <img src="./images/icons/dragdrop.svg" alt="drag drop icon"/>
@@ -413,33 +464,99 @@ function drop(e) {
     
       // newDiv.addEventListener("dragstart", dragStart);
       // newDiv.addEventListener("dragend", dragEnd);
-    
+      newDiv.className = "draggable";
+      newDiv.draggable = true;
       element.closest(".draggable").before(newDiv);
     
       // // Update dragDrops array
       // dragDrops.push(newDiv);
     }
+    function addVariableItem3(element) {
+      var newDiv = document.createElement("div");
+      
+      // newDiv.id = `new-drag-drop-${generateUniqueId()}`;
+    
+      newDiv.innerHTML = `
+          <img src="./images/icons/dragdrop.svg" alt="drag drop icon"/>
+          <input type="text" class="form-control general-control second" id="exampleInputName" aria-describedby="textHelp" placeholder="المتغير الأول ( مثال : من 20 ل25 سنة )">
+          <div class="trash-icon"><button onclick="deleteItem13(this)"><img src="./images/icons/trash.svg" alt="trash icon" /></button></div>
+      `;
+    
+      // newDiv.addEventListener("dragstart", dragStart);
+      // newDiv.addEventListener("dragend", dragEnd);
+      newDiv.className = "draggable13";
+      newDiv.draggable = true;
+      // document.querySelector('#containers-concepts').before(newDiv);
+      const containerConcepts = element.closest('.concepts-container-item');
+  
+      if (containerConcepts) {
+        // Select the last draggable item
+        const lastDraggable = containerConcepts.querySelector('.draggable13:last-child');
+
+        if (lastDraggable) {
+            // Insert newDiv before the last draggable item
+            containerConcepts.insertBefore(newDiv, lastDraggable);
+        } else {
+            // If no last draggable item, just append the newDiv
+            containerConcepts.appendChild(newDiv);
+        }
+
+        // Initialize draggable functionality for the newDiv
+        initializeDraggable13(newDiv);
+    } else {
+        console.error("Container not found!");
+    }
+      // initializeDraggable13(newDiv)
+      // // Update dragDrops array
+      // dragDrops.push(newDiv);
+    }
+    function initializeDraggable13(element) {
+      element.addEventListener('dragstart', () => {
+        element.classList.add('dragging13');
+      });
+    
+      element.addEventListener('dragend', () => {
+        element.classList.remove('dragging13');
+      });
+    }
+    function initializeDraggable12(element) {
+      element.addEventListener('dragstart', () => {
+        element.classList.add('dragging12');
+      });
+    
+      element.addEventListener('dragend', () => {
+        element.classList.remove('dragging12');
+      });
+    }
     function addVariableItem2(element) {
       var newDiv = document.createElement("div");
-      newDiv.className = "area-form-item draggable";
-      newDiv.draggable = true;
+      newDiv.className = "area-form-item";
+      
       // newDiv.id = `new-drag-drop-${generateUniqueId()}`;
   
       newDiv.innerHTML = `
        <img src="./images/icons/dragdrop.svg" alt="drog drop  icon"  />
           <input type="text" class="form-control general-control second" aria-describedby="textHelp" placeholder="المتغير الأول ( مثال : من 20 ل25 سنة )">
-          <div class="trash-icon"><button onclick="deleteItem(this)"><img src="./images/icons/trash.svg" alt="trash icon" /></button></div>
+          <div class="trash-icon"><button onclick="deleteItem12(this)"><img src="./images/icons/trash.svg" alt="trash icon" /></button></div>
       `;
       newDiv.style.marginTop='10px'
+      newDiv.classList.add('draggable12')
+      newDiv.draggable = true;
       // Insert the new div before the current "add-variable" element
       const areaFormItem = element?.closest(".form-item-outer-area");
       areaFormItem?.insertBefore(newDiv, areaFormItem.firstChild);
-
+      initializeDraggable12(newDiv)
   }
   
 
     function deleteItem(element) {
         element.closest(".draggable").remove();
+    }
+    function deleteItem12(element) {
+        element.closest(".draggable12").remove();
+    }
+    function deleteItem13(element) {
+        element.closest(".draggable13").remove();
     }
 
     function addNewSection() {
@@ -576,9 +693,9 @@ function drop(e) {
 function addNewSectionSecondContainer() {
   // Create a new div element
   const newSection = document.createElement("div");
-  newSection.classList.add("main-data-content");
+  newSection.classList.add("main-data-content","draggable1");
   newSection.id = `second-question-section`;
-  // newSection.draggable=true;
+  newSection.draggable=true;
   sectionCount++;
   const randomColor = getRandomColor();
   const getRandomNum = randomNums[sectionCount]
@@ -617,7 +734,7 @@ function addNewSectionSecondContainer() {
                       </header>
                       <div class="form" >
                         <div class="form-item form-item-outer-area form-item-outer-area-first" id="containers-area" style="display: none;">
-                          <div class="area-form-item draggable" draggable="true">
+                          <div class="area-form-item draggable12" draggable="true">
                                 <img src="./images/icons/dragdrop.svg" alt="drog drop  icon"  />
                                 <input type="text" class="form-control general-control" id="exampleInputName" aria-describedby="textHelp" placeholder="العبارة ( مثال : ما سنك؟ )">
                                 <div class="add-variable">
@@ -630,17 +747,17 @@ function addNewSectionSecondContainer() {
                         <div class="concepts-container word-container" style="display: none;">
                           <p class="concepts">العبارات</p>
                           <div class="concepts-container-item" id="containers-concepts">
-                            <div class="draggable" draggable="true">
+                            <div class="draggable13" draggable="true">
                               <img src="./images/icons/dragdrop.svg" alt="drag drop icon"/>
                               <input type="text" class="form-control general-control second" id="exampleInputName" aria-describedby="textHelp" placeholder="المتغير الأول ( مثال : من 20 ل25 سنة )">
                               <div class="trash-icon"><button onclick="deleteItem(this)"><img src="./images/icons/trash.svg" alt="trash icon" /></button></div>
                             </div>
-                            <div class="draggable" draggable="true">
+                            <div class="draggable13" draggable="true">
                               <img src="./images/icons/dragdrop.svg" alt="drag drop icon"/>
                               <input type="text" class="form-control general-control second" id="exampleInputName" aria-describedby="textHelp" placeholder="المتغير الأول ( مثال : من 20 ل25 سنة )">
                               <div class="add-variable">
-                                <img src="./images/icons/plus.svg" alt="plus icon" onclick="addVariableItem(this)"/>
-                                <p onclick="addVariableItem(this)" id="add-variable-small">أضف متغير</p>
+                                <img src="./images/icons/plus.svg" alt="plus icon" onclick="addVariableItem3(this)"/>
+                                <p onclick="addVariableItem3(this)" id="add-variable-small">أضف متغير</p>
                               </div>
                             </div>
                           </div>
@@ -660,8 +777,8 @@ function addNewSectionSecondContainer() {
     console.error("Element with ID #main-data-content-container2 not found!");
   }
   initializeEventListeners(newSection);
-  initializeDragAndDrop10(newSection.querySelector('#containers-area'));
-  initializeDragAndDrop10(newSection.querySelector('#containers-concepts'));
+  initializeDragAndDrop12(newSection.querySelector('#containers-area'));
+  initializeDragAndDrop13(newSection.querySelector('#containers-concepts'));
 
   newSection.classList.add('draggable1');
   newSection.setAttribute('draggable', true);
@@ -687,23 +804,50 @@ document.addEventListener("DOMContentLoaded", function() {
   addSectionButton.addEventListener('click', addNewSectionSecondContainer);
 }); 
 
-function initializeDragAndDrop10(container) {
-  const draggables = container.querySelectorAll('.draggable1');
+function initializeDragAndDrop12(container) {
+  const draggables = container.querySelectorAll('.draggable12');
 
   draggables.forEach(draggable => {
     draggable.addEventListener('dragstart', () => {
-      draggable.classList.add('dragging1');
+      draggable.classList.add('dragging12');
     });
 
     draggable.addEventListener('dragend', () => {
-      draggable.classList.remove('dragging1');
+      draggable.classList.remove('dragging12');
     });
   });
 
   container.addEventListener('dragover', (e) => {
     e.preventDefault();
-    const afterElement = getDragAfterElement(container, e.clientY);
-    const draggable = container.querySelector('.dragging1');
+    const afterElement = getDragAfterElement12(container, e.clientY);
+    const draggable = container.querySelector('.dragging12');
+
+    if (!draggable) return;
+
+    if (afterElement == null) {
+      container.appendChild(draggable);
+    } else {
+      container.insertBefore(draggable, afterElement);
+    }
+  });
+}
+function initializeDragAndDrop13(container) {
+  const draggables = container.querySelectorAll('.draggable13');
+
+  draggables.forEach(draggable => {
+    draggable.addEventListener('dragstart', () => {
+      draggable.classList.add('dragging13');
+    });
+
+    draggable.addEventListener('dragend', () => {
+      draggable.classList.remove('dragging13');
+    });
+  });
+
+  container.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    const afterElement = getDragAfterElement13(container, e.clientY);
+    const draggable = container.querySelector('.dragging13');
 
     if (!draggable) return;
 
@@ -715,10 +859,10 @@ function initializeDragAndDrop10(container) {
   });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  const secondContainer = document.querySelector(".section-second-container");
-  initDragAndDrop1(secondContainer);
-});
+// document.addEventListener("DOMContentLoaded", () => {
+//   const secondContainer = document.querySelector(".section-second-container");
+//   initDragAndDrop1(secondContainer);
+// });
 
     function addNewSectionThirdContainer() {
         // Create a new div element

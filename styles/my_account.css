@@ -3768,6 +3768,8 @@ margin-bottom: 2rem;
   border-radius: 8px;
   border: 1px solid #DEEEFA;
 }
+.draggable13,
+.draggable12,
 .drag-drop,.draggable{
   display: flex;
   justify-content: flex-start;
@@ -3775,22 +3777,30 @@ margin-bottom: 2rem;
   gap: 1.2rem;
   margin-bottom: 2rem;
 }
+.draggable13 img,
+.draggable12 img,
 .draggable img,.drag-drop img{
   width: 24px;
   height: 24px;
   object-fit: cover;
 }
+.draggable13 .second,
+.draggable12 .second,
 .draggable .second,
 .drag-drop .second{
   width: 86%;
 }
 
 @media (max-width:800px) {
+  .draggable13 .second,
   .draggable .second,
+  .draggable12 .second,
   .drag-drop .second{
     width: 100%;
   }
 }
+.draggable13:last-of-type,
+.draggable12:last-of-type,
 .draggable:last-of-type,
 .drag-drop:last-of-type{
   margin-bottom: 0px;
@@ -7081,6 +7091,8 @@ object-fit:cover;
   justify-content: flex-start;
   align-items: center;
 }
+.draggable13,
+.draggable12,
 .draggable1,
 .draggable{
   cursor: move;
@@ -7091,7 +7103,12 @@ object-fit:cover;
 }
 .draggable1.dragging1{
   opacity:0.7;
-
+}
+.draggable12.dragging12{
+  opacity:0.7;
+}
+.draggable13.dragging13{
+  opacity:0.7;
 }
 
 #second-question-section .section-second-container{
