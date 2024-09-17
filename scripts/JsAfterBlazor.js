@@ -467,7 +467,7 @@ function drop(e) {
       newDiv.className = "draggable";
       newDiv.draggable = true;
       element.closest(".draggable").before(newDiv);
-    
+      initializeDraggable1(newDiv)
       // // Update dragDrops array
       // dragDrops.push(newDiv);
     }
@@ -510,9 +510,18 @@ function drop(e) {
       // // Update dragDrops array
       // dragDrops.push(newDiv);
     }
+    function initializeDraggable1(element) {
+      element.addEventListener('dragstart', () => {
+        element.classList.add('dragging');
+      });
+    
+      element.addEventListener('dragend', () => {
+        element.classList.remove('dragging');
+      });
+    }
     function initializeDraggable13(element) {
       element.addEventListener('dragstart', () => {
-        element.classList.add('dragging13');
+        element.classList.add('dragging');
       });
     
       element.addEventListener('dragend', () => {
