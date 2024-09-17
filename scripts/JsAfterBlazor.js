@@ -1112,8 +1112,9 @@ document.addEventListener("DOMContentLoaded", () => {
     
   });
   function initializeEventListeners(section) {
-    const toggleButton = section.querySelector('.add-concept-word__container > .add-concept-word:first-child');
-    const toggleButton2 = section.querySelector('.add-concept-word__container > .add-concept-word:last-child');
+    const toggleButton = section.querySelector('.add-concept-word__container >.add-concept-word:first-child');
+    const toggleButton2 = section.querySelector('#toggle-button2');
+    console.log(section.querySelector('.add-concept-word__container '))
     const pElement = section.querySelector('.first-area');
     const imgElement = section.querySelector('header > img');
     const containerArea = section.querySelector('.form-item-outer-area');
