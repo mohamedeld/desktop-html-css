@@ -48,10 +48,10 @@ document?.addEventListener('DOMContentLoaded', function() {
             //console.log("click")
 
             event.preventDefault();
-            tabs.forEach(tab => tab.classList.remove('active'));
+            tabs?.forEach(tab => tab.classList.remove('active'));
             tab.classList.add('active');
 
-            contentContainers.forEach(container => container.style.display = 'none');
+            contentContainers?.forEach(container => container.style.display = 'none');
             contentContainers[index].style.display = 'block';
         });
     });
@@ -68,9 +68,11 @@ document?.addEventListener('DOMContentLoaded', function() {
 
     
 const draggables = document.querySelectorAll('.draggable');
+const draggables1 = document.querySelectorAll('.draggable1');
 const containers = document.querySelector('#containers');
 const containersArea = document.querySelector('#containers-area');
 const containerConcepts = document.querySelector('#containers-concepts');
+const containerParent = document.querySelector('#main-data-content-container2');
 draggables?.forEach(draggable=>{
   draggable.addEventListener('dragstart',()=>{
     draggable.classList.add('dragging');
@@ -82,6 +84,20 @@ draggables?.forEach(draggable=>{
     draggable.classList.remove('dragging');
   })
 })
+// document.addEventListener('DOMContentLoaded', () => {
+// draggables1?.forEach(draggable=>{
+//   draggable.addEventListener('dragstart',()=>{
+//     draggable.classList.add('dragging1');
+//   })
+// })
+// })
+// document.addEventListener('DOMContentLoaded', () => {
+// draggables1?.forEach(draggable=>{
+//   draggable.addEventListener('dragend',()=>{
+//     draggable.classList.remove('dragging1');
+//   })
+// })
+// })
 
   containers?.addEventListener('dragover',(e)=>{
     e.preventDefault();
@@ -97,6 +113,28 @@ draggables?.forEach(draggable=>{
   
 
 })
+// document.addEventListener('DOMContentLoaded', () => {
+
+containerParent?.addEventListener('dragover',(e)=>{
+    e.preventDefault();
+    const afterElement = getDragAfterElement1(containerParent, e.clientY);
+   
+    const draggable = document.querySelector('.dragging1');
+    if (!draggable) { // Check if draggable element exists
+      console.error("Draggable element not found!");
+      return; // Or handle the scenario differently (e.g., show a message)
+    }
+    if (afterElement == null) {
+      containerParent.appendChild(draggable);
+    } else {
+      containerParent?.insertBefore(draggable, afterElement);
+      
+    }
+  
+
+})
+// })
+
 containerConcepts?.addEventListener('dragover',(e)=>{
     e.preventDefault();
     const afterElement = getDragAfterElement(containerConcepts, e.clientY);
@@ -140,6 +178,61 @@ function getDragAfterElement(container, y) {
     }
   }, null)?.element;
 }
+function getDragAfterElement1(container, y) {
+  const draggableElements = [...container.querySelectorAll('.draggable1:not(.dragging)')];
+  
+  return draggableElements.reduce((closest, child) => {
+    const box = child.getBoundingClientRect();
+    const offset = y - box.top - box.height / 2;
+
+    if (offset < 0 && (closest === null || offset > closest.offset)) {
+      return { offset: offset, element: child };
+    } else {
+      return closest;
+    }
+  }, null)?.element;
+}
+// let draggedElement = null;
+
+// containerParent?.addEventListener('dragstart', (e) => {
+//   const target = e.target.closest('.draggable1');
+//   if (target) {
+//     draggedElement = target;
+//     e.dataTransfer.setData('text/plain', '');
+//     e.dataTransfer.effectAllowed = 'move';
+//   }
+// });
+
+// containerParent?.addEventListener('dragover', (e) => {
+//   e.preventDefault();
+//   const afterElement = getDragAfterElement1(containerParent, e.clientY);
+  
+//   if (afterElement == null) {
+//     containerParent.prepend(draggedElement);
+//   } else {
+//     containerParent.insertBefore(draggedElement, afterElement);
+//   }
+// });
+
+// containerParent?.addEventListener('dragend', () => {
+//   draggedElement = null;
+// });
+
+// function getDragAfterElement1(container, y) {
+//   const draggableElements = [...container.querySelectorAll('.draggable1:not(.dragging)')];
+  
+//   return draggableElements.reduce((closest, child) => {
+//     const box = child.getBoundingClientRect();
+//     const offset = box.top + box.height / 2 - y;
+
+//     if (offset >= 0 && (closest === null || offset < closest.offset)) {
+//       return { offset: offset, element: child };
+//     } else {
+//       return closest;
+//     }
+//   }, null)?.element;
+// }
+
 // Function to generate a unique ID
 function generateUniqueId() {
   return Math.random().toString(36).substr(2, 9);
@@ -151,14 +244,14 @@ let dragDrops = [];
 // Function to initialize drag and drop functionality
 function initDragAndDrop() {
   // Find all .drag-drop elements and assign unique IDs
-  document.querySelectorAll(".drag-drop").forEach((item, index) => {
+  document.querySelectorAll(".drag-drop")?.forEach((item, index) => {
     item.id = `drag-drop-${index}`;
     item.setAttribute("draggable", true);
     dragDrops.push(item);
   });
 
   // Add event listeners to all .drag-drop elements
-  dragDrops.forEach((item) => {
+  dragDrops?.forEach((item) => {
     item.addEventListener("dragstart", dragStart);
     item.addEventListener("dragend", dragEnd);
   });
@@ -247,7 +340,7 @@ function drop(e) {
     //console.log(tabsArb)
     // Ensure the first tab is active and its content is shown on initial load
     tabsArb[0]?.classList?.add('active'); // Make sure the first tab is active
-    contentContainersArb.forEach((container, index) => {
+    contentContainersArb?.forEach((container, index) => {
         container.style.display = index === 0 ? 'block' : 'none'; // Show first content container, hide others
     });
 
@@ -267,7 +360,7 @@ function drop(e) {
     const helpMessages = document.querySelectorAll(".to-help");
     const icons = document.querySelectorAll("#redicon");
 
-    icons.forEach((icon, index) => {
+    icons?.forEach((icon, index) => {
         icon.addEventListener('mouseenter', () => {
             if (helpMessages[index]) {
                 helpMessages[index].classList.add("show-red-message");
@@ -390,7 +483,7 @@ function drop(e) {
     function initializeDragAndDrop10(container) {
       const draggables = container.querySelectorAll('.draggable');
     
-      draggables.forEach(draggable => {
+      draggables?.forEach(draggable => {
         draggable.addEventListener('dragstart', () => {
           draggable.classList.add('dragging');
         });
@@ -484,8 +577,8 @@ function addNewSectionSecondContainer() {
   // Create a new div element
   const newSection = document.createElement("div");
   newSection.classList.add("main-data-content");
-  newSection.id = `new-question-section-${generateUniqueId()}`;
-
+  newSection.id = `second-question-section`;
+  // newSection.draggable=true;
   sectionCount++;
   const randomColor = getRandomColor();
   const getRandomNum = randomNums[sectionCount]
@@ -514,14 +607,16 @@ function addNewSectionSecondContainer() {
                     <div class="first-part-container">
                     <div class="add-concept-word__container">
                           <button class="add-concept-word" id="toggle-button" type="button">اضف بعد</button>
+                          <button class="remove-concept-word" style="display: none;">احذف البعد</button>
                           <button class="add-concept-word" id="toggle-button2" type="button">اضف عبارة</button>
+                           <button class="remove-concept-word1" type="button" style="display: none;">احذف العبارة</button>
                         </div>
                       <header>
                         <img src="./images/icons/dragdrop.svg" alt="drag drop icon" style="display: none;"/>
                         <p style="display: none;" class="first-area">البعد الاول</p>
                       </header>
                       <div class="form" >
-                        <div class="form-item form-item-outer-area" id="containers-area" style="display: none;">
+                        <div class="form-item form-item-outer-area form-item-outer-area-first" id="containers-area" style="display: none;">
                           <div class="area-form-item draggable" draggable="true">
                                 <img src="./images/icons/dragdrop.svg" alt="drog drop  icon"  />
                                 <input type="text" class="form-control general-control" id="exampleInputName" aria-describedby="textHelp" placeholder="العبارة ( مثال : ما سنك؟ )">
@@ -532,7 +627,7 @@ function addNewSectionSecondContainer() {
                               </div>
                             </div>
                         </div>
-                        <div class="concepts-container" style="display: none;">
+                        <div class="concepts-container word-container" style="display: none;">
                           <p class="concepts">العبارات</p>
                           <div class="concepts-container-item" id="containers-concepts">
                             <div class="draggable" draggable="true">
@@ -558,10 +653,31 @@ function addNewSectionSecondContainer() {
   newSection.style.border = `1px solid ${randomColor}`;
 
   // Insert the new section after the first one
-  const firstSection = document.querySelector(".main-data");
-  firstSection.appendChild(newSection);
+  const firstSection = document.querySelector("#main-data-content-container2");
+  if (firstSection) {
+    firstSection.appendChild(newSection);
+  } else {
+    console.error("Element with ID #main-data-content-container2 not found!");
+  }
+  initializeEventListeners(newSection);
   initializeDragAndDrop10(newSection.querySelector('#containers-area'));
   initializeDragAndDrop10(newSection.querySelector('#containers-concepts'));
+
+  newSection.classList.add('draggable1');
+  newSection.setAttribute('draggable', true);
+
+  // Add event listener for dragstart
+  newSection?.addEventListener('dragstart', (e) => {
+    e.dataTransfer.setData('text/plain', e.target.id);
+    e.target.classList.add('dragging1');
+  });
+  newSection?.addEventListener('dragstart', () => {
+    newSection.classList.add('dragging1');
+  });
+  // Add event listener for dragend
+  newSection?.addEventListener('dragend', () => {
+    newSection.classList.remove('dragging1');
+  });
 }
 document.addEventListener("DOMContentLoaded", function() {
   // This code runs after the DOM is fully loaded
@@ -570,6 +686,35 @@ document.addEventListener("DOMContentLoaded", function() {
   const addSectionButton = document.querySelector('#add-section-button'); // Adjust the selector as needed
   addSectionButton.addEventListener('click', addNewSectionSecondContainer);
 }); 
+
+function initializeDragAndDrop10(container) {
+  const draggables = container.querySelectorAll('.draggable1');
+
+  draggables.forEach(draggable => {
+    draggable.addEventListener('dragstart', () => {
+      draggable.classList.add('dragging1');
+    });
+
+    draggable.addEventListener('dragend', () => {
+      draggable.classList.remove('dragging1');
+    });
+  });
+
+  container.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    const afterElement = getDragAfterElement(container, e.clientY);
+    const draggable = container.querySelector('.dragging1');
+
+    if (!draggable) return;
+
+    if (afterElement == null) {
+      container.appendChild(draggable);
+    } else {
+      container.insertBefore(draggable, afterElement);
+    }
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   const secondContainer = document.querySelector(".section-second-container");
   initDragAndDrop1(secondContainer);
@@ -764,10 +909,10 @@ document.addEventListener("DOMContentLoaded", () => {
             day.innerHTML = lit;
         }
         const days = document.querySelectorAll('.day');
-        days.forEach(day => {
+        days?.forEach(day => {
             day.addEventListener('click', function () {
                 // Remove 'selected-day' class from all days
-                days.forEach(d => d.classList.remove('selected-day'));
+                days?.forEach(d => d.classList.remove('selected-day'));
                 // Add 'selected-day' class to the clicked day
                 this.classList.add('selected-day');
             });
@@ -917,6 +1062,8 @@ document.addEventListener("DOMContentLoaded", () => {
         e.preventDefault();
         mainRate.style.display = "none"
     })
+    const deleteButton = document.querySelector('.remove-concept-word');
+
     document?.addEventListener('DOMContentLoaded', function() {
     const pElement = document.querySelector('.first-area')
     const imgElement = document.querySelector('.first-area-img');
@@ -924,22 +1071,129 @@ document.addEventListener("DOMContentLoaded", () => {
     function handleAddArea (e){
       e.preventDefault();
       e.stopPropagation()
-      pElement.classList.toggle('showArea')
-      imgElement.classList.toggle('showArea')
-      containerArea.classList.toggle('showArea')
-    
+      pElement.classList.add('showArea')
+      imgElement.classList.add('showArea')
+      containerArea.classList.add('showArea')
+      this.style.display='none';
+      deleteButton.style.display='block';
     }
     const button = document.querySelector('#toggle-button'); // Adjust the selector as needed
     const button2 = document.querySelector('#toggle-button2'); // Adjust the selector as needed
     button?.addEventListener('click', handleAddArea);
     
-  
+
+    deleteButton?.addEventListener('click',function(e){
+      e.preventDefault();
+      e.stopPropagation()
+      pElement.classList.remove('showArea')
+      imgElement.classList.remove('showArea')
+      containerArea.classList.remove('showArea')
+      button.style.display='block';
+      this.style.display='none';
+    })
+    const removeConcept = document.querySelector('.remove-concept-word1');
     const containerWord = document.querySelector('.word-container');
     function handleAddArea2 (e){
       e.preventDefault();
       e.stopPropagation();
-      containerWord.classList.toggle('showArea2');
+      containerWord.classList.add('showArea2');
+      this.style.display='none';
+      removeConcept.style.display='block'
     }
     const button12 = document.querySelector('#toggle-button2'); // Adjust the selector as needed
     button12?.addEventListener('click', handleAddArea2);
+    removeConcept?.addEventListener('click',function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      containerWord.classList.remove('showArea2');
+      this.style.display='none';
+      button12.style.display='block'
+    })
+    
   });
+  function initializeEventListeners(section) {
+    const toggleButton = section.querySelector('.add-concept-word__container > .add-concept-word:first-child');
+    const toggleButton2 = section.querySelector('.add-concept-word__container > .add-concept-word:last-child');
+    const pElement = section.querySelector('.first-area');
+    const imgElement = section.querySelector('header > img');
+    const containerArea = section.querySelector('.form-item-outer-area');
+    const containerWord = section.querySelector('.concepts-container');
+    const removeConcept = section.querySelector('.remove-concept-word');
+    const removeConcept2 = section.querySelector('.remove-concept-word1');
+
+    // Debugging: Check if buttons are found
+    console.log('Toggle Button:', toggleButton);
+    console.log('Toggle Button 2:', toggleButton2);
+
+    if (toggleButton) {
+        toggleButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            handleAddArea(pElement, imgElement, containerArea);
+            toggleButton.style.display = 'none';
+            if (removeConcept) {
+                removeConcept.style.display = 'block';
+            }
+        });
+    }
+
+    if (toggleButton2) {
+        toggleButton2.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            handleAddArea2(containerWord);
+            toggleButton2.style.display = 'none';
+            if (removeConcept2) {
+                removeConcept2.style.display = 'block';
+            }
+        });
+    }
+
+    if (removeConcept) {
+        removeConcept.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            pElement.classList.remove('showArea');
+            imgElement.classList.remove('showArea');
+            containerArea.classList.remove('showArea');
+            toggleButton.style.display = 'block';
+            removeConcept.style.display = 'none';
+        });
+    }
+
+    if (removeConcept2) {
+        removeConcept2.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            containerWord.classList.remove('showArea2');
+            removeConcept2.style.display = 'none';
+            toggleButton2.style.display = 'block';
+        });
+    }
+}
+  // function initializeEventListeners(section) {
+  //   const toggleButton = section.querySelector('.add-concept-word__container > .add-concept-word:first-child');
+  //   const toggleButton2 = section.querySelector('.add-concept-word__container > .add-concept-word:last-child');
+  //   const pElement = section.querySelector('.first-area');
+  //   const imgElement = section.querySelector('header > img');
+  //   const containerArea = section.querySelector('.form-item-outer-area');
+  //   const containerWord = section.querySelector('.concepts-container');
+  
+  //   if (toggleButton) {
+  //     toggleButton.addEventListener('click', () => handleAddArea(pElement, imgElement, containerArea));
+  //   }
+  
+  //   if (toggleButton2) {
+  //     toggleButton2.addEventListener('click', () => handleAddArea2(containerWord));
+  //   }
+  // }
+  
+  function handleAddArea(pElement, imgElement, containerArea) {
+    pElement.classList.toggle('showArea');
+    imgElement.classList.toggle('showArea');
+    containerArea.classList.toggle('showArea');
+  }
+  
+  function handleAddArea2(containerWord) {
+    containerWord.classList.toggle('showArea2');
+  }
