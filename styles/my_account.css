@@ -3877,7 +3877,7 @@ margin-bottom: 2rem;
   margin-bottom: 2rem;
 }
 .first-part-container header{
-  padding: 0rem 1.6rem;
+  padding: 0rem 0rem 0rem 1.6rem;
   display: flex;
   justify-content: flex-start;
   align-items: center;

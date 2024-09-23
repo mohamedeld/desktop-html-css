@@ -72,8 +72,8 @@ const draggables1 = document.querySelectorAll('.draggable1');
 const draggables12 = document.querySelectorAll('.draggable12');
 const draggables13 = document.querySelectorAll('.draggable13');
 const containers = document.querySelector('#containers');
-const containersArea = document.querySelector('#containers-area');
-const containerConcepts = document.querySelector('#containers-concepts');
+// const containersArea = document.querySelector('#containers-area');
+// const containerConcepts = document.querySelector('#containers-concepts');
 const containerParent = document.querySelector('#main-data-content-container2');
 draggables?.forEach(draggable=>{
   draggable.addEventListener('dragstart',()=>{
@@ -108,6 +108,85 @@ draggables13?.forEach(draggable=>{
     draggable.classList.remove('dragging13');
   })
 })
+
+let areaIndex=0;
+
+function addFirstSuccessArea(){
+  const newDiv = document?.createElement('div');
+  
+  newDiv.style.border='1px solid #167CC8';
+  newDiv.style.width='100%';
+  newDiv.style.padding='1rem';
+  newDiv.style.borderRadius='8px';
+  newDiv.style.margin='10px -22px 10px 0px';
+  areaIndex++;
+  let contentParagrpah = `البعد ${areaIndex}`;
+  
+  newDiv.innerHTML = `
+                    <div style="flex:1;">
+                       <header>                                    <img class="first-area-img"  src="./images/icons/dragdrop.svg" alt="drag drop icon"/>
+                                    <p class="first-area">${contentParagrpah}</p>
+                      </header>
+                                 <div className="firstarea " id="containers-area" >
+                                  <div class="area-form-item draggable12" draggable="true">
+                                    <img src="./images/icons/dragdrop.svg" alt="drog drop  icon"  />
+                                    <input type="text" class="form-control general-control" id="exampleInputName" aria-describedby="textHelp" placeholder="العبارة ( مثال : ما سنك؟ )">
+                                    <div class="trash-icon"><button onclick="deleteItem12(this)"><img src="./images/icons/trash.svg" alt="trash icon" /></button></div>
+                                </div>
+                                <div class="area-form-item draggable12" style="margin-top:10px" draggable="true">
+                                    <img src="./images/icons/dragdrop.svg" alt="drog drop  icon"  />
+                                    <input type="text" class="form-control general-control" id="exampleInputName" aria-describedby="textHelp" placeholder="العبارة ( مثال : ما سنك؟ )">
+                                    <div class="add-variable">
+                                      <img src="./images/icons/plus.svg" alt="plus icon" onclick="addVariableItem2(this)"/>
+                                      <p onclick="addVariableItem2(this)" id="add-variable-small">أضف متغير</p>
+                                  </div>
+                                </div>
+                                 </div>
+                    </div>
+                              
+  `;
+  document.querySelector('#containers-data')?.appendChild(newDiv);
+  const container = newDiv.querySelector('#containers-area');
+  initialDragAndDrop12(container);
+}
+function initialDragAndDrop12(container){
+  const draggables = container.querySelectorAll('.draggable12');
+  
+  draggables.forEach(draggable => {
+    draggable.addEventListener('dragstart', () => {
+      draggable.classList.add('dragging12');
+    });
+
+    draggable.addEventListener('dragend', () => {
+      draggable.classList.remove('dragging12');
+    });
+  });
+
+  container.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    const afterElement = getDragAfterElement12(container, e.clientY);
+    const draggable = container.querySelector('.dragging12');
+
+    if (!draggable) return;
+
+    if (afterElement == null) {
+      container.appendChild(draggable);
+    } else {
+      container.insertBefore(draggable, afterElement);
+    }
+  });
+  
+}
+// function initializeDragAndDrop12(container) {
+  
+// }
+document.addEventListener("DOMContentLoaded", function (e){
+  e?.preventDefault();
+  document?.querySelector('#toggle-button').addEventListener('click',(e)=>{
+    e?.preventDefault();
+    addFirstSuccessArea()
+  })
+});
 // document.addEventListener('DOMContentLoaded', () => {
 // draggables1?.forEach(draggable=>{
 //   draggable.addEventListener('dragstart',()=>{
@@ -139,55 +218,108 @@ draggables13?.forEach(draggable=>{
 })
 // document.addEventListener('DOMContentLoaded', () => {
 
-containerParent?.addEventListener('dragover',(e)=>{
-    e.preventDefault();
-    const afterElement = getDragAfterElement1(containerParent, e.clientY);
+// containerParent?.addEventListener('dragover',(e)=>{
+//     e.preventDefault();
+//     const afterElement = getDragAfterElement1(containerParent, e.clientY);
    
-    const draggable = document.querySelector('.dragging1');
-    if (!draggable) { // Check if draggable element exists
-      console.error("Draggable element not found!");
-      return; // Or handle the scenario differently (e.g., show a message)
-    }
-    if (afterElement == null) {
-      containerParent.appendChild(draggable);
-    } else {
-      containerParent?.insertBefore(draggable, afterElement);
+//     const draggable = document.querySelector('.dragging1');
+//     if (!draggable) { // Check if draggable element exists
+//       console.error("Draggable element not found!");
+//       return; // Or handle the scenario differently (e.g., show a message)
+//     }
+//     if (afterElement == null) {
+//       containerParent.appendChild(draggable);
+//     } else {
+//       containerParent?.insertBefore(draggable, afterElement);
       
-    }
+//     }
   
 
-})
+// })
 // })
 
-containerConcepts?.addEventListener('dragover',(e)=>{
-    e.preventDefault();
-    const afterElement = getDragAfterElement13(containerConcepts, e.clientY);
-    const draggable = document.querySelector('.dragging13');
-      console.log("after ", afterElement)
-    if (afterElement == null) {
-      containerConcepts.appendChild(draggable);
-    } else {
-      containerConcepts.insertBefore(draggable, afterElement);
+// containerConcepts?.addEventListener('dragover',(e)=>{
+//     e.preventDefault();
+//     const afterElement = getDragAfterElement13(containerConcepts, e.clientY);
+//     const draggable = document.querySelector('.dragging13');
+//       console.log("after ", afterElement)
+//     if (afterElement == null) {
+//       containerConcepts.appendChild(draggable);
+//     } else {
+//       containerConcepts.insertBefore(draggable, afterElement);
       
-    }
-  
+//     }
+// })
 
-})
-containersArea?.addEventListener('dragover',(e)=>{
-    e.preventDefault();
-    const afterElement = getDragAfterElement12(containersArea, e.clientY);
-    const draggable = document.querySelector('.dragging12');
-    console.log("dra ",draggable)
-    if (afterElement == null) {
-      containersArea.appendChild(draggable);
-    } else {
-      containersArea.insertBefore(draggable, afterElement);
+let conceptIndex=0;
+function addNewConceptsSuccess(){
+  const newDiv = document.createElement('div');
+  newDiv.style.border='1px solid #167CC8';
+  newDiv.style.width='100%';
+  newDiv.style.padding='1rem';
+  newDiv.style.borderRadius='8px';
+  newDiv.style.margin='10px 0px 10px 0px';
+  conceptIndex++;
+  let paragraphIndex= `العبارة رثم ${conceptIndex}`
+  newDiv.innerHTML = `
+                                  <p class="concepts">${paragraphIndex}</p>
+                              <div class="concepts-container-item" id="containers-concepts">
+                                <div class="draggable13" draggable="true">
+                                  <img src="./images/icons/dragdrop.svg" alt="drag drop icon"   />
+                                  <input type="text" class="form-control general-control second" id="exampleInputName" aria-describedby="textHelp" placeholder="المتغير الأول ( مثال : من 20 ل25 سنة )">
+                                  <div class="trash-icon"><button onclick="deleteItem(this)"><img src="./images/icons/trash.svg" alt="trash icon" /></button></div>
+                                </div>
+                                <div class="draggable13" draggable="true">
+                                  <img src="./images/icons/dragdrop.svg" alt="drag drop icon" />
+                                  <input type="text" class="form-control general-control second" id="exampleInputName" aria-describedby="textHelp" placeholder="المتغير الأول ( مثال : من 20 ل25 سنة )">
+                                  <div class="add-variable">
+                                    <img src="./images/icons/plus.svg" alt="plus icon" onclick="addVariableItem3(this)"/>
+                                    <p onclick="addVariableItem3(this)" id="add-variable-small">أضف متغير</p>
+                                  </div>
+                                </div>
+                              </div>
+                                
+  `;
+
+  document.querySelector('#full-container-concept').appendChild(newDiv);
+  const container = newDiv.querySelector('#containers-concepts');
+  initializeDragAndDropForContainer(container)
+  // initializeDraggable13(newDiv)
+}
+function initializeDragAndDropForContainer(container) {
+  const draggables = container.querySelectorAll('.draggable13');
+
+  draggables.forEach(draggable => {
+      draggable.addEventListener('dragstart', () => {
+          draggable.classList.add('dragging13');
+      });
+
+      draggable.addEventListener('dragend', () => {
+          draggable.classList.remove('dragging13');
+      });
+  });
+
+  container.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      const afterElement = getDragAfterElement13(container, e.clientY);
+      const draggable = container.querySelector('.dragging13');
       
-    }
-  
+      if (!draggable) return;
 
-})
-
+      if (afterElement == null) {
+          container.appendChild(draggable);
+      } else {
+          container.insertBefore(draggable, afterElement);
+      }
+  });
+}
+document.addEventListener("DOMContentLoaded", function (e){
+  e?.preventDefault();
+  document?.querySelector('#toggle-button2').addEventListener('click',(e)=>{
+    e?.preventDefault();
+    addNewConceptsSuccess()
+  })
+});
 function getDragAfterElement(container, y) {
   const draggableElements = [...container.querySelectorAll('.draggable:not(.dragging)')];
   
@@ -315,6 +447,7 @@ function initDragAndDrop() {
 
 // Call initDragAndDrop function after DOM content has loaded
 document.addEventListener("DOMContentLoaded", initDragAndDrop);
+
 
 function dragStart(e) {
   e.dataTransfer.setData("text/plain", e.target.id);
@@ -486,12 +619,8 @@ function drop(e) {
       // newDiv.addEventListener("dragend", dragEnd);
       newDiv.className = "draggable13";
       newDiv.draggable = true;
-      // document.querySelector('#containers-concepts').before(newDiv);
-      const containerConcepts = element.closest('.concepts-container-item');
-  
-      if (containerConcepts) {
-        // Select the last draggable item
-        const lastDraggable = containerConcepts.querySelector('.draggable13:last-child');
+        const containerConcepts = element.closest('.concepts-container-item');
+      const lastDraggable = containerConcepts.querySelector('.draggable13:last-child');
 
         if (lastDraggable) {
             // Insert newDiv before the last draggable item
@@ -500,13 +629,26 @@ function drop(e) {
             // If no last draggable item, just append the newDiv
             containerConcepts.appendChild(newDiv);
         }
+     initializeDraggable13(newDiv)
+  
+    //   if (containerConcepts) {
+    //     // Select the last draggable item
+    //     const lastDraggable = containerConcepts.querySelector('.draggable13:last-child');
 
-        // Initialize draggable functionality for the newDiv
-        initializeDraggable13(newDiv);
-    } else {
-        console.error("Container not found!");
-    }
-      // initializeDraggable13(newDiv)
+    //     if (lastDraggable) {
+    //         // Insert newDiv before the last draggable item
+    //         containerConcepts.insertBefore(newDiv, lastDraggable);
+    //     } else {
+    //         // If no last draggable item, just append the newDiv
+    //         containerConcepts.appendChild(newDiv);
+    //     }
+
+    //     // Initialize draggable functionality for the newDiv
+    //     initializeDraggable13(newDiv);
+    // } else {
+    //     console.error("Container not found!");
+    // }
+      
       // // Update dragDrops array
       // dragDrops.push(newDiv);
     }
@@ -521,7 +663,7 @@ function drop(e) {
     }
     function initializeDraggable13(element) {
       element.addEventListener('dragstart', () => {
-        element.classList.add('dragging');
+        element.classList.add('dragging13');
       });
     
       element.addEventListener('dragend', () => {
@@ -552,8 +694,7 @@ function drop(e) {
       newDiv.classList.add('draggable12')
       newDiv.draggable = true;
       // Insert the new div before the current "add-variable" element
-      const areaFormItem = element?.closest(".form-item-outer-area");
-      areaFormItem?.insertBefore(newDiv, areaFormItem.firstChild);
+      element.closest('#containers-area')?.appendChild(newDiv);
       initializeDraggable12(newDiv)
   }
   
@@ -813,33 +954,6 @@ document.addEventListener("DOMContentLoaded", function() {
   addSectionButton.addEventListener('click', addNewSectionSecondContainer);
 }); 
 
-function initializeDragAndDrop12(container) {
-  const draggables = container.querySelectorAll('.draggable12');
-
-  draggables.forEach(draggable => {
-    draggable.addEventListener('dragstart', () => {
-      draggable.classList.add('dragging12');
-    });
-
-    draggable.addEventListener('dragend', () => {
-      draggable.classList.remove('dragging12');
-    });
-  });
-
-  container.addEventListener('dragover', (e) => {
-    e.preventDefault();
-    const afterElement = getDragAfterElement12(container, e.clientY);
-    const draggable = container.querySelector('.dragging12');
-
-    if (!draggable) return;
-
-    if (afterElement == null) {
-      container.appendChild(draggable);
-    } else {
-      container.insertBefore(draggable, afterElement);
-    }
-  });
-}
 function initializeDragAndDrop13(container) {
   const draggables = container.querySelectorAll('.draggable13');
 
@@ -1230,9 +1344,9 @@ function initializeDragAndDrop13(container) {
       this.style.display='none';
       deleteButton.style.display='block';
     }
-    const button = document.querySelector('#toggle-button'); // Adjust the selector as needed
+    // const button = document.querySelector('#toggle-button'); // Adjust the selector as needed
     const button2 = document.querySelector('#toggle-button2'); // Adjust the selector as needed
-    button?.addEventListener('click', handleAddArea);
+    // button?.addEventListener('click', handleAddArea);
     
 
     deleteButton?.addEventListener('click',function(e){
@@ -1253,78 +1367,78 @@ function initializeDragAndDrop13(container) {
       this.style.display='none';
       removeConcept.style.display='block'
     }
-    const button12 = document.querySelector('#toggle-button2'); // Adjust the selector as needed
-    button12?.addEventListener('click', handleAddArea2);
-    removeConcept?.addEventListener('click',function(e){
-      e.preventDefault();
-      e.stopPropagation();
-      containerWord.classList.remove('showArea2');
-      this.style.display='none';
-      button12.style.display='block'
-    })
+    // const button12 = document.querySelector('#toggle-button2'); // Adjust the selector as needed
+    // button12?.addEventListener('click', handleAddArea2);
+    // removeConcept?.addEventListener('click',function(e){
+    //   e.preventDefault();
+    //   e.stopPropagation();
+    //   containerWord.classList.remove('showArea2');
+    //   this.style.display='none';
+    //   button12.style.display='block'
+    // })
     
   });
-  function initializeEventListeners(section) {
-    const toggleButton = section.querySelector('.add-concept-word__container >.add-concept-word:first-child');
-    const toggleButton2 = section.querySelector('#toggle-button2');
-    console.log(section.querySelector('.add-concept-word__container '))
-    const pElement = section.querySelector('.first-area');
-    const imgElement = section.querySelector('header > img');
-    const containerArea = section.querySelector('.form-item-outer-area');
-    const containerWord = section.querySelector('.concepts-container');
-    const removeConcept = section.querySelector('.remove-concept-word');
-    const removeConcept2 = section.querySelector('.remove-concept-word1');
+//   function initializeEventListeners(section) {
+//     const toggleButton = section.querySelector('.add-concept-word__container >.add-concept-word:first-child');
+//     // const toggleButton2 = section.querySelector('#toggle-button2');
+//     console.log(section.querySelector('.add-concept-word__container '))
+//     const pElement = section.querySelector('.first-area');
+//     const imgElement = section.querySelector('header > img');
+//     const containerArea = section.querySelector('.form-item-outer-area');
+//     const containerWord = section.querySelector('.concepts-container');
+//     const removeConcept = section.querySelector('.remove-concept-word');
+//     const removeConcept2 = section.querySelector('.remove-concept-word1');
 
-    // Debugging: Check if buttons are found
-    console.log('Toggle Button:', toggleButton);
-    console.log('Toggle Button 2:', toggleButton2);
+//     // Debugging: Check if buttons are found
+//     console.log('Toggle Button:', toggleButton);
+//     // console.log('Toggle Button 2:', toggleButton2);
 
-    if (toggleButton) {
-        toggleButton.addEventListener('click', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            handleAddArea(pElement, imgElement, containerArea);
-            toggleButton.style.display = 'none';
-            if (removeConcept) {
-                removeConcept.style.display = 'block';
-            }
-        });
-    }
+//     if (toggleButton) {
+//         toggleButton.addEventListener('click', (e) => {
+//             e.preventDefault();
+//             e.stopPropagation();
+//             handleAddArea(pElement, imgElement, containerArea);
+//             toggleButton.style.display = 'none';
+//             if (removeConcept) {
+//                 removeConcept.style.display = 'block';
+//             }
+//         });
+//     }
 
-    if (toggleButton2) {
-        toggleButton2.addEventListener('click', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            handleAddArea2(containerWord);
-            toggleButton2.style.display = 'none';
-            if (removeConcept2) {
-                removeConcept2.style.display = 'block';
-            }
-        });
-    }
+//     // if (toggleButton2) {
+//     //     toggleButton2.addEventListener('click', (e) => {
+//     //         e.preventDefault();
+//     //         e.stopPropagation();
+//     //         handleAddArea2(containerWord);
+//     //         toggleButton2.style.display = 'none';
+//     //         if (removeConcept2) {
+//     //             removeConcept2.style.display = 'block';
+//     //         }
+//     //     });
+//     // }
 
-    if (removeConcept) {
-        removeConcept.addEventListener('click', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            pElement.classList.remove('showArea');
-            imgElement.classList.remove('showArea');
-            containerArea.classList.remove('showArea');
-            toggleButton.style.display = 'block';
-            removeConcept.style.display = 'none';
-        });
-    }
+//     if (removeConcept) {
+//         removeConcept.addEventListener('click', (e) => {
+//             e.preventDefault();
+//             e.stopPropagation();
+//             pElement.classList.remove('showArea');
+//             imgElement.classList.remove('showArea');
+//             containerArea.classList.remove('showArea');
+//             toggleButton.style.display = 'block';
+//             removeConcept.style.display = 'none';
+//         });
+//     }
 
-    if (removeConcept2) {
-        removeConcept2.addEventListener('click', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            containerWord.classList.remove('showArea2');
-            removeConcept2.style.display = 'none';
-            toggleButton2.style.display = 'block';
-        });
-    }
-}
+//     if (removeConcept2) {
+//         removeConcept2.addEventListener('click', (e) => {
+//             e.preventDefault();
+//             e.stopPropagation();
+//             containerWord.classList.remove('showArea2');
+//             removeConcept2.style.display = 'none';
+//             // toggleButton2.style.display = 'block';
+//         });
+//     }
+// }
   // function initializeEventListeners(section) {
   //   const toggleButton = section.querySelector('.add-concept-word__container > .add-concept-word:first-child');
   //   const toggleButton2 = section.querySelector('.add-concept-word__container > .add-concept-word:last-child');
@@ -1342,11 +1456,11 @@ function initializeDragAndDrop13(container) {
   //   }
   // }
   
-  function handleAddArea(pElement, imgElement, containerArea) {
-    pElement.classList.toggle('showArea');
-    imgElement.classList.toggle('showArea');
-    containerArea.classList.toggle('showArea');
-  }
+  // function handleAddArea(pElement, imgElement, containerArea) {
+  //   pElement.classList.toggle('showArea');
+  //   imgElement.classList.toggle('showArea');
+  //   containerArea.classList.toggle('showArea');
+  // }
   
   function handleAddArea2(containerWord) {
     containerWord.classList.toggle('showArea2');
