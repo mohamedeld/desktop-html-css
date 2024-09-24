@@ -119,6 +119,7 @@ function addFirstSuccessArea(){
   newDiv.style.padding='1rem';
   newDiv.style.borderRadius='8px';
   newDiv.style.margin='10px -22px 10px 0px';
+ 
   areaIndex++;
   let contentParagrpah = `البعد ${areaIndex}`;
   
@@ -145,28 +146,60 @@ function addFirstSuccessArea(){
                     </div>
                               
   `;
+  newDiv.draggable=true;
+  newDiv.classList.add('draggable15');
   document.querySelector('#containers-data')?.appendChild(newDiv);
   const container = newDiv.querySelector('#containers-area');
+  const container2 = document?.querySelector('#containers-data');
   initialDragAndDrop12(container);
+  initialDragAndDrop15(container2)
 }
 function initialDragAndDrop12(container){
-  const draggables = container.querySelectorAll('.draggable12');
+  const draggables = container?.querySelectorAll('.draggable12');
   
-  draggables.forEach(draggable => {
-    draggable.addEventListener('dragstart', () => {
+  draggables?.forEach(draggable => {
+    draggable?.addEventListener('dragstart', () => {
       draggable.classList.add('dragging12');
     });
 
-    draggable.addEventListener('dragend', () => {
+    draggable?.addEventListener('dragend', () => {
       draggable.classList.remove('dragging12');
+    });
+  });
+
+  container?.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    const afterElement = getDragAfterElement12(container, e.clientY);
+    const draggable = container.querySelector('.dragging12');
+
+    if (!draggable) return;
+
+    if (afterElement == null) {
+      container.appendChild(draggable);
+    } else {
+      container.insertBefore(draggable, afterElement);
+    }
+  });
+  
+}
+function initialDragAndDrop15(container){
+  const draggables = container.querySelectorAll('.draggable15');
+  
+  draggables.forEach(draggable => {
+    draggable.addEventListener('dragstart', () => {
+      draggable.classList.add('dragging15');
+    });
+
+    draggable.addEventListener('dragend', () => {
+      draggable.classList.remove('dragging15');
     });
   });
 
   container.addEventListener('dragover', (e) => {
     e.preventDefault();
-    const afterElement = getDragAfterElement12(container, e.clientY);
-    const draggable = container.querySelector('.dragging12');
-
+    const afterElement = getDragAfterElement15(container, e.clientY);
+    const draggable = container.querySelector('.dragging15');
+    
     if (!draggable) return;
 
     if (afterElement == null) {
@@ -350,6 +383,20 @@ function getDragAfterElement13(container, y) {
 }
 function getDragAfterElement12(container, y) {
   const draggableElements = [...container.querySelectorAll('.draggable12:not(.dragging12)')];
+  
+  return draggableElements.reduce((closest, child) => {
+    const box = child.getBoundingClientRect();
+    const offset = y - box.top - box.height / 2;
+
+    if (offset < 0 && (closest === null || offset > closest.offset)) {
+      return { offset: offset, element: child };
+    } else {
+      return closest;
+    }
+  }, null)?.element;
+}
+function getDragAfterElement15(container, y) {
+  const draggableElements = [...container.querySelectorAll('.draggable15:not(.dragging15)')];
   
   return draggableElements.reduce((closest, child) => {
     const box = child.getBoundingClientRect();
@@ -839,14 +886,15 @@ function drop(e) {
     }
     const randomNums = ["الأول", "الثاني", "الثالث", "الرابع", "الخامس", "السادس", "السابع", "الثامن", "التاسع", "العاشر", "الحادي عشر", "الثاني عشر", "الثالث عشر", "الرابع عشر", "الخامس عشر", "السادس عشر", "السابع عشر", "الثامن عشر", "التاسع عشر", "العشرون", "الحادي والعشرون", "الثاني والعشرون", "الثالث والعشرون", "الرابع والعشرون", "الخامس والعشرون", "السادس والعشرون", "السابع والعشرون", "الثامن والعشرون", "التاسع والعشرون", "الثلاثون", "الحادي والثلاثون", "الثاني والثلاثون", "الثالث والثلاثون", "الرابع والثلاثون", "الخامس والثلاثون", "السادس والثلاثون", "السابع والثلاثون", "الثامن والثلاثون", "التاسع والثلاثون", "الأربعون", "الحادي والأربعون", "الثاني والأربعون", "الثالث والأربعون", "الرابع والأربعون", "الخامس والأربعون", "السادس والأربعون", "السابع والأربعون", "الثامن والأربعون", "التاسع والأربعون", "الخمسون"];
     
+  
     
 function addNewSectionSecondContainer() {
   // Create a new div element
   const newSection = document.createElement("div");
   newSection.classList.add("main-data-content","draggable1");
   newSection.id = `second-question-section`;
-  newSection.draggable=true;
   sectionCount++;
+  newSection.draggable=true;
   const randomColor = getRandomColor();
   const getRandomNum = randomNums[sectionCount]
   const sectionTitle = `المحور ${getRandomNum}`;
@@ -878,41 +926,16 @@ function addNewSectionSecondContainer() {
                           <button class="add-concept-word" id="toggle-button2" type="button">اضف عبارة</button>
                            <button class="remove-concept-word1" type="button" style="display: none;">احذف العبارة</button>
                         </div>
-                      <header>
-                        <img src="./images/icons/dragdrop.svg" alt="drag drop icon" style="display: none;"/>
-                        <p style="display: none;" class="first-area">البعد الاول</p>
-                      </header>
-                      <div class="form" >
-                        <div class="form-item form-item-outer-area form-item-outer-area-first" id="containers-area" style="display: none;">
-                          <div class="area-form-item draggable12" draggable="true">
-                                <img src="./images/icons/dragdrop.svg" alt="drog drop  icon"  />
-                                <input type="text" class="form-control general-control" id="exampleInputName" aria-describedby="textHelp" placeholder="العبارة ( مثال : ما سنك؟ )">
-                                <div class="add-variable">
-                                  <img src="./images/icons/plus.svg" alt="plus icon" onclick="addVariableItem2(this)"/>
-                                  <p onclick="addVariableItem2(this)" id="add-variable-small">أضف متغير</p>
+                         <div class="form">
+                            
+                              <div class="form-item form-item-outer-area form-item-outer-area-first" id="containers-data">
                                 
                               </div>
-                            </div>
-                        </div>
-                        <div class="concepts-container word-container" style="display: none;">
-                          <p class="concepts">العبارات</p>
-                          <div class="concepts-container-item" id="containers-concepts">
-                            <div class="draggable13" draggable="true">
-                              <img src="./images/icons/dragdrop.svg" alt="drag drop icon"/>
-                              <input type="text" class="form-control general-control second" id="exampleInputName" aria-describedby="textHelp" placeholder="المتغير الأول ( مثال : من 20 ل25 سنة )">
-                              <div class="trash-icon"><button onclick="deleteItem(this)"><img src="./images/icons/trash.svg" alt="trash icon" /></button></div>
-                            </div>
-                            <div class="draggable13" draggable="true">
-                              <img src="./images/icons/dragdrop.svg" alt="drag drop icon"/>
-                              <input type="text" class="form-control general-control second" id="exampleInputName" aria-describedby="textHelp" placeholder="المتغير الأول ( مثال : من 20 ل25 سنة )">
-                              <div class="add-variable">
-                                <img src="./images/icons/plus.svg" alt="plus icon" onclick="addVariableItem3(this)"/>
-                                <p onclick="addVariableItem3(this)" id="add-variable-small">أضف متغير</p>
-                              </div>
+                            <div class="concepts-container word-container" id="full-container-concept">
+                              
                             </div>
                           </div>
-                        </div>
-                      </div>
+                      
                     </div>
                     <div class="inner-main-drag"></div>
   `;
@@ -926,8 +949,8 @@ function addNewSectionSecondContainer() {
   } else {
     console.error("Element with ID #main-data-content-container2 not found!");
   }
-  initializeEventListeners(newSection);
-  initializeDragAndDrop12(newSection.querySelector('#containers-area'));
+  // initializeEventListeners(newSection);
+  initialDragAndDrop12(newSection.querySelector('#containers-area'));
   initializeDragAndDrop13(newSection.querySelector('#containers-concepts'));
 
   newSection.classList.add('draggable1');
@@ -955,29 +978,29 @@ document.addEventListener("DOMContentLoaded", function() {
 }); 
 
 function initializeDragAndDrop13(container) {
-  const draggables = container.querySelectorAll('.draggable13');
+  const draggables = container?.querySelectorAll('.draggable13');
 
-  draggables.forEach(draggable => {
-    draggable.addEventListener('dragstart', () => {
+  draggables?.forEach(draggable => {
+    draggable?.addEventListener('dragstart', () => {
       draggable.classList.add('dragging13');
     });
 
-    draggable.addEventListener('dragend', () => {
+    draggable?.addEventListener('dragend', () => {
       draggable.classList.remove('dragging13');
     });
   });
 
-  container.addEventListener('dragover', (e) => {
+  container?.addEventListener('dragover', (e) => {
     e.preventDefault();
     const afterElement = getDragAfterElement13(container, e.clientY);
-    const draggable = container.querySelector('.dragging13');
+    const draggable = container?.querySelector('.dragging13');
 
     if (!draggable) return;
 
     if (afterElement == null) {
-      container.appendChild(draggable);
+      container?.appendChild(draggable);
     } else {
-      container.insertBefore(draggable, afterElement);
+      container?.insertBefore(draggable, afterElement);
     }
   });
 }
