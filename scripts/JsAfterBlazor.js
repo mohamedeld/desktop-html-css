@@ -154,6 +154,50 @@ function addFirstSuccessArea(){
   initialDragAndDrop12(container);
   initialDragAndDrop15(container2)
 }
+function addFirstSuccessArea2(sectionIndex){
+  console.log(sectionIndex)
+  const newDiv = document?.createElement('div');
+  
+  newDiv.style.border='1px solid #167CC8';
+  newDiv.style.width='100%';
+  newDiv.style.padding='1rem';
+  newDiv.style.borderRadius='8px';
+  newDiv.style.margin='10px -22px 10px 0px';
+ 
+  areaIndex++;
+  let contentParagrpah = `البعد ${areaIndex}`;
+  
+  newDiv.innerHTML = `
+                    <div style="flex:1;">
+                       <header>                                    <img class="first-area-img"  src="./images/icons/dragdrop.svg" alt="drag drop icon"/>
+                                    <p class="first-area">${contentParagrpah}</p>
+                      </header>
+                                 <div className="firstarea " id="containers-area-${sectionIndex}" >
+                                  <div class="area-form-item draggable12" draggable="true">
+                                    <img src="./images/icons/dragdrop.svg" alt="drog drop  icon"  />
+                                    <input type="text" class="form-control general-control" id="exampleInputName" aria-describedby="textHelp" placeholder="العبارة ( مثال : ما سنك؟ )">
+                                    <div class="trash-icon"><button onclick="deleteItem12(this)"><img src="./images/icons/trash.svg" alt="trash icon" /></button></div>
+                                </div>
+                                <div class="area-form-item draggable12" style="margin-top:10px" draggable="true">
+                                    <img src="./images/icons/dragdrop.svg" alt="drog drop  icon"  />
+                                    <input type="text" class="form-control general-control" id="exampleInputName" aria-describedby="textHelp" placeholder="العبارة ( مثال : ما سنك؟ )">
+                                    <div class="add-variable">
+                                      <img src="./images/icons/plus.svg" alt="plus icon" onclick="addVariableItem2(this)"/>
+                                      <p onclick="addVariableItem2(this)" id="add-variable-small">أضف متغير</p>
+                                  </div>
+                                </div>
+                                 </div>
+                    </div>
+                              
+  `;
+  newDiv.draggable=true;
+  newDiv.classList.add('draggable15');
+  document.querySelector(`#containers-data-${sectionIndex}`)?.appendChild(newDiv);
+  const container = newDiv.querySelector(`#containers-area-${sectionIndex}`);
+  const container2 = document?.querySelector(`#containers-data-${sectionIndex}`);
+  initialDragAndDrop12(container);
+  initialDragAndDrop15(container2)
+}
 function initialDragAndDrop12(container){
   const draggables = container?.querySelectorAll('.draggable12');
   
@@ -199,6 +243,34 @@ function initialDragAndDrop15(container){
     e.preventDefault();
     const afterElement = getDragAfterElement15(container, e.clientY);
     const draggable = container.querySelector('.dragging15');
+    
+    if (!draggable) return;
+
+    if (afterElement == null) {
+      container.appendChild(draggable);
+    } else {
+      container.insertBefore(draggable, afterElement);
+    }
+  });
+  
+}
+function initialDragAndDrop16(container){
+  const draggables = container.querySelectorAll('.draggable16');
+  
+  draggables.forEach(draggable => {
+    draggable.addEventListener('dragstart', () => {
+      draggable.classList.add('dragging16');
+    });
+
+    draggable.addEventListener('dragend', () => {
+      draggable.classList.remove('dragging16');
+    });
+  });
+
+  container.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    const afterElement = getDragAfterElement16(container, e.clientY);
+    const draggable = container.querySelector('.dragging16');
     
     if (!draggable) return;
 
@@ -293,7 +365,7 @@ function addNewConceptsSuccess(){
   newDiv.style.borderRadius='8px';
   newDiv.style.margin='10px 0px 10px 0px';
   conceptIndex++;
-  let paragraphIndex= `العبارة رثم ${conceptIndex}`
+  let paragraphIndex= `العبارة رقم ${conceptIndex}`
   newDiv.innerHTML = `
                                   <p class="concepts">${paragraphIndex}</p>
                               <div class="concepts-container-item" id="containers-concepts">
@@ -316,7 +388,49 @@ function addNewConceptsSuccess(){
 
   document.querySelector('#full-container-concept').appendChild(newDiv);
   const container = newDiv.querySelector('#containers-concepts');
+  const container2 = document?.querySelector('#full-container-concept');
+  newDiv.classList.add('draggable16');
+  newDiv.draggable =true;
+  initialDragAndDrop16(container2)
   initializeDragAndDropForContainer(container)
+  // initializeDraggable13(newDiv)
+}
+let counterIndex=0;
+function addNewConceptsSuccess2(sectionIndex){
+  const newDiv = document.createElement('div');
+  newDiv.style.border='1px solid #167CC8';
+  newDiv.style.width='100%';
+  newDiv.style.padding='1rem';
+  newDiv.style.borderRadius='8px';
+  newDiv.style.margin='10px 0px 10px 0px';
+  counterIndex++;
+  let paragraphIndex= `العبارة رقم ${counterIndex}`
+  newDiv.innerHTML = `
+                                  <p class="concepts">${paragraphIndex}</p>
+                              <div class="concepts-container-item" id="containers-concepts-${sectionIndex}">
+                                <div class="draggable13" draggable="true">
+                                  <img src="./images/icons/dragdrop.svg" alt="drag drop icon"   />
+                                  <input type="text" class="form-control general-control second" id="exampleInputName" aria-describedby="textHelp" placeholder="المتغير الأول ( مثال : من 20 ل25 سنة )">
+                                  <div class="trash-icon"><button onclick="deleteItem(this)"><img src="./images/icons/trash.svg" alt="trash icon" /></button></div>
+                                </div>
+                                <div class="draggable13" draggable="true">
+                                  <img src="./images/icons/dragdrop.svg" alt="drag drop icon" />
+                                  <input type="text" class="form-control general-control second" id="exampleInputName" aria-describedby="textHelp" placeholder="المتغير الأول ( مثال : من 20 ل25 سنة )">
+                                  <div class="add-variable">
+                                    <img src="./images/icons/plus.svg" alt="plus icon" onclick="addVariableItem3(this)"/>
+                                    <p onclick="addVariableItem3(this)" id="add-variable-small">أضف متغير</p>
+                                  </div>
+                                </div>
+                              </div>
+                                
+  `;
+  newDiv.classList.add('draggable16');
+  newDiv.draggable =true;
+  document.querySelector(`#full-container-concept-${sectionIndex}`).appendChild(newDiv);
+  const container = newDiv.querySelector(`#containers-concepts-${sectionIndex}`);
+  const container2 = document?.querySelector(`#full-container-concept-${sectionIndex}`);
+  initializeDragAndDropForContainer(container)
+  initialDragAndDrop16(container2)
   // initializeDraggable13(newDiv)
 }
 function initializeDragAndDropForContainer(container) {
@@ -367,6 +481,20 @@ function getDragAfterElement(container, y) {
     }
   }, null)?.element;
 }
+function getDragAfterElement17(container, y) {
+  const draggableElements = [...container.querySelectorAll('.draggable17:not(.dragging17)')];
+  
+  return draggableElements.reduce((closest, child) => {
+    const box = child.getBoundingClientRect();
+    const offset = y - box.top - box.height / 2;
+
+    if (offset < 0 && (closest === null || offset > closest.offset)) {
+      return { offset: offset, element: child };
+    } else {
+      return closest;
+    }
+  }, null)?.element;
+}
 function getDragAfterElement13(container, y) {
   const draggableElements = [...container.querySelectorAll('.draggable13:not(.dragging13)')];
   
@@ -397,6 +525,20 @@ function getDragAfterElement12(container, y) {
 }
 function getDragAfterElement15(container, y) {
   const draggableElements = [...container.querySelectorAll('.draggable15:not(.dragging15)')];
+  
+  return draggableElements.reduce((closest, child) => {
+    const box = child.getBoundingClientRect();
+    const offset = y - box.top - box.height / 2;
+
+    if (offset < 0 && (closest === null || offset > closest.offset)) {
+      return { offset: offset, element: child };
+    } else {
+      return closest;
+    }
+  }, null)?.element;
+}
+function getDragAfterElement16(container, y) {
+  const draggableElements = [...container.querySelectorAll('.draggable16:not(.dragging16)')];
   
   return draggableElements.reduce((closest, child) => {
     const box = child.getBoundingClientRect();
@@ -788,11 +930,15 @@ function drop(e) {
         </form>
       `;
       newSection.style.marginTop = "20px";
-    
+      newSection.style.marginBottom = "20px";
+      newSection.classList.add('draggable17')
+      newSection.draggable = true;
       // Append the new section to the sections container
       const sectionsContainer = document.querySelector(".sections-container");
       sectionsContainer.appendChild(newSection);
       initializeDragAndDrop10(newSection.querySelector('#containers'))
+      const container2 = document.querySelector('.sections-container');
+      initializeDragAndDrop17(container2)
     }
     function initializeDragAndDrop10(container) {
       const draggables = container.querySelectorAll('.draggable');
@@ -811,6 +957,31 @@ function drop(e) {
         e.preventDefault();
         const afterElement = getDragAfterElement(container, e.clientY);
         const draggable = document.querySelector('.dragging');
+    
+        if (afterElement == null) {
+          container.appendChild(draggable);
+        } else {
+          container.insertBefore(draggable, afterElement);
+        }
+      });
+    }
+    function initializeDragAndDrop17(container) {
+      const draggables = container.querySelectorAll('.draggable17');
+    
+      draggables?.forEach(draggable => {
+        draggable.addEventListener('dragstart', () => {
+          draggable.classList.add('dragging17');
+        });
+    
+        draggable.addEventListener('dragend', () => {
+          draggable.classList.remove('dragging17');
+        });
+      });
+    
+      container.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        const afterElement = getDragAfterElement17(container, e.clientY);
+        const draggable = document.querySelector('.dragging17');
     
         if (afterElement == null) {
           container.appendChild(draggable);
@@ -892,7 +1063,7 @@ function addNewSectionSecondContainer() {
   // Create a new div element
   const newSection = document.createElement("div");
   newSection.classList.add("main-data-content","draggable1");
-  newSection.id = `second-question-section`;
+  newSection.id = `second-question-section-${sectionCount + 1}`;
   sectionCount++;
   newSection.draggable=true;
   const randomColor = getRandomColor();
@@ -921,17 +1092,17 @@ function addNewSectionSecondContainer() {
                     </div>
                     <div class="first-part-container">
                     <div class="add-concept-word__container">
-                          <button class="add-concept-word" id="toggle-button" type="button">اضف بعد</button>
+                          <button class="add-concept-word" id="toggle-button-${sectionCount}" type="button">اضف بعد</button>
                           <button class="remove-concept-word" style="display: none;">احذف البعد</button>
-                          <button class="add-concept-word" id="toggle-button2" type="button">اضف عبارة</button>
+                          <button class="add-concept-word" id="toggle-button2-${sectionCount}" type="button">اضف عبارة</button>
                            <button class="remove-concept-word1" type="button" style="display: none;">احذف العبارة</button>
                         </div>
                          <div class="form">
                             
-                              <div class="form-item form-item-outer-area form-item-outer-area-first" id="containers-data">
+                              <div class="form-item form-item-outer-area form-item-outer-area-first" id="containers-data-${sectionCount}">
                                 
                               </div>
-                            <div class="concepts-container word-container" id="full-container-concept">
+                            <div class="concepts-container word-container" id="full-container-concept-${sectionCount}">
                               
                             </div>
                           </div>
@@ -949,9 +1120,16 @@ function addNewSectionSecondContainer() {
   } else {
     console.error("Element with ID #main-data-content-container2 not found!");
   }
-  // initializeEventListeners(newSection);
-  initialDragAndDrop12(newSection.querySelector('#containers-area'));
-  initializeDragAndDrop13(newSection.querySelector('#containers-concepts'));
+  // Add event listeners for toggle buttons
+  // Initialize drag and drop functionality
+  initialDragAndDrop12(newSection.querySelector('#containers-data-' + sectionCount));
+  initializeDragAndDrop13(newSection.querySelector('#containers-concepts-' + sectionCount));
+
+   document.getElementById(`toggle-button-${sectionCount}`).addEventListener('click', () => addFirstSuccessArea2(sectionCount));
+    document.getElementById(`toggle-button2-${sectionCount}`).addEventListener('click', () => addNewConceptsSuccess2(sectionCount));
+ 
+   
+ 
 
   newSection.classList.add('draggable1');
   newSection.setAttribute('draggable', true);

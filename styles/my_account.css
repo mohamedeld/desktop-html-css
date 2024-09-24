@@ -7095,13 +7095,19 @@ object-fit:cover;
 .draggable12,
 .draggable1,
 .draggable15,
+.draggable17,
+.draggable16,
 .draggable{
   cursor: move;
 }
 .draggable15.dragging15,
+.draggable16.dragging16,
+.draggable17.dragging17,
 .draggable.dragging{
   opacity:0.7;
-
+}
+.main .inner-main-questions{
+  width: 85%;
 }
 .draggable1.dragging1{
   opacity:0.7;
