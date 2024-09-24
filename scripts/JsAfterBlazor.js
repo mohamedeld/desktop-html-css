@@ -128,7 +128,7 @@ function addFirstSuccessArea(){
                        <header>                                    <img class="first-area-img"  src="./images/icons/dragdrop.svg" alt="drag drop icon"/>
                                     <p class="first-area">${contentParagrpah}</p>
                       </header>
-                                 <div className="firstarea " id="containers-area" >
+                                 <div class="firstarea " id="containers-area" >
                                   <div class="area-form-item draggable12" draggable="true">
                                     <img src="./images/icons/dragdrop.svg" alt="drog drop  icon"  />
                                     <input type="text" class="form-control general-control" id="exampleInputName" aria-describedby="textHelp" placeholder="العبارة ( مثال : ما سنك؟ )">
@@ -154,8 +154,8 @@ function addFirstSuccessArea(){
   initialDragAndDrop12(container);
   initialDragAndDrop15(container2)
 }
+let counterIndex1=0;
 function addFirstSuccessArea2(sectionIndex){
-  console.log(sectionIndex)
   const newDiv = document?.createElement('div');
   
   newDiv.style.border='1px solid #167CC8';
@@ -164,15 +164,15 @@ function addFirstSuccessArea2(sectionIndex){
   newDiv.style.borderRadius='8px';
   newDiv.style.margin='10px -22px 10px 0px';
  
-  areaIndex++;
-  let contentParagrpah = `البعد ${areaIndex}`;
-  
+  counterIndex1++;
+  let contentParagrpah = `البعد ${counterIndex1}`;
+    console.log(sectionIndex)
   newDiv.innerHTML = `
                     <div style="flex:1;">
                        <header>                                    <img class="first-area-img"  src="./images/icons/dragdrop.svg" alt="drag drop icon"/>
                                     <p class="first-area">${contentParagrpah}</p>
                       </header>
-                                 <div className="firstarea " id="containers-area-${sectionIndex}" >
+                                 <div class="firstarea " id="containers-area-${sectionIndex}" >
                                   <div class="area-form-item draggable12" draggable="true">
                                     <img src="./images/icons/dragdrop.svg" alt="drog drop  icon"  />
                                     <input type="text" class="form-control general-control" id="exampleInputName" aria-describedby="textHelp" placeholder="العبارة ( مثال : ما سنك؟ )">
@@ -192,17 +192,20 @@ function addFirstSuccessArea2(sectionIndex){
   `;
   newDiv.draggable=true;
   newDiv.classList.add('draggable15');
+  
   document.querySelector(`#containers-data-${sectionIndex}`)?.appendChild(newDiv);
   const container = newDiv.querySelector(`#containers-area-${sectionIndex}`);
+  
   const container2 = document?.querySelector(`#containers-data-${sectionIndex}`);
   initialDragAndDrop12(container);
   initialDragAndDrop15(container2)
 }
 function initialDragAndDrop12(container){
   const draggables = container?.querySelectorAll('.draggable12');
-  
+    
   draggables?.forEach(draggable => {
     draggable?.addEventListener('dragstart', () => {
+      console.log(draggable)
       draggable.classList.add('dragging12');
     });
 
@@ -210,11 +213,54 @@ function initialDragAndDrop12(container){
       draggable.classList.remove('dragging12');
     });
   });
-
+  
   container?.addEventListener('dragover', (e) => {
     e.preventDefault();
     const afterElement = getDragAfterElement12(container, e.clientY);
     const draggable = container.querySelector('.dragging12');
+    
+    if (!draggable) return;
+
+    if (afterElement == null) {
+      container.appendChild(draggable);
+    } else {
+      container.insertBefore(draggable, afterElement);
+    }
+  });
+  
+}
+function getDragAfterElement12(container, y) {
+  const draggableElements = [...container.querySelectorAll('.draggable12:not(.dragging12)')];
+  
+  return draggableElements.reduce((closest, child) => {
+    const box = child.getBoundingClientRect();
+    const offset = y - box.top - box.height / 2;
+
+    if (offset < 0 && (closest === null || offset > closest.offset)) {
+      return { offset: offset, element: child };
+    } else {
+      return closest;
+    }
+  }, null)?.element;
+}
+
+function initialDragAndDrop30(container){
+  const draggables = container?.querySelectorAll('.draggable1');
+  
+  draggables?.forEach(draggable => {
+    draggable?.addEventListener('dragstart', () => {
+      draggable.classList.add('dragging1');
+    });
+
+    draggable?.addEventListener('dragend', () => {
+      draggable.classList.remove('dragging1');
+    });
+  });
+
+  container?.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    const afterElement = getDragAfterElement30(container, e.clientY);
+    const draggable = container.querySelector('.dragging1');
 
     if (!draggable) return;
 
@@ -509,8 +555,9 @@ function getDragAfterElement13(container, y) {
     }
   }, null)?.element;
 }
-function getDragAfterElement12(container, y) {
-  const draggableElements = [...container.querySelectorAll('.draggable12:not(.dragging12)')];
+
+function getDragAfterElement30(container, y) {
+  const draggableElements = [...container.querySelectorAll('.draggable1:not(.dragging1)')];
   
   return draggableElements.reduce((closest, child) => {
     const box = child.getBoundingClientRect();
@@ -576,35 +623,35 @@ function getDragAfterElement1(container, y) {
 //   }
 // });
 
-// containerParent?.addEventListener('dragover', (e) => {
-//   e.preventDefault();
-//   const afterElement = getDragAfterElement1(containerParent, e.clientY);
-  
-//   if (afterElement == null) {
-//     containerParent.prepend(draggedElement);
-//   } else {
-//     containerParent.insertBefore(draggedElement, afterElement);
-//   }
-// });
+//                   containerParent?.addEventListener('dragover', (e) => {
+//                     e.preventDefault();
+//                     const afterElement = getDragAfterElement1(containerParent, e.clientY);
+//                       console.log(draggedElement)
+//                     if (afterElement == null) {
+//                       containerParent.prepend(draggedElement);
+//                     } else {
+//                       containerParent.insertBefore(draggedElement, afterElement);
+//                     }
+//                   });
 
-// containerParent?.addEventListener('dragend', () => {
-//   draggedElement = null;
-// });
+//                   containerParent?.addEventListener('dragend', () => {
+//                     draggedElement = null;
+//                   });
 
-// function getDragAfterElement1(container, y) {
-//   const draggableElements = [...container.querySelectorAll('.draggable1:not(.dragging)')];
-  
-//   return draggableElements.reduce((closest, child) => {
-//     const box = child.getBoundingClientRect();
-//     const offset = box.top + box.height / 2 - y;
+//                   function getDragAfterElement1(container, y) {
+//                     const draggableElements = [...container.querySelectorAll('.draggable1:not(.dragging1)')];
+                    
+//                     return draggableElements.reduce((closest, child) => {
+//                       const box = child.getBoundingClientRect();
+//                       const offset = box.top + box.height / 2 - y;
 
-//     if (offset >= 0 && (closest === null || offset < closest.offset)) {
-//       return { offset: offset, element: child };
-//     } else {
-//       return closest;
-//     }
-//   }, null)?.element;
-// }
+//                       if (offset >= 0 && (closest === null || offset < closest.offset)) {
+//                         return { offset: offset, element: child };
+//                       } else {
+//                         return closest;
+//                       }
+//                     }, null)?.element;
+//                   }
 
 // Function to generate a unique ID
 function generateUniqueId() {
@@ -1122,7 +1169,7 @@ function addNewSectionSecondContainer() {
   }
   // Add event listeners for toggle buttons
   // Initialize drag and drop functionality
-  initialDragAndDrop12(newSection.querySelector('#containers-data-' + sectionCount));
+  initialDragAndDrop12(newSection.querySelector('#containers-area-' + sectionCount));
   initializeDragAndDrop13(newSection.querySelector('#containers-concepts-' + sectionCount));
 
    document.getElementById(`toggle-button-${sectionCount}`).addEventListener('click', () => addFirstSuccessArea2(sectionCount));
@@ -1153,6 +1200,7 @@ document.addEventListener("DOMContentLoaded", function() {
   // Example: Call addNewSectionSecondContainer when a button is clicked
   const addSectionButton = document.querySelector('#add-section-button'); // Adjust the selector as needed
   addSectionButton.addEventListener('click', addNewSectionSecondContainer);
+  initialDragAndDrop30(containerParent)
 }); 
 
 function initializeDragAndDrop13(container) {
