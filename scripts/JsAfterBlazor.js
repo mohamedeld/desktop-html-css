@@ -1169,11 +1169,11 @@ function addNewSectionSecondContainer() {
   }
   // Add event listeners for toggle buttons
   // Initialize drag and drop functionality
-  initialDragAndDrop12(newSection.querySelector('#containers-area-' + sectionCount));
-  initializeDragAndDrop13(newSection.querySelector('#containers-concepts-' + sectionCount));
-
-   document.getElementById(`toggle-button-${sectionCount}`).addEventListener('click', () => addFirstSuccessArea2(sectionCount));
-    document.getElementById(`toggle-button2-${sectionCount}`).addEventListener('click', () => addNewConceptsSuccess2(sectionCount));
+  const currentCount = sectionCount;
+  initialDragAndDrop12(newSection.querySelector('#containers-area-' + currentCount));
+  initializeDragAndDrop13(newSection.querySelector('#containers-concepts-' + currentCount));
+   document.getElementById(`toggle-button-${currentCount}`).addEventListener('click', () => addFirstSuccessArea2(currentCount));
+    document.getElementById(`toggle-button2-${currentCount}`).addEventListener('click', () => addNewConceptsSuccess2(currentCount));
  
    
  
